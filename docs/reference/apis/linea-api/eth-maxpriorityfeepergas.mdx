@@ -1,0 +1,32 @@
+---
+title: eth_maxPriorityFeePerGas
+description: 'Returns the current priority fee per gas on Linea, in wei.'
+image: /img/socialCards/ethmaxpriorityfeepergas.jpg
+---
+
+import RpcPlayground from '@site/src/components/RpcPlayground';
+
+# `eth_maxPriorityFeePerGas`
+
+Returns the current priority fee per gas in wei. This is the tip paid to validators above the base
+fee.
+
+## Parameters
+
+None.
+
+## Returns
+
+Hexadecimal value of the current max priority fee per gas in wei.
+
+## Example
+
+<RpcPlayground
+  method="eth_maxPriorityFeePerGas"
+  params={[]}
+  exampleResponse={{
+    jsonrpc: "2.0",
+    id: 1,
+    result: "0x396c8ee"
+  }}
+/>

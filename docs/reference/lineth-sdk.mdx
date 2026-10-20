@@ -1,0 +1,220 @@
+---
+title: Lineth SDK
+description: >-
+  A viem-based TypeScript SDK for bridging ETH and tokens and for sending and
+  claiming messages between Ethereum and Linea.
+image: /img/socialCards/lineth-sdk.jpg
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Bridge ETH and tokens, and send and claim messages between Ethereum (L1) and Linea (L2), using a set of composable TypeScript functions. The Lineth SDK is built on [viem](https://viem.sh/): you create standard viem clients and call SDK actions on them, or extend a client with SDK decorators.
+
+The SDK is published as two packages:
+
+- `@lfdt-lineth/sdk-viem`: the actions and decorators most applications use.
+- `@lfdt-lineth/sdk-core`: framework-agnostic utilities (Merkle tree, message types, chain and contract helpers). Most users get it automatically through `@lfdt-lineth/sdk-viem` and do not install it directly.
+
+It resolves contract addresses automatically for Ethereum Mainnet, Linea Mainnet, Sepolia, and Linea Sepolia.
+Select the network by passing the matching chain from `viem/chains`.
+On a custom Lineth deployment, create viem clients for your chains and pass that deployment's
+contract addresses: `rollupAddress`, the message service address, and, when bridging tokens, the
+token bridge addresses.
+
+## Installation
+
+Install the SDK alongside viem, which is a required peer dependency (version 2.22.0 or later):
+
+```bash
+npm install @lfdt-lineth/sdk-viem viem
+```
+
+## Set up your clients
+
+Most actions take a viem client. Read actions use a public client, and state-changing actions (deposits, withdrawals, claims) use a wallet client. Use `mainnet` and `linea` for production, or `sepolia` and `lineaSepolia` for testing:
+
+```ts
+import { createPublicClient, http } from 'viem';
+import { sepolia, lineaSepolia } from 'viem/chains';
+
+const l1Client = createPublicClient({ chain: sepolia, transport: http() });
+const l2Client = createPublicClient({ chain: lineaSepolia, transport: http() });
+```
+
+## Bridge ETH and tokens
+
+Use `deposit` to bridge from L1 to L2, and `withdraw` to bridge from L2 to L1. Set `token` to `zeroAddress` to bridge native ETH. Both actions take a wallet client and return a transaction hash.
+
+```ts
+import { createWalletClient, createPublicClient, http, zeroAddress } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { sepolia, lineaSepolia } from 'viem/chains';
+import { deposit } from '@lfdt-lineth/sdk-viem';
+
+const client = createWalletClient({ chain: sepolia, transport: http() });
+const l2Client = createPublicClient({ chain: lineaSepolia, transport: http() });
+
+const hash = await deposit(client, {
+  l2Client,
+  account: privateKeyToAccount('0x...'),
+  amount: 1_000_000_000_000n,
+  token: zeroAddress, // Use zeroAddress for ETH
+  to: '0xRecipientAddress',
+  data: '0x', // Optional data
+  fee: 100_000_000n, // Optional fee
+});
+```
+
+```ts
+import { createWalletClient, http, zeroAddress } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { lineaSepolia } from 'viem/chains';
+import { withdraw } from '@lfdt-lineth/sdk-viem';
+
+const client = createWalletClient({ chain: lineaSepolia, transport: http() });
+
+const hash = await withdraw(client, {
+  account: privateKeyToAccount('0x...'),
+  amount: 1_000_000_000_000n,
+  token: zeroAddress, // Use zeroAddress for ETH
+  to: '0xRecipientAddress',
+  data: '0x', // Optional data
+});
+```
+
+## Claim messages
+
+A message sent across the bridge is claimed on the destination layer. Messages to L2 are usually delivered automatically by the Postman service, so manual claiming is mainly needed on L1. Use `claimOnL1` to finalize an L2-to-L1 message, and `claimOnL2` to finalize an L1-to-L2 message.
+
+Claiming on L1 requires a Merkle proof. You can fetch it with [`getMessageProof`](#read-message-data) and pass it in, as shown below.
+
+<Tabs className="my-tabs">
+  <TabItem value="L1" label="Claim on L1">
+
+```ts
+import { createWalletClient, http, zeroAddress } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { sepolia } from 'viem/chains';
+import { claimOnL1 } from '@lfdt-lineth/sdk-viem';
+
+const client = createWalletClient({ chain: sepolia, transport: http() });
+
+const hash = await claimOnL1(client, {
+  account: privateKeyToAccount('0x...'),
+  from: '0xSenderAddress',
+  to: '0xRecipientAddress',
+  fee: 100_000_000n,
+  value: 1_000_000_000_000n,
+  messageNonce: 1n,
+  calldata: '0x',
+  feeRecipient: zeroAddress,
+  messageProof: {
+    root: '0x...',
+    proof: ['0x...'],
+    leafIndex: 0,
+  },
+});
+```
+
+  </TabItem>
+  <TabItem value="L2" label="Claim on L2">
+
+```ts
+import { createWalletClient, http, zeroAddress } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { lineaSepolia } from 'viem/chains';
+import { claimOnL2 } from '@lfdt-lineth/sdk-viem';
+
+const client = createWalletClient({ chain: lineaSepolia, transport: http() });
+
+const hash = await claimOnL2(client, {
+  account: privateKeyToAccount('0x...'),
+  from: '0xSenderAddress',
+  to: '0xRecipientAddress',
+  fee: 100_000_000n,
+  value: 1_000_000_000_000n,
+  messageNonce: 1n,
+  calldata: '0x',
+  feeRecipient: zeroAddress,
+  // Optional transaction parameters
+  gas: 21000n,
+  maxFeePerGas: 100_000_000n,
+  maxPriorityFeePerGas: 1_000_000n,
+});
+```
+
+  </TabItem>
+</Tabs>
+
+## Read message data
+
+These actions run on a public client and read data from the chain. To check whether a message is ready to claim, query its status, and to claim on L1, fetch its proof:
+
+```ts
+import { createPublicClient, http } from 'viem';
+import { sepolia, lineaSepolia } from 'viem/chains';
+import { getL2ToL1MessageStatus, getMessageProof } from '@lfdt-lineth/sdk-viem';
+
+const l1Client = createPublicClient({ chain: sepolia, transport: http() });
+const l2Client = createPublicClient({ chain: lineaSepolia, transport: http() });
+
+const status = await getL2ToL1MessageStatus(l1Client, {
+  l2Client,
+  messageHash: '0x...',
+});
+
+const messageProof = await getMessageProof(l1Client, {
+  l2Client,
+  messageHash: '0x...',
+});
+```
+
+The full set of read actions:
+
+| Action | Returns |
+| --- | --- |
+| `getL1ToL2MessageStatus` | Whether an L1-to-L2 message is unknown, claimable, or claimed. |
+| `getL2ToL1MessageStatus` | Whether an L2-to-L1 message is unknown, claimable, or claimed, including finalization checks. |
+| `getMessageProof` | The Merkle proof needed to claim an L2-to-L1 message on L1. |
+| `getMessageByMessageHash` | Full message details from onchain `MessageSent` events. |
+| `getMessagesByTransactionHash` | All messages emitted in a given transaction. |
+| `getTransactionReceiptByMessageHash` | The transaction receipt that contains a specific message. |
+| `getMessageSentEvents` | `MessageSent` logs for a given block range. |
+| `getBlockExtraData` | Decoded Linea block `extraData` (version and fee parameters). |
+| `computeMessageHash` | Deterministically hashes message parameters (utility). |
+
+## Decorators
+
+Instead of calling actions as standalone functions, you can extend a viem client so the actions become methods on the client. Use `publicActionsL1` and `publicActionsL2` for read actions, and `walletActionsL1` and `walletActionsL2` for write actions:
+
+```ts
+import { createPublicClient, http } from 'viem';
+import { sepolia, lineaSepolia } from 'viem/chains';
+import { publicActionsL1, publicActionsL2 } from '@lfdt-lineth/sdk-viem';
+
+const l1Client = createPublicClient({ chain: sepolia, transport: http() }).extend(publicActionsL1());
+const l2Client = createPublicClient({ chain: lineaSepolia, transport: http() }).extend(publicActionsL2());
+```
+
+Each decorator accepts optional contract addresses (`rollupAddress`, `l2MessageServiceAddress`, and, for wallet decorators, the token bridge addresses) for a custom deployment.
+On Ethereum Mainnet, Linea Mainnet, Sepolia, and Linea Sepolia you can omit them, and the SDK resolves the addresses automatically.
+
+## Core utilities
+
+For advanced or framework-agnostic use, `@lfdt-lineth/sdk-core` exposes the building blocks the viem package is built on: `SparseMerkleTree` for proof generation and verification, `parseBlockExtraData`, `formatMessageStatus`, `getContractsAddressesByChainId`, the `OnChainMessageStatus` enum, chain helpers, and the message types. Install it directly only if you need these without viem:
+
+```bash
+npm install @lfdt-lineth/sdk-core
+```
+
+## Resources
+
+- [`@lfdt-lineth/sdk-viem` README](https://github.com/LFDT-Lineth/lineth-monorepo/tree/main/ts-libs/sdk/sdk-viem): the full reference for every action, decorator, and error type.
+- [viem documentation](https://viem.sh/): client setup, transports, and accounts.
+
+:::note
+
+This SDK was previously published as `@consensys/linea-sdk`. The package was renamed to `@lfdt-lineth/sdk-viem` and rebuilt on viem. The previous `@consensys/linea-sdk` API (the `LineaSDK` class and `L1ClaimingService`) is no longer the documented interface.
+
+:::
