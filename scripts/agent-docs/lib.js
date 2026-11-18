@@ -19,7 +19,8 @@ const GROUPS = [
   },
   {
     title: "Deployment architecture",
-    test: (route) => route === "/deployment" || route.startsWith("/deployment/"),
+    test: (route) =>
+      route === "/deployment" || route.startsWith("/deployment/"),
   },
   {
     title: "Run and test",

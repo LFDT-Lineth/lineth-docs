@@ -14,21 +14,9 @@ import styles from "./styles.module.css";
 
 /** Map each docs sidebar to its top-level navbar section. */
 const SIDEBAR_SECTIONS = {
-  introSidebar: {
-    label: "Introduction",
+  stackSidebar: {
+    label: "Stack",
     href: "/",
-  },
-  evaluateSidebar: {
-    label: "Evaluate Lineth",
-    href: "/evaluate",
-  },
-  deploymentSidebar: {
-    label: "Deployment architecture",
-    href: "/deployment",
-  },
-  runSidebar: {
-    label: "Run and test",
-    href: "/run",
   },
   protocolSidebar: {
     label: "Protocol",
