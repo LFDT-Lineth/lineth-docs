@@ -1,0 +1,154 @@
+{
+  "name": "lineth-docs",
+  "version": "3.3.1",
+  "private": true,
+  "scripts": {
+    "prebuild": "node scripts/generate-glossary.js && node scripts/generateSocialCard.js && node scripts/updateCategories.js",
+    "build": "docusaurus build",
+    "postbuild": "node scripts/agent-docs/generate.js",
+    "prepare": "node scripts/husky-prepare.js",
+    "clean-slate": "bash ./clean-slate.sh",
+    "clear": "docusaurus clear",
+    "deploy": "docusaurus deploy",
+    "docusaurus": "docusaurus",
+    "format": "prettier --write \"{blog,docs,src,static}/(**/*).{md,mdx,ts,js,tsx,jsx,json}\"",
+    "format:docs": "prettier --write \"docs/**/*.{md,mdx}\"",
+    "format:docs:check": "prettier --check \"docs/**/*.{md,mdx}\"",
+    "glossary:generate": "node scripts/generate-glossary.js",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "eslint .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:style": "stylelint \"**/*.css\"",
+    "lint:style:fix": "npm run lint:style -- --fix",
+    "agent-docs:test": "node --test scripts/agent-docs/*.test.js",
+    "agent-docs:check": "node scripts/agent-docs/check.js",
+    "agent-docs:verify-preview": "node scripts/agent-docs/verify-preview.js",
+    "serve": "docusaurus serve",
+    "start": "docusaurus start",
+    "swizzle": "docusaurus swizzle",
+    "typecheck": "tsc",
+    "typecheck-staged": "tsc-files --noEmit",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "write-translations": "docusaurus write-translations"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,jsx,tsx}": "npm run lint:js:fix",
+    "**/*.{ts,tsx}": "npm run typecheck-staged",
+    "**/*.css": "npm run lint:style",
+    "**/*.{ts,js,tsx,jsx,json}": "prettier --write",
+    "**/*.{md,mdx}": "prettier --write"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "last 2 versions",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@11ty/gray-matter": "1.0.0",
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/faster": "3.10.2",
+    "@docusaurus/plugin-content-docs": "3.10.2",
+    "@docusaurus/plugin-google-tag-manager": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
+    "@docusaurus/remark-plugin-npm2yarn": "3.10.2",
+    "@docusaurus/theme-mermaid": "3.10.2",
+    "@easyops-cn/docusaurus-search-local": "0.55.3",
+    "@intercom/messenger-js-sdk": "0.0.20",
+    "@mdx-js/react": "3.1.1",
+    "@r74tech/docusaurus-plugin-panzoom": "2.5.0",
+    "axios": "1.20.0",
+    "browserslist": "4.29.4",
+    "cheerio": "1.2.0",
+    "clsx": "2.1.1",
+    "dotenv": "17.4.2",
+    "fast-xml-parser": "5.12.0",
+    "github-slugger": "1.5.0",
+    "ignore": "7.0.14",
+    "prism-react-renderer": "2.4.1",
+    "raw-loader": "4.0.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "redocusaurus": "2.5.2",
+    "sharp": "0.35.5",
+    "turndown": "7.2.4",
+    "turndown-plugin-gfm": "1.0.2",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "@docusaurus/module-type-aliases": "3.10.2",
+    "@docusaurus/tsconfig": "3.10.2",
+    "@eslint/compat": "2.1.1",
+    "@eslint/eslintrc": "3.3.7",
+    "@eslint/js": "9.39.5",
+    "@googleapis/sheets": "13.0.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vercel/node": "5.10.2",
+    "eslint": "9.39.5",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-import-resolver-typescript": "4.4.5",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-prettier": "5.5.7",
+    "eslint-plugin-react": "7.37.5",
+    "globals": "17.13.0",
+    "google-auth-library": "10.9.1",
+    "googleapis-common": "8.0.3",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.0",
+    "prettier": "3.9.10",
+    "stylelint": "17.16.0",
+    "stylelint-config-standard": "40.0.0",
+    "tsc-files": "1.1.4",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0"
+  },
+  "engines": {
+    "node": "24.22.3",
+    "npm": ">=12.2.1"
+  },
+  "overrides": {
+    "@vercel/nft": {
+      "glob": "14.0.2"
+    },
+    "@vercel/node": {
+      "path-to-regexp": "6.3.0",
+      "undici": "6.29.1"
+    },
+    "@vercel/static-config": {
+      "ajv": "8.20.0"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.1"
+    },
+    "deepmerge": "4.1.2",
+    "rimraf": {
+      "glob": "14.0.2"
+    },
+    "serialize-javascript": "7.1.4",
+    "tinypool": "2.2.0"
+  },
+  "allowScripts": {
+    "@swc/core": false,
+    "core-js": false,
+    "esbuild": false,
+    "fsevents": false,
+    "unrs-resolver": false
+  },
+  "packageManager": "npm@12.2.1"
+}

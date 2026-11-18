@@ -17,7 +17,7 @@ providers, is unavailable, unreliable, or censoring.
 :::info
 
 In the case of the Linea public network, the L1 is Ethereum which serves as the
-[finality layer](../network/overview/transaction-finality.mdx).
+[finality layer](https://docs.linea.build/network/overview/transaction-finality).
 
 :::
 
@@ -70,7 +70,7 @@ When a user submits a forced transaction, the following components validate and 
 
 - `ForcedTransactionGateway`: Validates and submits the transaction to the `LineaRollup`, and
   generates a rolling hash.
-- [`LineaRollup`](../network/build/contracts.mdx): The Linea rollup and message service contract that stores the transaction.
+- [`LineaRollup`](https://docs.linea.build/network/build/contracts): The Linea rollup and message service contract that stores the transaction.
 - [Coordinator](./architecture/coordinator/index.mdx): Forwards the transaction to the sequencer for processing.
 - [Sequencer](./architecture/sequencer/index.mdx): Processes the transaction before the deadline.
 - [Prover](./architecture/prover/index.mdx): Generates a proof of the transaction and includes it in the finalization proof.
@@ -92,7 +92,7 @@ The coordinator listens for when the `LineaRollup` contract emits a `ForcedTrans
 corresponding forced transaction. It then forwards the transaction to the sequencer for processing before the deadline.
 
 Once processed, the prover generates a proof of the transaction and the corresponding rolling hash and
-[submits the proof to the finalization layer](../network/overview/transaction-finality.mdx#hard-finality).
+[submits the proof to the finalization layer](https://docs.linea.build/network/overview/transaction-finality#hard-finality).
 
 The complete lifecycle of a forced transaction is as follows:
 
@@ -148,16 +148,16 @@ sequenceDiagram
 <small>
 
 > `LineaRollup` (L1): Refers to the smart contract that provides the [Linea rollup and L1 message
-> service](../network/build/contracts.mdx). This contract is deployed on Ethereum and stores forced
+> service](https://docs.linea.build/network/build/contracts). This contract is deployed on Ethereum and stores forced
 > transactions, maintains rolling hashes, enforces deadlines, and verifies zero-knowledge proofs.
 
 </small>
 
 ## Next steps
 
-- Learn how to [enable forced transactions](../stack/how-to/enable-forced-transactions.mdx).
+- Learn how to [enable forced transactions](../run/enable-forced-transactions.mdx).
 - Learn how to [submit forced transactions](../protocol/how-to/forced-transactions.mdx) on Linea
   Public Mainnet.
 - Consider the normal [transaction lifecycle](./architecture/index.mdx#transaction-lifecycle).
-- See the [changelog](../changelog/release-notes.mdx) for release history.
+- See the [changelog](https://docs.linea.build/changelog/release-notes) for release history.
 ```

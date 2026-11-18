@@ -29,10 +29,10 @@ lines of data and exceed a module's limit. Transactions that reach this point ar
 Transactions rejected for exceeding module limits can be identified through the following
 methods, which return an error:
 
-- [`linea_estimateGas`](../../../reference/apis/linea-api/linea-estimategas.mdx)
-- [`eth_sendRawTransaction`](../../../reference/apis/linea-api/eth-sendrawtransaction.mdx)
+- [`linea_estimateGas`](https://docs.linea.build/reference/apis/linea-api/linea-estimategas)
+- [`eth_sendRawTransaction`](https://docs.linea.build/reference/apis/linea-api/eth-sendrawtransaction)
 
-Use [`linea_getTransactionExclusionStatusV1`](../../../reference/apis/linea-api/linea-gettransactionexclusionstatusv1.mdx)
+Use [`linea_getTransactionExclusionStatusV1`](https://docs.linea.build/reference/apis/linea-api/linea-gettransactionexclusionstatusv1)
 to get the rejection status of a transaction that was sent, but was not rejected immediately
 nor included in a block.
 You can use this method to identify the reason for rejection in edge cases where

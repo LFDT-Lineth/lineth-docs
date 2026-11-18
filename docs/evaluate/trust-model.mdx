@@ -1,0 +1,163 @@
+---
+title: Trust model
+description: Trust assumptions, privileged roles, and failure modes for Lineth deployments
+image: /img/socialCards/trust-model.jpg
+---
+
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+This page describes the trust model in a <GlossaryTerm term="Lineth" />
+deployment: what each component can do, what participants can verify, privileged contract roles,
+and how to recover when a dependency fails.
+
+For protocol guarantees and operator-controlled security measures, see
+[Security and assurance](./security.mdx).
+
+## Trust assumptions
+
+In a <GlossaryTerm term="Rollup">rollup</GlossaryTerm> and a
+
+<GlossaryTerm term="Validium">validium</GlossaryTerm>, the
+<GlossaryTerm term="Operator">operator</GlossaryTerm> runs the [deployment components](../deployment/core-components.mdx). In both deployment models, the components can take these actions:
+
+- The <GlossaryTerm term="Sequencer">sequencer</GlossaryTerm> can order, delay, or omit transactions within a block.
+- The <GlossaryTerm term="Prover">prover</GlossaryTerm> can stall proof generation, which halts finalization.
+- The <GlossaryTerm term="Coordinator">coordinator</GlossaryTerm> can stall the pipeline that conflates blocks, requests proofs, and submits them to
+  the <GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm>.
+- The <GlossaryTerm term="System contracts">system contracts</GlossaryTerm> can pause subsystems, change the verifier address, change rate limits,
+  and upgrade contracts through the proxy upgrade path (and, on a
+  <GlossaryTerm term="Canonical token bridge">canonical bridge</GlossaryTerm>, pause and upgrade [contract roles](#system-contract-roles)).
+
+In both models, the components **cannot**:
+
+- Forge state. Invalid blocks fail proof verification.
+- Produce a valid proof for an invalid state transition.
+- Modify state independently of the sequencer or prover.
+- Process canonical bridge messages that are not tied to a verified state commitment, unless
+  a privileged role upgrades or reconfigures the contracts.
+- Bypass the contract roles in the deployed implementation.
+  Privileged functions require the matching role.
+
+Each participant can read state visible to them and broadcast transactions.
+They cannot modify network state.
+What a participant can see through the operator's RPC depends on the deployment's
+[access control](../deployment/access-control.mdx) configuration.
+Access control does not hide data already posted onchain.
+
+When the deployment uses
+
+<GlossaryTerm term="Quorum Byzantine Fault Tolerance (QBFT)">QBFT</GlossaryTerm>, block production depends on the validator set: with `3f+1` validators, at most `f` can fail or deviate. See
+[Multi-validator consensus](../deployment/multi-validator-consensus.mdx).
+
+### What participants can verify
+
+In every deployment, participants can check that a proof was accepted by reading the
+[finalization contract](../protocol/architecture/smart-contracts.mdx#finalization-contract) on
+the finalization layer.
+They can also read submission events, [contract role](#system-contract-roles) assignments, contract state, proxy admin,
+implementation addresses, and canonical bridge events on that layer.
+
+In a <GlossaryTerm term="Rollup">rollup</GlossaryTerm>, transaction data is posted onchain to the
+finalization layer.
+While that data remains available, the operator cannot withhold data availability.
+When the finalization layer is Ethereum, transaction data is posted as
+[EIP-4844](https://eips.ethereum.org/EIPS/eip-4844) blobs.
+Participants can reconstruct state from those blobs while they are retained.
+After Ethereum's blob retention window, reconstructing history from Ethereum requires a copy of
+the blob data kept outside Ethereum's blob store.
+Participants can also verify public rollup block contents and ordering by running a
+
+<GlossaryTerm term="Full node">full node</GlossaryTerm>, and can verify their own observed state from that public data.
+
+In a <GlossaryTerm term="Validium">validium</GlossaryTerm>, transaction data stays
+offchain.
+Data availability (DA) is operated by
+
+<GlossaryTerm term="Archive node">archive nodes</GlossaryTerm> or a DA committee. Those providers can withhold data, which halts recovery, but they cannot forge state, because proofs still verify on
+the finalization layer. Participants can verify data and state claims they are authorized to access, including checks with [Merkle proofs](/protocol/architecture/state-manager#merkle-trees) against
+posted state roots. A Merkle proof can support inclusion of authorized data. It does not by itself establish global transaction ordering for participants who do not have the full ordered data set.
+
+### Finalization layer
+
+A deployment inherits its finalization layer's finality.
+The deployment carries its own sequencer, prover, contract role, and verifier assumptions.
+
+If the finalization layer is Linea Mainnet, the deployment also depends on Linea Mainnet operating the
+same component stack, plus Linea's Security Council and its bridge to Ethereum.
+Verifying the chain end-to-end requires verifying both the deployment's proof on Linea
+Mainnet and Linea Mainnet's proofs on Ethereum.
+See [Linea Mainnet risk disclosures](https://docs.linea.build/network/risk-disclosures).
+
+## System contract roles
+
+The <GlossaryTerm term="System contracts">system contracts</GlossaryTerm> use onchain roles to gate privileged functions: pause, finalize, change the
+verifier, and grant other roles.
+The protocol defines what each role can do.
+The operator chooses which addresses hold them at deploy time.
+
+Replacing the contract implementation is a separate power.
+It belongs to whoever controls the proxy admin, not automatically to `DEFAULT_ADMIN_ROLE`.
+
+In production deployments, both role holders and proxy admin control should sit behind a
+multisig, governance contract, or timelock, and may involve multiple independent parties.
+
+| Role                              | What it can do                                                                             | Recommended holder                                                                      |
+| --------------------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| `DEFAULT_ADMIN_ROLE`              | Grant or revoke other roles                                                                | High-security multisig or governance contract; initial holder set during initialization |
+| `OPERATOR_ROLE`                   | Submit blobs/calldata, finalize blocks                                                     | Day-to-day operator address                                                             |
+| `SECURITY_COUNCIL_ROLE`           | Reserved for governance pause/upgrade authority                                            | High-security governance contract or multisig                                           |
+| `PAUSE_*_ROLE` / `UNPAUSE_*_ROLE` | Pause and unpause specific subsystems (L1↔L2, L2→L1, finalization, state submission, etc.) | Split between operator (pause) and governance (unpause) for fast incident containment   |
+| `VERIFIER_SETTER_ROLE`            | Change the verifier contract for a given proof type                                        | Governance contract                                                                     |
+| `RATE_LIMIT_SETTER_ROLE`          | Change L2→L1 withdrawal rate limits                                                        | Governance contract                                                                     |
+
+Contracts are upgradeable via the
+[OpenZeppelin Transparent Upgradeable Proxy pattern](/protocol/architecture/smart-contracts#contract-versioning).
+The [Linea Security Council transaction record](https://docs.linea.build/changelog/security-council-record) shows a public
+Linea example of multisig-governed role and upgrade operations.
+
+:::warning
+
+`DEFAULT_ADMIN_ROLE` cannot be assigned through `__Permissions_init`.
+The initial holder is set via the explicit `defaultAdmin` initializer field.
+Plan the initial holder before initialization.
+
+:::
+
+Role constants are defined on the smart contract reference pages, including
+[LineaRollup](/reference/smart-contracts/linearollup),
+[ZkEvmV2](/reference/smart-contracts/zkevmv2) (`OPERATOR_ROLE`),
+[LineaRollupPauseManager](/reference/smart-contracts/lib/linearolluppausemanager), and
+[RateLimiter](/reference/smart-contracts/messageservice/lib/ratelimiter)
+(`RATE_LIMIT_SETTER_ROLE`).
+Linea Mainnet deployed addresses are on [Contracts](https://docs.linea.build/network/build/contracts).
+
+## Failures and recovery
+
+If the sequencer, prover, or coordinator stalls, the operator restarts the affected service or
+fails over to redundant infrastructure.
+See [High availability](../deployment/high-availability.mdx).
+
+Each failure has the following effect on participants:
+
+- **Sequencer halt**: Block production stops, and pending transactions are not included.
+  In a [multi-validator](../deployment/multi-validator-consensus.mdx) deployment,
+  [restore lost quorum](../run/run-multiple-validators.mdx#restore-lost-quorum).
+- **Prover stall**: Proofs are not generated and finalization stops.
+  Soft-finalized blocks remain on the Lineth network.
+- **Coordinator stall**: Submission to the finalization layer stops, with the same downstream effect
+  as a prover stall.
+- **Finalization layer reorg**: Wait for the required finality depth on the finalization layer.
+- **Admin key compromise**: The compromised role can act within its scope until revoked.
+  `DEFAULT_ADMIN_ROLE` compromise affects all roles.
+  Revoke or rotate authority through the deployment's governance or multisig process, and use
+  emergency pause roles where available.
+- **Data availability (DA) withheld in a validium**: Participants without the required DA or
+  [access control](../deployment/access-control.mdx) permissions cannot reconstruct or verify affected transaction data.
+  Operators define a wind-down procedure (this depends on a consortium agreement and is not enforced
+  by the Lineth protocol).
+
+## See also
+
+- [Security and assurance](./security.mdx): Protocol guarantees, operator controls, and published
+  assurance evidence.
+- [Deployment models](./deployment-models.mdx): Comparison and tradeoffs between rollups and validiums.

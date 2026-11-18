@@ -1,0 +1,40 @@
+{
+  "installCommand": "npx -y npm@12.2.1 ci",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    {
+      "src": "^/$",
+      "has": [
+        { "type": "header", "key": "accept", "value": ".*text/markdown.*" }
+      ],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8",
+        "X-Robots-Tag": "noindex",
+        "Cache-Control": "public, max-age=300, must-revalidate",
+        "Link": "</llms.txt>; rel=\"alternate\"; type=\"text/plain\"; title=\"Lineth llms.txt\"",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "dest": "/index.md"
+    },
+    {
+      "src": "^/((?!(?:search|404)/?$)(?!\\.well-known(?:/|$))(?!.*\\.(?:abi|css|gif|ico|jpg|jpeg|js|json|md|png|sol|svg|toml|txt|webp|woff|woff2|xml|yml|zip)$).+?)/?$",
+      "has": [
+        { "type": "header", "key": "accept", "value": ".*text/markdown.*" }
+      ],
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8",
+        "X-Robots-Tag": "noindex",
+        "Cache-Control": "public, max-age=300, must-revalidate",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "dest": "/$1.md"
+    }
+  ]
+}

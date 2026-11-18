@@ -1,6 +1,8 @@
 ---
 title: Smart contracts
-description: The onchain system contracts Lineth deploys on the finalization layer and on the network.
+description: >-
+  The onchain system contracts Lineth deploys on the finalization layer and on
+  the network.
 image: /img/socialCards/smart-contracts.jpg
 ---
 
@@ -16,7 +18,7 @@ language that compiles to EVM bytecode.
 
 ## Finalization contract
 
-Deployed on the [finalization layer](../../stack/deployment/finalization-layer.mdx), this contract
+Deployed on the [finalization layer](../../deployment/finalization-layer.mdx), this contract
 is the network's onchain root of trust: nothing the network claims about its own state is accepted elsewhere
 until this contract has recorded it.
 The finalization contract:
@@ -34,7 +36,7 @@ The finalization contract:
 
 :::note Linea Mainnet
 
-In the Linea Mainnet deployment, this contract is [`LineaRollup`](../../network/build/contracts.mdx) on Ethereum,
+In the Linea Mainnet deployment, this contract is [`LineaRollup`](https://docs.linea.build/network/build/contracts) on Ethereum,
 which also serves as the finalization layer [message service](bridge/canonical-message-service.mdx).
 Operators running other deployments can reuse the same contract or deploy an equivalent that satisfies the
 interfaces their finalization design requires.
@@ -56,7 +58,7 @@ At finalization, the <GlossaryTerm term="zk-SNARK" /> public input includes the 
 new final shnarf.
 The contract accepts the proof only when that new final shnarf matches one it has already recorded.
 
-How the shnarf is recorded depends on the [deployment model](../../stack/evaluate/deployment-models.mdx):
+How the shnarf is recorded depends on the [deployment model](../../evaluate/deployment-models.mdx):
 
 - For a <GlossaryTerm term="Rollup">rollup</GlossaryTerm>, the coordinator submits compressed transaction data to
   the finalization layer as EIP-4844 blobs.
@@ -100,14 +102,14 @@ Lineth's upgradeable contracts, including the finalization contract, message ser
 pattern (v4.x): state lives in a proxy, and an upgrade replaces the implementation the proxy delegates to.
 
 Who holds upgrade authority is a deployment decision, not a protocol one.
-See [Trust model](../../stack/evaluate/trust-model.mdx) for how that authority is scoped.
+See [Trust model](../../evaluate/trust-model.mdx) for how that authority is scoped.
 
 :::note Linea Mainnet
 
 Linea contracts are written in [Solidity](https://www.soliditylang.org/) and audited by two to three external
 auditors before release, alongside static analysis and, where applicable, formal verification.
 The auditors also confirm the deployment on the target environment.
-See [Security audits](../reference/security-audits.mdx) for the published reports.
+See [Security audits](../../reference/security-audits.mdx) for the published reports.
 Upgrading the system requires signatures from both the Linea Operational Safe and the Linea Security Council Safe
 multisignature accounts.
 
@@ -115,8 +117,8 @@ multisignature accounts.
 
 ## See also
 
-- See the [contracts reference](../../network/build/contracts.mdx) for the deployed addresses and roles on Linea
-  Mainnet, and the [Security Council transaction record](../../changelog/security-council-record.mdx) for its
+- See the [contracts reference](https://docs.linea.build/network/build/contracts) for the deployed addresses and roles on Linea
+  Mainnet, and the [Security Council transaction record](https://docs.linea.build/changelog/security-council-record) for its
   upgrade history.
 - See the [contract source code](https://github.com/LFDT-Lineth/lineth-monorepo/tree/main/contracts/src) in the
   `lineth-monorepo`.

@@ -1,0 +1,58 @@
+---
+description: Required spelling, casing, and naming for product terms and technical concepts across docs.linea.build.
+globs:
+  - docs/**/*.{mdx,md}
+  - .github/vale/**
+  - .github/workflows/spelling.yml
+alwaysApply: false
+---
+
+# Terminology
+
+## Casing of common terms
+
+- Use "dapp" rather than "dApp" or "DApp", and capitalize like any other noun.
+- Use "onchain" rather than "on-chain" or "on chain", and capitalize like any other noun.
+- Use "offchain" rather than "off-chain" or "off chain", and capitalize like any other noun.
+- Use lowercase "web2" and "web3" (never "Web2"/"Web3"), except at the start of a sentence.
+
+## Linea vs. Lineth naming
+
+Linea and Lineth are related but distinct terms, and getting them right matters for
+technical accuracy:
+
+- **Linea** is the public Mainnet network, brand, token, tokenomics, governance, and the
+  Linea SDK.
+- **Lineth** is the open-source ZK-rollup stack, protocol, codebase, components, onchain
+  contracts, and tooling that Linea Mainnet and other networks are built on.
+
+Do not assert which term applies to a given page from memory. The canonical explanation,
+including the tab-to-product mapping (which tabs document Linea vs. Lineth), lives at
+[Linea and Lineth](/protocol/linea-vs-lineth) (`docs/protocol/linea-vs-lineth.mdx`). Read
+that page first, and match the naming already used on neighboring pages in the same
+section.
+
+Where a page already uses a term consistently, keep matching it rather than introducing a
+new term. If you're unsure whether a name is final, leave the existing wording in place and
+note your question in the pull request description rather than guessing.
+
+## Lineth deployment vs. Lineth network
+
+Do not treat **deployment** and **network** as interchangeable, and do not switch between
+them at random on the same page.
+
+- A **deployment** is the operator's instance of the stack: topology, access control,
+  data availability, finalization layer, and endpoints. Use it for how the stack is run.
+- A **network** is the chain that instance produces: it has a chain ID and state, and it
+  sends or claims messages. Use it for chain-to-chain behavior.
+
+## Spelling
+
+Pull requests run Vale spelling. A warning means Vale does not recognize a word in a
+changed documentation file.
+
+- If the word is a typo, correct it in the documentation.
+- If the word is a real term this change introduces, add one pattern to
+  `.github/vale/accept.txt` in the same pull request. Vale treats each line as a
+  case-sensitive regular expression. Include plurals and possessives in the pattern
+  when the page uses them, for example `Openfort(?:'s)?`.

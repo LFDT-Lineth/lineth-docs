@@ -1,0 +1,8 @@
+/* Entry point — layer imports only.
+   See AGENTS.md or .cursor/rules/css-styling.mdc for the architecture rules. */
+@import url("./tokens.css");
+@import url("./fonts.css");
+@import url("./base.css");
+@import url("./utilities.css");
+@import url("./docusaurus-overrides.css");
+@import url("./vendor-overrides.css");

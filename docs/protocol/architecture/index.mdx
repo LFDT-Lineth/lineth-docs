@@ -12,7 +12,7 @@ import TransactionLifecycle from "/img/protocol/architecture/transaction-lifecyc
 environment.
 
 <GlossaryTerm term="Operator">Operators</GlossaryTerm> and network designers configure their stack to shape protocol behavior and trust assumptions, for example, choosing the [data
-availability](../../stack/deployment/data-availability.mdx) and [finalization layer](../../stack/deployment/finalization-layer.mdx) design.
+availability](../../deployment/data-availability.mdx) and [finalization layer](../../deployment/finalization-layer.mdx) design.
 
 ## Transaction lifecycle
 
@@ -51,11 +51,11 @@ The coordinator submits the data and the proofs to the
 <GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm>. The finalization contract validates the <GlossaryTerm term="zk-SNARK" /> proofs and records the state roots. After
 verification and any configured delay, transactions reach settlement finality on the selected finalization layer.
 
-[Data availability](../../stack/deployment/data-availability.mdx) is the guarantee that the
+[Data availability](../../deployment/data-availability.mdx) is the guarantee that the
 transaction data underlying these proofs remains accessible to the parties who need it to verify or
 reconstruct historical state.
 How data availability is provided depends on the
-[deployment model](../../stack/evaluate/deployment-models.mdx):
+[deployment model](../../evaluate/deployment-models.mdx):
 
 - For a <GlossaryTerm term="Rollup">rollup</GlossaryTerm>, the coordinator submits compressed
   transaction data to the finalization layer as EIP-4844 blobs.
@@ -72,7 +72,7 @@ Lineth includes several classes of components, each of which serve part of the t
 
 - [**Nodes**](./nodes/index.mdx) accept transactions over JSON-RPC and produce or import blocks.
   A fully public network provides externally reachable nodes.
-  In other [deployment types](../../stack/evaluate/deployment-models.mdx), node services may be
+  In other [deployment types](../../evaluate/deployment-models.mdx), node services may be
   configured to be private or semi-private.
 
 - **Internal protocol services** stay inside the operator's trusted network boundary.
@@ -109,5 +109,5 @@ configurable as an external P2P service.
   Consensus and execution clients request signatures for blocks, attestations, and transactions
   over HTTP, while private keys stay in an enterprise-grade key store.
   Signing is access-controlled and auditable, which simplifies key revocation and rotation.
-  See [Key management](../../stack/deployment/key-management.mdx) for how Lineth signer roles use
+  See [Key management](../../deployment/key-management.mdx) for how Lineth signer roles use
   Web3Signer and other custody options.

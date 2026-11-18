@@ -1,26 +1,17 @@
 ---
 title: Reference
-description: Technical references for the public Linea network and for Lineth deployments.
+description: Configuration, contracts, audits, the Lineth SDK, and the glossary.
 image: /img/socialCards/reference.jpg
 ---
 
 import ActionCards from "@site/src/components/ActionCards";
 
-This section contains technical references for [Linea](../network/index.mdx), the public network,
-and [Lineth](../stack/index.mdx), the stack that powers Linea and custom networks.
+This section is the lookup material for a Lineth deployment: component configuration, protocol
+contracts, published audits, the Lineth SDK, and the glossary. The Linea Mainnet RPC and Token API
+stay on [docs.linea.build](https://docs.linea.build/reference/apis).
 
 <ActionCards
   cards={[
-    {
-      text: "RPC and APIs",
-      description: "The Linea JSON-RPC API, including standard Ethereum methods, and the Token REST API.",
-      href: "/reference/apis",
-    },
-    {
-      text: "Lineth SDK",
-      description: "An SDK to enable applications to call bridge functions between Ethereum and Linea.",
-      href: "/reference/lineth-sdk",
-    },
     {
       text: "Component configuration",
       description: "Configuration options for Lineth components: Linea Besu, prover, coordinator, Maru, and Postman.",
@@ -30,6 +21,21 @@ and [Lineth](../stack/index.mdx), the stack that powers Linea and custom network
       text: "Smart contracts",
       description: "Lineth protocol contract interfaces.",
       href: "/reference/smart-contracts",
+    },
+    {
+      text: "Lineth SDK",
+      description: "An SDK to enable applications to call bridge functions between Ethereum and Linea.",
+      href: "/reference/lineth-sdk",
+    },
+    {
+      text: "Security audits",
+      description: "Published security reviews for Lineth protocol components and Linea Mainnet contracts.",
+      href: "/reference/security-audits",
+    },
+    {
+      text: "Glossary",
+      description: "Definitions of Linea, Lineth, and zero-knowledge terms used in these docs.",
+      href: "/reference/glossary",
     },
   ]}
 />
