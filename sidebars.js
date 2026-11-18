@@ -1,63 +1,76 @@
 /** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
 const sidebars = {
-  introSidebar: [
+  stackSidebar: [
     {
       type: "html",
       value: "Introduction",
       className: "sidebar-section-divider",
     },
     { type: "doc", id: "index", className: "intro-section-item" },
-  ],
-  evaluateSidebar: [
     {
-      type: "html",
-      value: "Evaluate Lineth",
-      className: "sidebar-section-divider",
+      type: "category",
+      label: "Evaluate Lineth",
+      collapsible: false,
+      items: [
+        "evaluate/index",
+        "evaluate/deployment-models",
+        {
+          type: "doc",
+          id: "evaluate/trust-model",
+          label: "Trust model",
+        },
+        {
+          type: "doc",
+          id: "evaluate/security",
+          label: "Security and assurance",
+        },
+        "evaluate/compliance",
+      ],
     },
-    { type: "doc", id: "evaluate/index", className: "intro-section-item" },
-    "evaluate/deployment-models",
     {
-      type: "doc",
-      id: "evaluate/trust-model",
-      label: "Trust model",
+      type: "category",
+      label: "Deployment architecture",
+      collapsible: false,
+      items: [
+        "deployment/index",
+        "deployment/core-components",
+        "deployment/data-availability",
+        "deployment/finalization-layer",
+        "deployment/finality",
+        "deployment/multi-validator-consensus",
+        "deployment/high-availability",
+        "deployment/key-management",
+      ],
     },
     {
-      type: "doc",
-      id: "evaluate/security",
-      label: "Security and assurance",
+      type: "category",
+      label: "Run and test",
+      collapsible: false,
+      items: [
+        "run/index",
+        "run/run-local-lineth-stack",
+        {
+          type: "doc",
+          id: "run/run-multiple-validators",
+          label: "Run multiple validators",
+        },
+        "run/monitor-a-deployment",
+        {
+          type: "category",
+          label: "Use forced transactions",
+          collapsible: true,
+          collapsed: false,
+          items: [
+            "run/enable-forced-transactions",
+            {
+              type: "doc",
+              id: "protocol/how-to/forced-transactions",
+              label: "Submit forced transactions",
+            },
+          ],
+        },
+      ],
     },
-    "evaluate/compliance",
-  ],
-  deploymentSidebar: [
-    {
-      type: "html",
-      value: "Deployment architecture",
-      className: "sidebar-section-divider",
-    },
-    { type: "doc", id: "deployment/index", className: "intro-section-item" },
-    "deployment/core-components",
-    "deployment/data-availability",
-    "deployment/finalization-layer",
-    "deployment/finality",
-    "deployment/multi-validator-consensus",
-    "deployment/high-availability",
-    "deployment/key-management",
-  ],
-  runSidebar: [
-    {
-      type: "html",
-      value: "Run and test",
-      className: "sidebar-section-divider",
-    },
-    { type: "doc", id: "run/index", className: "intro-section-item" },
-    "run/run-local-lineth-stack",
-    {
-      type: "doc",
-      id: "run/run-multiple-validators",
-      label: "Run multiple validators",
-    },
-    "run/monitor-a-deployment",
-    "run/enable-forced-transactions",
   ],
   protocolSidebar: [
     {
@@ -66,7 +79,11 @@ const sidebars = {
       className: "sidebar-section-divider",
     },
     { type: "doc", id: "protocol/index", className: "intro-section-item" },
-    { type: "doc", id: "protocol/linea-vs-lineth", className: "intro-section-item" },
+    {
+      type: "doc",
+      id: "protocol/linea-vs-lineth",
+      className: "intro-section-item",
+    },
     {
       type: "category",
       label: "Architecture",
@@ -128,27 +145,9 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Resources",
-      collapsible: false,
-      items: [
-        {
-          type: "doc",
-          id: "protocol/reference/repos",
-          label: "Source repositories",
-        },
-      ],
-    },
-    {
-      type: "category",
       label: "Mechanisms",
       collapsible: false,
       items: ["protocol/eip-7702", "protocol/forced-transactions"],
-    },
-    {
-      type: "category",
-      label: "How to",
-      collapsible: false,
-      items: ["protocol/how-to/forced-transactions"],
     },
   ],
   referenceSidebar: [
@@ -163,7 +162,11 @@ const sidebars = {
       label: "Component configuration",
       collapsible: false,
       items: [
-        { type: "doc", id: "reference/component-configuration/index", label: "Overview" },
+        {
+          type: "doc",
+          id: "reference/component-configuration/index",
+          label: "Overview",
+        },
         "reference/component-configuration/linea-besu-plugin-options",
         "reference/component-configuration/linea-prover-options",
         "reference/component-configuration/linea-coordinator-options",
@@ -184,14 +187,21 @@ const sidebars = {
           label: "Interfaces",
           collapsible: true,
           collapsed: true,
-          items: [{ type: "autogenerated", dirName: "reference/smart-contracts/interfaces" }],
+          items: [
+            {
+              type: "autogenerated",
+              dirName: "reference/smart-contracts/interfaces",
+            },
+          ],
         },
         {
           type: "category",
           label: "lib",
           collapsible: true,
           collapsed: true,
-          items: [{ type: "autogenerated", dirName: "reference/smart-contracts/lib" }],
+          items: [
+            { type: "autogenerated", dirName: "reference/smart-contracts/lib" },
+          ],
         },
         "reference/smart-contracts/linearollup",
         {
@@ -199,14 +209,24 @@ const sidebars = {
           label: "messageservice",
           collapsible: true,
           collapsed: true,
-          items: [{ type: "autogenerated", dirName: "reference/smart-contracts/messageservice" }],
+          items: [
+            {
+              type: "autogenerated",
+              dirName: "reference/smart-contracts/messageservice",
+            },
+          ],
         },
         {
           type: "category",
           label: "TokenBridge",
           collapsible: true,
           collapsed: true,
-          items: [{ type: "autogenerated", dirName: "reference/smart-contracts/tokenbridge" }],
+          items: [
+            {
+              type: "autogenerated",
+              dirName: "reference/smart-contracts/tokenbridge",
+            },
+          ],
         },
         "reference/smart-contracts/zkevmv2",
       ],
@@ -217,6 +237,7 @@ const sidebars = {
       collapsible: false,
       items: ["reference/lineth-sdk"],
     },
+    "reference/repos",
     "reference/security-audits",
     "reference/glossary",
   ],

@@ -9,7 +9,7 @@ image: /img/socialCards/nodes.jpg
 import GlossaryTerm from "@theme/GlossaryTerm";
 
 Every <GlossaryTerm term="Lineth" /> node runs a consensus client,
-[Maru](../../reference/repos.mdx#maru), which orders blocks and propagates them to peers, and one or
+[Maru](../../../reference/repos.mdx#maru), which orders blocks and propagates them to peers, and one or
 more execution clients, which execute transactions and maintain EVM state.
 Maru communicates with its execution clients over the standard Ethereum
 [Engine API](https://github.com/ethereum/execution-apis/blob/main/src/engine/common.md).
@@ -19,7 +19,7 @@ services, either publicly or only within the operator's network.
 
 ## Consensus client: Maru
 
-[Maru](../../reference/repos.mdx#maru) implements
+[Maru](../../../reference/repos.mdx#maru) implements
 
 <GlossaryTerm term="Quorum Byzantine Fault Tolerance (QBFT)">QBFT</GlossaryTerm> consensus and runs on every node, in one of two roles:
 
@@ -48,7 +48,7 @@ and integrate with Maru, including Linea Besu, Besu, Geth, Erigon, and Nethermin
 This promotes client diversity and compatibility with existing Ethereum node tooling and
 infrastructure.
 
-[Linea Besu](../../reference/repos.mdx#linea-besu-upstream) is a distribution of
+[Linea Besu](../../../reference/repos.mdx#linea-besu-upstream) is a distribution of
 [Besu](https://docs.besu-eth.org/) that bundles several Lineth-specific plugins with preset startup
 profiles.
 These plugins implement the protocol functions that a standard Ethereum client doesn't provide:

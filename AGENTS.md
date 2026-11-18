@@ -5,14 +5,17 @@ this Docusaurus v3 documentation site for Lineth. The working URL is `docs.linet
 
 ## Repository areas
 
-| Section | Directory | Documents |
-| --- | --- | --- |
-| Introduction | `docs/index.mdx` | Lineth overview |
-| Evaluate Lineth | `docs/evaluate` | Deployment models, trust, security, compliance |
+| Section                 | Directory         | Documents                                                                          |
+| ----------------------- | ----------------- | ---------------------------------------------------------------------------------- |
+| Introduction            | `docs/index.mdx`  | Lineth overview                                                                    |
+| Evaluate Lineth         | `docs/evaluate`   | Deployment models, trust, security, compliance                                     |
 | Deployment architecture | `docs/deployment` | Data availability, finalization, finality, QBFT, high availability, key management |
-| Run and test | `docs/run` | Local stack, validators, monitoring |
-| Protocol | `docs/protocol` | Protocol architecture and mechanisms |
-| Reference | `docs/reference` | Component configuration, contracts, SDK, audits, glossary |
+| Run and test            | `docs/run`        | Local stack, validators, monitoring, forced transactions                           |
+| Protocol                | `docs/protocol`   | Protocol architecture and mechanisms                                               |
+| Reference               | `docs/reference`  | Component configuration, contracts, SDK, source repositories, audits, glossary     |
+
+Introduction, Evaluate Lineth, Deployment architecture, and Run and test share one sidebar.
+The top navigation labels are Stack, Protocol, and Reference.
 
 See [README.md](README.md) for what this draft includes and what is still open.
 
@@ -38,14 +41,14 @@ Detailed rules live in `.cursor/rules/` and apply automatically in Cursor when e
 file matching their `globs`. Other agents should read the relevant file directly before
 editing matching content:
 
-| Rule file | Applies to | Covers |
-| --- | --- | --- |
-| `content-structure.mdc` | `docs/**/*.{md,mdx}` | Tab/audience/tone, page structure |
-| `editorial-voice.mdc` | `docs/**/*.{md,mdx}` | Voice, heading style, `[VERIFY]` markers |
-| `terminology.mdc` | `docs/**/*.{md,mdx}` | Casing, Linea/Lineth naming, component capitalization |
-| `markdown-formatting.mdc` | `docs/**/*.{md,mdx}` | Frontmatter, links, line wrapping, images |
-| `contributor-workflow.mdc` | repo-wide | Issue-first workflow, redirects, PR hygiene |
-| `css-styling.mdc` | `src/**/*.{css,tsx,jsx,ts,js}` | CSS architecture, design tokens, forbidden patterns |
+| Rule file                  | Applies to                     | Covers                                                |
+| -------------------------- | ------------------------------ | ----------------------------------------------------- |
+| `content-structure.mdc`    | `docs/**/*.{md,mdx}`           | Tab/audience/tone, page structure                     |
+| `editorial-voice.mdc`      | `docs/**/*.{md,mdx}`           | Voice, heading style, `[VERIFY]` markers              |
+| `terminology.mdc`          | `docs/**/*.{md,mdx}`           | Casing, Linea/Lineth naming, component capitalization |
+| `markdown-formatting.mdc`  | `docs/**/*.{md,mdx}`           | Frontmatter, links, line wrapping, images             |
+| `contributor-workflow.mdc` | repo-wide                      | Issue-first workflow, redirects, PR hygiene           |
+| `css-styling.mdc`          | `src/**/*.{css,tsx,jsx,ts,js}` | CSS architecture, design tokens, forbidden patterns   |
 
 Agent skills live under `.agents/skills/<skill-name>/SKILL.md` and are loaded when the
 task matches the skill's description:

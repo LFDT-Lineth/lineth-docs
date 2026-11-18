@@ -1,12 +1,14 @@
 import React from "react";
-import ThemedImage from "@theme/ThemedImage";
 import { GitHubIcon } from "@site/src/components/icons";
 import styles from "./styles.module.css";
 
 const NAV_LINKS = [
   { label: "Documentation", href: "/" },
   { label: "Linea Mainnet docs", href: "https://docs.linea.build" },
-  { label: "LF Decentralized Trust", href: "https://www.lfdecentralizedtrust.org/" },
+  {
+    label: "LF Decentralized Trust",
+    href: "https://www.lfdecentralizedtrust.org/",
+  },
   { label: "Discord", href: "https://discord.gg/hyperledger" },
 ];
 
@@ -22,14 +24,7 @@ export default function FooterWrapper() {
   return (
     <footer className={styles.footer}>
       <a href="/" className={styles.logoLink} aria-label="Lineth documentation">
-        <ThemedImage
-          sources={{
-            light: "/img/Linea_docs_logo.svg",
-            dark: "/img/Linea_docs_logo_dark.svg",
-          }}
-          alt="Lineth docs"
-          className={styles.logo}
-        />
+        <span className={styles.wordmark}>Lineth</span>
       </a>
 
       <nav className={styles.navLinks} aria-label="Footer navigation">

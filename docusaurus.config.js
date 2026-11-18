@@ -66,8 +66,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Set a base path separate from default /docs
-          editUrl:
-            "https://github.com/alexandratran/lineth-docs/tree/main/",
+          editUrl: "https://github.com/alexandratran/lineth-docs/tree/main/",
           path: "docs",
           routeBasePath: "/",
           include: ["**/*.md", "**/*.mdx"],
@@ -156,45 +155,19 @@ const config = {
         },
       },
       navbar: {
-        logo: {
-          alt: "Lineth",
-          src: "img/Linea_docs_logo.svg",
-          srcDark: "img/Linea_docs_logo_dark.svg",
-        },
+        title: "Lineth",
         items: [
           {
             type: "doc",
             docId: "index",
             position: "left",
-            label: "Introduction",
-          },
-          {
-            type: "doc",
-            docId: "evaluate/index",
-            position: "left",
-            label: "Evaluate Lineth",
-            activeBaseRegex: "^/evaluate(/|$)",
-          },
-          {
-            type: "doc",
-            docId: "deployment/index",
-            position: "left",
-            label: "Deployment architecture",
-            activeBaseRegex: "^/deployment(/|$)",
-          },
-          {
-            type: "doc",
-            docId: "run/index",
-            position: "left",
-            label: "Run and test",
-            activeBaseRegex: "^/run(/|$)",
+            label: "Stack",
           },
           {
             type: "doc",
             docId: "protocol/index",
             position: "left",
             label: "Protocol",
-            activeBaseRegex: "^/protocol(/|$)",
           },
           {
             type: "doc",
@@ -204,10 +177,16 @@ const config = {
             activeBaseRegex: "^/reference(/|$)",
           },
           {
-            to: "/support",
-            label: "Support",
+            href: "https://github.com/LFDT-Lineth",
             position: "right",
-            className: "support-link",
+            className: "header-github-link",
+            "aria-label": "GitHub",
+          },
+          {
+            href: "https://discord.gg/hyperledger",
+            position: "right",
+            className: "header-discord-link",
+            "aria-label": "Discord",
           },
         ],
       },

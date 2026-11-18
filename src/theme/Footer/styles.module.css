@@ -14,11 +14,13 @@
   align-items: center;
 }
 
-.logo {
-  height: 22px;
-  width: 132px;
-  display: block;
-  transform: translateY(-3px);
+.wordmark {
+  font-family: AtypDisplay, sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--linea-text-primary);
 }
 
 .navLinks {

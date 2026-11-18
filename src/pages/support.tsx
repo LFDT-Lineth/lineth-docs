@@ -24,7 +24,10 @@ export default function Support(): React.ReactNode {
             <p className={styles.intro}>
               Can&apos;t find what you need in the docs? Use the open-source
               community channels below. Linea Mainnet support stays on{" "}
-              <Link to="https://docs.linea.build/support">docs.linea.build</Link>.
+              <Link to="https://docs.linea.build/support">
+                docs.linea.build
+              </Link>
+              .
             </p>
           </div>
         </section>
@@ -44,7 +47,9 @@ export default function Support(): React.ReactNode {
                     />
                     <span>Lineth on GitHub</span>
                   </div>
-                  <p>Explore the source code for the Lineth open-source stack.</p>
+                  <p>
+                    Explore the source code for the Lineth open-source stack.
+                  </p>
                 </Link>
                 <Link
                   className={styles.resourceCard}
