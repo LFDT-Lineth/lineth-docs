@@ -1,0 +1,25 @@
+{
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    // Docusaurus 3.10 still relies on baseUrl for @site/*; keep TS6 usable until upstream drops it.
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@site/*": ["./*"]
+    },
+    "types": ["@docusaurus/module-type-aliases", "@docusaurus/theme-classic", "node"],
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": [
+    "api/**/*",
+    "src/**/*",
+    "docusaurus.config.js",
+    "eslint.config.mjs",
+    "scripts/**/*.js",
+    "static/js/**/*.js",
+    "stylelint.config.mjs"
+  ],
+  "exclude": ["node_modules", "build", "dist", ".docusaurus"]
+}

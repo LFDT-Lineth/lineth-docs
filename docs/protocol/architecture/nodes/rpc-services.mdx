@@ -1,0 +1,69 @@
+---
+title: RPC services
+description: >-
+  JSON-RPC services exposed by Lineth nodes, enabling access to near-head state
+  and full historical blockchain data.
+image: /img/socialCards/rpc-services.jpg
+---
+
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+RPC services expose the JSON-RPC interfaces that applications, users, and internal services use to read network
+data and submit transactions.
+Any <GlossaryTerm term="Lineth" /> node can serve them, publicly or only within the operator's network, and RPC
+nodes are typically placed behind load balancers and [access control](../../../deployment/access-control.mdx).
+
+Two things distinguish one RPC node from another: which methods it serves, and how much state history
+it retains. Serving RPC is independent of a node's consensus role.
+
+## Method availability
+
+Standard Ethereum JSON-RPC namespaces are available on any execution client. The `linea_` namespace is
+implemented by Linea Besu plugins, so a node serves those methods only if it runs Linea Besu with the
+relevant plugins enabled. A node running Geth, Erigon, Nethermind, or upstream Besu serves standard
+Ethereum methods but not the `linea_` namespace.
+
+## State retention
+
+By default, a node keeps current state and recent history. This is all it needs to verify blocks and
+follow the chain, and it suits low-latency queries against recent blocks and current state, along
+with high-throughput transaction propagation. Access to this recent window is sometimes called
+**near-head** access. A node in this configuration can't reconstruct state at older blocks.
+
+Retaining more history costs proportionally more storage, so operators provision it only where
+historical queries are needed.
+
+### Archive nodes
+
+An archive node retains state at every block from genesis, alongside the blocks and transactions
+themselves, so it can reconstruct the chain state at any past block height. It trades minimal latency
+and modest storage requirements for completeness, and acts as the source of truth for historical
+state, supporting auditing, forensics, analytics, and historical consistency checks.
+
+## Why run your own RPC
+
+Public RPC endpoints are convenient for development, testing, and low-volume usage.
+As usage grows, or as requirements around reliability, trust, or data access get stricter, a dedicated RPC node
+becomes more valuable:
+
+- **Reliability**: Public endpoints are shared infrastructure, subject to rate limits, request prioritization,
+  and maintenance windows outside your control.
+  Your own node lets you size resources and manage uptime to your application's needs.
+- **Performance**: A self-hosted node can be tuned for one workload, whether that's low-latency access to recent
+  state or high-throughput historical queries, without contention from other users.
+- **Correctness**: Querying a public endpoint means trusting a third party to serve accurate and complete data.
+  Your own node validates chain data directly from the protocol.
+- **Historical data**: Public endpoints often restrict archive access because of its storage cost.
+  Your own [archive node](#archive-nodes) has no such limits.
+- **Operational control**: A self-hosted node can sit inside a private network behind load balancers and [access control](../../../deployment/access-control.mdx),
+  which is useful for backend services, indexers, and internal tooling that need predictable access patterns and
+  tighter security boundaries.
+
+## See also
+
+- See [Deployment architecture](../../../deployment/index.mdx) for how RPC nodes fit into an
+  operator's footprint.
+- On Linea Mainnet, most users reach RPC services through their
+  [wallet](https://docs.linea.build/network/how-to/connect-wallet), and developers either use a
+  [node provider](https://docs.linea.build/network/build/tools/node-providers) or
+  [run their own node](https://docs.linea.build/network/how-to/run-a-node).

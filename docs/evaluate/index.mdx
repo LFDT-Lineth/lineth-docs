@@ -1,0 +1,63 @@
+---
+title: Evaluate Lineth
+sidebar_label: Overview
+description: >-
+  Compare Lineth deployment models, trust, privacy, security, and compliance
+  against your use case
+image: /img/socialCards/evaluate-lineth.jpg
+---
+
+import ActionCards from "@site/src/components/ActionCards";
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+This section answers questions you might have when evaluating <GlossaryTerm term="Lineth" /> for
+your use case.
+
+<ActionCards
+  cards={[
+    {
+      text: "Deployment models",
+      description: "Compare rollup and validium trade-offs for data availability, access, and finalization.",
+      href: "/evaluate/deployment-models",
+    },
+    {
+      text: "Trust model",
+      description: "Understand what each deployment component can do, what participants can verify, and privileged contract roles.",
+      href: "/evaluate/trust-model",
+    },
+    {
+      text: "Security and assurance",
+      description: "Review protocol guarantees, operator controls, and published assurance evidence.",
+      href: "/evaluate/security",
+    },
+    {
+      text: "Compliance",
+      description: "Use a deployment's protocol evidence in your own compliance program.",
+      href: "/evaluate/compliance",
+    },
+  ]}
+/>
+
+:::tip
+To explore the components and architectural design choices, see
+[Deployment architecture](../deployment/index.mdx).
+:::
+
+## Use cases
+
+A Lineth network can suit use cases such as:
+
+- **24/7 settlement:** Keep trading, funding, and cash settlement active outside normal banking hours.
+- **Swaps and bridging:** Exchange assets in an application, and move ETH and other tokens between
+  Ethereum and the network.
+- **Collateral mobility:** Pledge, recall, and reuse tokenized collateral instead of leaving it trapped
+  across venues and ledgers.
+- **Atomic Delivery versus Payment (DvP):** Settle tokenized cash and securities together, so both flows
+  complete or neither does.
+- **Intraday repo:** Fund for the hours you need, with cash and collateral moving together.
+- **Onchain gaming:** Run games that need fast settlement and public transactions.
+
+Whether you need a public network with open access and onchain data, or a
+
+<GlossaryTerm term="Validium">private validium</GlossaryTerm> that keeps transaction data offchain and controls who can access it, you can configure Lineth for either. Start by evaluating [deployment
+models](deployment-models.mdx).

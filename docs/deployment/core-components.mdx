@@ -1,0 +1,72 @@
+---
+title: Deployment components
+description: Required and optional components in a Lineth deployment footprint
+image: /img/socialCards/deployment-components.jpg
+---
+
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+This page describes the <GlossaryTerm term="Lineth" /> components.
+It identifies which components an <GlossaryTerm term="Operator">operator</GlossaryTerm> must or may run, and
+describes how they are versioned or replaced.
+For what each component does internally, see [Protocol Architecture](../protocol/architecture/index.mdx).
+
+## Core protocol components
+
+The following components are **required**.
+
+**Replaceability:** Versioned via protocol upgrade.
+
+- [Maru](../protocol/architecture/nodes/index.mdx#consensus-client-maru): Consensus layer client
+- [Linea Besu](../protocol/architecture/nodes/index.mdx#execution-client-linea-besu): Execution layer client.
+  Required for sequencer nodes and trace generation; other nodes can run any Ethereum execution client
+- [Sequencer](../protocol/architecture/sequencer/index.mdx): Linea Besu plugins that order, build, and
+  execute blocks
+- [Coordinator](../protocol/architecture/coordinator/index.mdx): Orchestrates batching, proof generation, and submissions
+- [Prover](../protocol/architecture/prover/index.mdx): Generates zero-knowledge proofs of state transitions
+- [State manager](../protocol/architecture/state-manager.mdx): Maintains a state representation for proof generation
+- [Tracer](../protocol/architecture/sequencer/tracer.mdx): Generates execution traces required for proofs
+
+:::note
+Lineth uses a [dual-layer architecture](../protocol/architecture/nodes/index.mdx): Maru for consensus and an
+execution client for the EVM.
+Operators can configure the consensus and execution layers separately.
+This enables but does not guarantee client diversity and network resilience; those depend on the operator's deployment.
+
+Each Maru validator requires its own Linea Besu execution client.
+Additional execution clients can be attached to an existing node as followers, without running more
+Maru instances.
+:::
+
+## Onchain system contracts
+
+The following [smart contracts](../protocol/architecture/smart-contracts.mdx) or alternatives that offer parity are **required**.
+
+**Replaceability:** Versioned via redeployment.
+
+- `AddressFilter` contract
+- Canonical token bridge
+- Finalization verifier
+- `LineaRollup` message bridge contract
+- Token bridge contracts
+
+## Auxiliary services
+
+Auxiliary services are **not required for protocol correctness**. They are typically **optional**
+and **replaceable**.
+
+Common examples include:
+
+- [Block explorer](../protocol/architecture/index.mdx#components-overview)
+- [Archive node service](../protocol/architecture/nodes/rpc-services.mdx#archive-nodes)
+- [RPC load balancers](../protocol/architecture/nodes/rpc-services.mdx)
+- [Monitoring and metrics](../run/monitor-a-deployment.mdx)
+- Indexer
+- API portal
+
+**Special cases**
+
+- [Web3Signer](https://docs.web3signer.consensys.com/): Optional remote signing service
+  that can front files, vaults, and cloud key management services (KMS).
+  Web3Signer is in the signing-path trust boundary.
+  See [Key management](./key-management.mdx) for how to configure Web3Signer and other key custody options.

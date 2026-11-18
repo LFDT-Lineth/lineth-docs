@@ -1,0 +1,35 @@
+---
+title: Canonical bridge
+description: >-
+  The canonical bridge between a Lineth network and its finalization layer,
+  using the canonical message service and token bridge.
+image: /img/socialCards/canonical-bridge.jpg
+---
+
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+A <GlossaryTerm term="Lineth" /> network exchanges data and value with its
+
+<GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm> through the **canonical bridge**. The canonical bridge is two protocol components:
+
+- [Canonical token bridge](./canonical-token-bridge.mdx): A pair of lock-and-mint contracts for bridging any
+  ERC-20 token.
+- [Canonical message service](./canonical-message-service.mdx): A general-purpose primitive that carries
+  arbitrary messages and native currency in both directions.
+  The token bridge is built on it.
+
+In both directions (Lineth network ↔ finalization layer), a message executes on the destination chain only once that chain holds an onchain record of
+it, and anyone can submit the claim that triggers execution.
+An optional offchain relay, the <GlossaryTerm term="Postman" />, can deliver these messages automatically.
+
+What differs between the directions is when that record is checked against the origin chain.
+From the Lineth network to the finalization layer, messages are recorded on the finalization layer only once the
+blocks that sent them are finalized.
+From the finalization layer to the Lineth network, messages are recorded on the network first, and checked against
+the finalization layer at the next finalization.
+See [Message commitments](./canonical-message-service.mdx#message-commitments) for more information.
+
+:::tip
+To learn how two Lineth networks communicate with each other, see
+[native interoperability](../../../deployment/interoperability.mdx).
+:::
