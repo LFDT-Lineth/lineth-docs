@@ -4,7 +4,7 @@
 }
 
 .glossaryTermWrapper .glossaryTerm {
-  color: var(--linea-text-primary) !important;
+  color: var(--ifm-font-color-base) !important;
   text-decoration: underline dotted !important;
   text-underline-offset: 2px;
   cursor: help;
@@ -13,7 +13,7 @@
 }
 
 .glossaryTermWrapper .glossaryTerm:hover {
-  color: var(--linea-link-highlight-color) !important;
+  color: var(--ifm-color-primary) !important;
 }
 
 .tooltip {
@@ -27,7 +27,7 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 0.5rem;
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-  font-size: var(--font-body-md);
+  font-size: 0.9rem;
   font-weight: normal;
   font-style: normal;
   text-decoration: none;

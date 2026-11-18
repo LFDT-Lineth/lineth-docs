@@ -12,7 +12,7 @@ this Docusaurus v3 documentation site for Lineth. The working URL is `docs.linet
 | Deployment architecture | `docs/deployment` | Data availability, finalization, finality, QBFT, high availability, key management |
 | Run and test            | `docs/run`        | Local stack, validators, monitoring, forced transactions                           |
 | Protocol                | `docs/protocol`   | Protocol architecture and mechanisms                                               |
-| Reference               | `docs/reference`  | Component configuration, contracts, SDK, source repositories, audits, glossary     |
+| Reference               | `docs/reference`  | Component configuration, contracts, source repositories, audits, glossary          |
 
 Introduction, Evaluate Lineth, Deployment architecture, and Run and test share one sidebar.
 The top navigation labels are Stack, Protocol, and Reference.
@@ -27,8 +27,8 @@ See [README.md](README.md) for what this draft includes and what is still open.
 2. **Use Linea and Lineth precisely.** They're related but distinct terms. Check
    [`/protocol/linea-vs-lineth`](docs/protocol/linea-vs-lineth.mdx) before asserting which
    one applies to a claim, and don't guess from memory. See `.cursor/rules/terminology.mdc`.
-3. **Never hardcode brand colors, spacing, or radii in `src/`.** Use the `var(--linea-*)`
-   design tokens in `src/css/tokens.css`. See `.cursor/rules/css-styling.mdc`.
+3. **Use default Docusaurus styling.** Do not reintroduce Linea colors, fonts, logos, or
+   the old token stylesheet. See `.cursor/rules/css-styling.mdc`.
 4. **Verify before requesting review.** Preview locally with `npm run start`, and confirm
    `npm run build` succeeds.
 5. **Pass CI.** PRs run ESLint/Stylelint, TypeScript, Vale spelling/style, and link

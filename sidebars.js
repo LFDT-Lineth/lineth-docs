@@ -1,18 +1,14 @@
 /** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
 const sidebars = {
   stackSidebar: [
-    {
-      type: "html",
-      value: "Introduction",
-      className: "sidebar-section-divider",
-    },
     { type: "doc", id: "index", className: "intro-section-item" },
     {
       type: "category",
       label: "Evaluate Lineth",
-      collapsible: false,
+      collapsible: true,
+      collapsed: false,
+      link: { type: "doc", id: "evaluate/index" },
       items: [
-        "evaluate/index",
         "evaluate/deployment-models",
         {
           type: "doc",
@@ -30,9 +26,10 @@ const sidebars = {
     {
       type: "category",
       label: "Deployment architecture",
-      collapsible: false,
+      collapsible: true,
+      collapsed: false,
+      link: { type: "doc", id: "deployment/index" },
       items: [
-        "deployment/index",
         "deployment/core-components",
         "deployment/data-availability",
         "deployment/finalization-layer",
@@ -45,9 +42,10 @@ const sidebars = {
     {
       type: "category",
       label: "Run and test",
-      collapsible: false,
+      collapsible: true,
+      collapsed: false,
+      link: { type: "doc", id: "run/index" },
       items: [
-        "run/index",
         "run/run-local-lineth-stack",
         {
           type: "doc",
@@ -73,11 +71,6 @@ const sidebars = {
     },
   ],
   protocolSidebar: [
-    {
-      type: "html",
-      value: "Introduction",
-      className: "sidebar-section-divider",
-    },
     { type: "doc", id: "protocol/index", className: "intro-section-item" },
     {
       type: "doc",
@@ -87,9 +80,10 @@ const sidebars = {
     {
       type: "category",
       label: "Architecture",
-      collapsible: false,
+      collapsible: true,
+      collapsed: false,
+      link: { type: "doc", id: "protocol/architecture/index" },
       items: [
-        "protocol/architecture/index",
         {
           type: "category",
           label: "Nodes",
@@ -146,27 +140,20 @@ const sidebars = {
     {
       type: "category",
       label: "Mechanisms",
-      collapsible: false,
+      collapsible: true,
+      collapsed: false,
       items: ["protocol/eip-7702", "protocol/forced-transactions"],
     },
   ],
   referenceSidebar: [
-    {
-      type: "html",
-      value: "Introduction",
-      className: "sidebar-section-divider",
-    },
     { type: "doc", id: "reference/index", className: "intro-section-item" },
     {
       type: "category",
       label: "Component configuration",
-      collapsible: false,
+      collapsible: true,
+      collapsed: false,
+      link: { type: "doc", id: "reference/component-configuration/index" },
       items: [
-        {
-          type: "doc",
-          id: "reference/component-configuration/index",
-          label: "Overview",
-        },
         "reference/component-configuration/linea-besu-plugin-options",
         "reference/component-configuration/linea-prover-options",
         "reference/component-configuration/linea-coordinator-options",
@@ -230,12 +217,6 @@ const sidebars = {
         },
         "reference/smart-contracts/zkevmv2",
       ],
-    },
-    {
-      type: "category",
-      label: "SDKs and libraries",
-      collapsible: false,
-      items: ["reference/lineth-sdk"],
     },
     "reference/repos",
     "reference/security-audits",

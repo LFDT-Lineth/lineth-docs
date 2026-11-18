@@ -36,7 +36,7 @@ function AgentLinks() {
         rel="alternate"
         type="text/plain"
         href="/llms.txt"
-        title="Linea documentation index"
+        title="Lineth documentation index"
       />
       {hasMarkdownAlternate(pathname) && (
         <link

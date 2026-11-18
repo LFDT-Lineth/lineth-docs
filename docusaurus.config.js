@@ -18,7 +18,6 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenAnchors: "throw",
-  favicon: "img/favicons/favicon-96x96.png",
   trailingSlash: false,
 
   // GitHub pages deployment config.
@@ -36,12 +35,6 @@ const config = {
   },
 
   scripts: [{ src: "/js/clearSearchOnCollapse.js", async: true }],
-
-  clientModules: [
-    require.resolve("./src/clientModules/codeBlockClassifier.js"),
-    require.resolve("./src/clientModules/responsiveTables.js"),
-    require.resolve("./src/clientModules/sidebarOffset.js"),
-  ],
 
   markdown: {
     mermaid: true,
@@ -96,7 +89,7 @@ const config = {
     /* @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
       colorMode: {
-        defaultMode: "dark",
+        defaultMode: "light",
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
@@ -108,9 +101,11 @@ const config = {
           layout: "dagre",
           look: "classic",
           useMaxWidth: false,
-          fontFamily: "AtypText, sans-serif",
+          fontFamily:
+            "system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif",
           themeVariables: {
-            fontFamily: "AtypText, sans-serif",
+            fontFamily:
+              "system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif",
           },
           flowchart: {
             useMaxWidth: false,
@@ -229,11 +224,7 @@ const config = {
           "python",
         ],
       },
-      metadata: [
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: "/img/Linea_social_card_docs.png" },
-        { property: "og:image", content: "/img/Linea_social_card_docs.png" },
-      ],
+      metadata: [{ name: "twitter:card", content: "summary" }],
       languageTabs: [
         {
           highlight: "bash",
@@ -298,41 +289,6 @@ const config = {
   ],
   headTags: [
     {
-      tagName: "link",
-      attributes: {
-        rel: "icon",
-        type: "image/png",
-        sizes: "96x96",
-        href: "/img/favicons/favicon-96x96.png",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "icon",
-        type: "image/png",
-        sizes: "192x192",
-        href: "/img/favicons/web-app-manifest-192x192.png",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "icon",
-        type: "image/png",
-        sizes: "512x512",
-        href: "/img/favicons/web-app-manifest-512x512.png",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "apple-touch-icon",
-        sizes: "180x180",
-        href: "/img/favicons/apple-touch-icon.png",
-      },
-    },
-    {
       tagName: "script",
       attributes: {
         type: "application/ld+json",
@@ -343,7 +299,6 @@ const config = {
         "@type": "Organization",
         "name": "Lineth",
         "url": "https://docs.lineth.io",
-        "logo": "https://docs.lineth.io/img/favicons/favicon-96x96.png",
         "sameAs": [
           "https://github.com/LFDT-Lineth"
         ]

@@ -1,102 +1,32 @@
 .card {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: var(--homepage-card-background);
-  border-radius: var(--linea-radius-md);
-  padding: 24px;
-  min-height: 148px;
-  overflow: hidden;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  color: inherit;
   text-decoration: none;
-  color: inherit !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-[data-theme="light"] .card {
-  text-decoration: none !important;
-}
-
-[data-theme="dark"] .card {
-  text-decoration: none !important;
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+  border-color: var(--ifm-color-primary);
+  color: inherit;
   text-decoration: none;
-  color: inherit !important;
-  opacity: 1;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.35rem;
 }
 
 .text {
-  font-family: AtypDisplay, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--linea-text-primary);
   margin: 0;
-}
-
-[data-theme="dark"] .text {
-  color: var(--linea-text-primary);
+  font-weight: 600;
 }
 
 .description {
-  font-family: AtypText, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--linea-text-secondary);
   margin: 0;
-}
-
-[data-theme="dark"] .description {
-  color: var(--linea-text-secondary);
-}
-
-.arrowButton {
-  margin-top: 24px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background-color: var(--linea-arrow-btn-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--linea-black);
-  transition: background-color 0.2s ease;
-  flex-shrink: 0;
-}
-
-[data-theme="dark"] .arrowButton {
-  background-color: var(--linea-arrow-btn-bg);
-  color: var(--linea-black);
-}
-
-.card:hover .arrowButton {
-  background-color: var(--linea-highlight-color-2);
-  color: var(--linea-white);
-}
-
-.decorativeImage {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 41px;
-  height: 41px;
-  pointer-events: none;
-  display: block;
-  object-fit: contain;
-}
-
-@media (max-width: 768px) {
-  .text {
-    font-size: 16px;
-  }
+  color: var(--ifm-color-emphasis-700);
 }
