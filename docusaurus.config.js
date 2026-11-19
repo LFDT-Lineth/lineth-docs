@@ -180,7 +180,7 @@ const config = {
             activeBaseRegex: "^/reference(/|$)",
           },
           {
-            href: "https://github.com/LFDT-Lineth",
+            href: "https://github.com/LFDT-Lineth/lineth-monorepo",
             position: "right",
             className: "header-github-link",
             "aria-label": "GitHub",
@@ -221,16 +221,16 @@ const config = {
                 href: "https://discord.gg/hyperledger",
               },
               {
-                label: "LFDT",
-                href: "https://www.lfdecentralizedtrust.org/",
+                label: "LF Decentralized Trust",
+                href: "https://www.lfdecentralizedtrust.org/projects/lineth",
               },
               {
                 label: "Lineth GitHub",
-                href: "https://github.com/LFDT-Lineth",
+                href: "https://github.com/LFDT-Lineth/lineth-monorepo",
               },
               {
                 label: "Documentation GitHub",
-                href: "https://github.com/alexandratran/lineth-docs",
+                href: "https://github.com/LFDT-Lineth/lineth-docs",
               },
             ],
           },
