@@ -1,6 +1,6 @@
 ---
 description: Editorial voice, tone, and heading style for docs.linea.build content.
-globs: docs/**/*.{mdx,md}
+globs: docs/**/*.md
 alwaysApply: false
 ---
 

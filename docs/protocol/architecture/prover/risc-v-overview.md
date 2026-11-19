@@ -1,0 +1,59 @@
+---
+title: RISC-V proving architecture
+description: How RISC-V can support guest-program-based proving in Lineth.
+image: /img/socialCards/risc-v-proving-architecture.jpg
+---
+
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+<GlossaryTerm term="Lineth" /> is evolving toward a RISC-V-based proving architecture. In this proving context, RISC-V is the execution target for _guest programs:_ programs that define the
+computation the protocol needs to prove. Instead of representing every proving task only through custom constraints and circuits, a guest program can be compiled to RISC-V, executed in the Lineth
+proving system, and composed into the broader proof-generation flow.
+
+:::warning Status
+RISC-V proving is in development and is not yet part of the proving path in any Lineth deployment.
+:::
+
+## Why RISC-V matters for proving
+
+RISC-V is an open instruction-set architecture.
+In a proving system, it can provide a common execution target for programs that need to be proven.
+
+Using RISC-V as a proving target enables Lineth to represent proof logic as guest programs.
+A guest program defines the computation to prove, compiles to RISC-V, and runs inside the Lineth proving
+system, which can produce a proof for that computation.
+
+This creates a clearer boundary between the program being proven and the Lineth proving system that
+executes and proves it.
+
+This boundary is important for Ethereum compatibility.
+EVM upgrades and forks can change the execution behavior the protocol needs to prove.
+With a RISC-V model, guest programs can encode those execution-rule changes in program logic, which can
+make backward compatibility and EVM upgrade support easier than reshaping broad parts of custom proving
+constraints or circuits for each EVM change.
+
+## Relationship to the prover
+
+The [prover](./index.md) generates the proofs that support protocol correctness guarantees.
+The current proof-generation path produces execution, compression, and aggregation proofs.
+[Corset](./corset.md) expands the traces for each proof, and [gnark](./gnark.md) turns the result into a <GlossaryTerm term="zk-SNARK" />.
+
+The RISC-V architecture is an evolution within the prover role.
+It is designed to change the proving target and the way proof-generating programs are represented, while
+preserving the prover's high-level purpose: producing proofs that let the network verify state transitions.
+The <GlossaryTerm term="Coordinator">coordinator</GlossaryTerm> still orchestrates proof generation and finality submission
+according to the network's deployment model.
+
+## High-level flow
+
+At a high level, the planned RISC-V proving architecture follows this flow:
+
+1. A guest program defines the computation that must be proven, such as EVM execution logic.
+2. The guest program is compiled to RISC-V.
+3. The Lineth proving system executes the RISC-V program and produces a proof for that computation.
+4. Proofs can be composed into the broader proof-generation flow.
+5. The coordinator submits the resulting proof data to the <GlossaryTerm term="Finalization layer">
+   finalization layer</GlossaryTerm> according to the network's deployment model.
+
+At the protocol level, Lineth still proves that state transitions are valid and finalizes those proofs
+through the configured finalization layer.

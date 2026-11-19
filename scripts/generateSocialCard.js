@@ -104,7 +104,7 @@ async function generateSocialCard(title, outputPath) {
   }
 }
 
-// Function to process a single .mdx/.md file
+// Function to process a single .md/.md file
 async function processMdxFile(filePath) {
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContent);
@@ -144,7 +144,7 @@ function processDirectory(directory) {
     if (fs.statSync(fullPath).isDirectory()) {
       processDirectory(fullPath);
     } else if (
-      path.extname(fullPath) === ".mdx" ||
+      path.extname(fullPath) === ".md" ||
       path.extname(fullPath) === ".md"
     ) {
       processMdxFile(fullPath);

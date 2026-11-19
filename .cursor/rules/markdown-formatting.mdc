@@ -1,6 +1,6 @@
 ---
 description: Markdown/MDX formatting conventions for docs.linea.build content files.
-globs: docs/**/*.{mdx,md}
+globs: docs/**/*.md
 alwaysApply: false
 ---
 
@@ -8,9 +8,9 @@ alwaysApply: false
 
 ## File format
 
-- Use `.mdx` for all pages under `docs/` (not `.md`), so React components and Docusaurus
-  elements (like `<Tabs>`) render correctly. This rule doesn't apply to root-level files
-  such as this repo's own `README.mdx`/`CONTRIBUTING.md`.
+- Use `.md` for pages under `docs/`. The site compiles those files as MDX, so React
+  components such as `<Tabs>` and `<GlossaryTerm>` still render. This rule doesn't apply
+  to root-level files such as `README.md` and `CONTRIBUTING.md`.
 - Prefer HTML-like formatting over plain Markdown syntax for elements like tables (use
   `<table>` rather than pipe/dash Markdown tables). Several elements already require HTML
   syntax (`<Tabs>`, images), so using it everywhere avoids mixing both styles on one page.
@@ -52,7 +52,7 @@ Don't add an `image` field manually: the social card is generated automatically 
 ## Images
 
 Add new images to `/static/img/`, mirroring the `docs/` folder structure. See
-[README.mdx](../../README.mdx#adding-images) for the exact JSX pattern and size classes
+[README.md](../../README.md#adding-images) for the exact JSX pattern and size classes
 (`img-xsmall`, `img-small`, `img-medium`, `img-large`).
 
 ## UI element references
@@ -78,17 +78,12 @@ Content goes here.
 </details>
 ```
 
-## Prettier
+## Markdownlint
 
-A Husky pre-commit hook runs Prettier on staged Markdown, MDX, JavaScript, and JSON.
-CI checks documentation Markdown with `npm run format:docs:check`.
+`npm run lint:md` checks `docs/**/*.md`. Lines of 200 characters are allowed.
+The check's line limit is 600, because some glossary definitions are longer
+than 200 and markdownlint does not reflow them.
+Keep `<GlossaryTerm>` on the same line as the words around it. A blank line before
+the component splits the sentence into two paragraphs.
 
-Prettier preserves existing line breaks in Markdown and MDX. It can break a Markdown
-list nested in HTML or JSX. Wrap that block so Prettier leaves it alone. Put both
-comments at the start of the line:
-
-- In `.md` files, use `<!-- prettier-ignore-start -->` and `<!-- prettier-ignore-end -->`.
-- In `.mdx` files, use `{/* prettier-ignore-start */}` and `{/* prettier-ignore-end */}`.
-
-Use the form that matches the file type. HTML comments fail MDX compilation, and
-Prettier does not recognize JSX comments in Markdown.
+JavaScript and JSON still run through Prettier on commit. Documentation does not.

@@ -20,11 +20,11 @@ We provide issue templates for [bug reports](.github/ISSUE_TEMPLATE/bug-report.y
 ## Steps
 
 1. [Fork the repo](https://github.com/Consensys-Incorporated/doc.linea/fork) so you can work on it.
-2. Make your changes. See [Writing conventions](README.mdx#writing-conventions) and
+2. Make your changes. See [Writing conventions](README.md#writing-conventions) and
    AGENTS.md's linked rule files for editorial standards.
 3. Review your changes locally. See
-   [Running locally](README.mdx#running-locally) and
-   [Quality checks before pushing](README.mdx#quality-checks-before-pushing).
+   [Running locally](README.md#running-locally) and
+   [Quality checks before pushing](README.md#quality-checks-before-pushing).
 4. Submit your changes as a
    [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
@@ -61,7 +61,7 @@ The glossary page is generated, so don't edit it directly:
 2. Add your term, in alphabetical order, to `src/lib/glossary.json` with a `term` and a
    `definition`. Keep definitions to a short paragraph or two.
 3. Run `npm run glossary:generate` to regenerate
-   `docs/reference/glossary.mdx` from `src/lib/glossary.json`.
+   `docs/reference/glossary.md` from `src/lib/glossary.json`.
 4. Open a pull request and tag us for review.
 
 To show a glossary term as a hover tooltip inline in a page, import and use the

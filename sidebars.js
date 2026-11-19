@@ -1,26 +1,26 @@
 /** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
 const sidebars = {
   stackSidebar: [
-    { type: "doc", id: "index", className: "intro-section-item" },
+    { type: "doc", id: "stack/index", className: "intro-section-item" },
     {
       type: "category",
       label: "Evaluate Lineth",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "evaluate/index" },
+      link: { type: "doc", id: "stack/evaluate/index" },
       items: [
-        "evaluate/deployment-models",
+        "stack/evaluate/deployment-models",
         {
           type: "doc",
-          id: "evaluate/trust-model",
+          id: "stack/evaluate/trust-model",
           label: "Trust model",
         },
         {
           type: "doc",
-          id: "evaluate/security",
+          id: "stack/evaluate/security",
           label: "Security and assurance",
         },
-        "evaluate/compliance",
+        "stack/evaluate/compliance",
       ],
     },
     {
@@ -28,15 +28,15 @@ const sidebars = {
       label: "Deployment architecture",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "deployment/index" },
+      link: { type: "doc", id: "stack/deployment/index" },
       items: [
-        "deployment/core-components",
-        "deployment/data-availability",
-        "deployment/finalization-layer",
-        "deployment/finality",
-        "deployment/multi-validator-consensus",
-        "deployment/high-availability",
-        "deployment/key-management",
+        "stack/deployment/core-components",
+        "stack/deployment/data-availability",
+        "stack/deployment/finalization-layer",
+        "stack/deployment/finality",
+        "stack/deployment/multi-validator-consensus",
+        "stack/deployment/high-availability",
+        "stack/deployment/key-management",
       ],
     },
     {
@@ -44,22 +44,22 @@ const sidebars = {
       label: "Run and test",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "run/index" },
+      link: { type: "doc", id: "stack/run-and-test/index" },
       items: [
-        "run/run-local-lineth-stack",
+        "stack/run-and-test/run-local-lineth-stack",
         {
           type: "doc",
-          id: "run/run-multiple-validators",
+          id: "stack/run-and-test/run-multiple-validators",
           label: "Run multiple validators",
         },
-        "run/monitor-a-deployment",
+        "stack/run-and-test/monitor-a-deployment",
         {
           type: "category",
           label: "Use forced transactions",
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           items: [
-            "run/enable-forced-transactions",
+            "stack/run-and-test/enable-forced-transactions",
             {
               type: "doc",
               id: "protocol/how-to/forced-transactions",

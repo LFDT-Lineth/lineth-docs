@@ -37,6 +37,8 @@ const config = {
   scripts: [{ src: "/js/clearSearchOnCollapse.js", async: true }],
 
   markdown: {
+    // Pages are .md files and still contain JSX components, so compile them as MDX.
+    format: "mdx",
     mermaid: true,
   },
 
@@ -62,7 +64,7 @@ const config = {
           editUrl: "https://github.com/alexandratran/lineth-docs/tree/main/",
           path: "docs",
           routeBasePath: "/",
-          include: ["**/*.md", "**/*.mdx"],
+          include: ["**/*.md"],
           exclude: [
             "**/_*.{js,jsx,ts,tsx,md,mdx}",
             "**/_*/**",
@@ -102,10 +104,10 @@ const config = {
           look: "classic",
           useMaxWidth: false,
           fontFamily:
-            "system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif",
+            'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
           themeVariables: {
             fontFamily:
-              "system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif",
+              'Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif',
           },
           flowchart: {
             useMaxWidth: false,
@@ -150,11 +152,17 @@ const config = {
         },
       },
       navbar: {
-        title: "Lineth",
+        logo: {
+          alt: "Lineth",
+          src: "img/lineth-logo.svg",
+          srcDark: "img/lineth-logo-dark.svg",
+          width: 128,
+          height: 32,
+        },
         items: [
           {
             type: "doc",
-            docId: "index",
+            docId: "stack/index",
             position: "left",
             label: "Stack",
           },
@@ -189,23 +197,40 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Lineth",
+            title: "Documentation",
             items: [
               {
-                label: "Documentation",
+                label: "Stack",
                 to: "/",
               },
               {
-                label: "Support",
-                to: "/support",
+                label: "Protocol",
+                to: "/protocol",
               },
               {
-                label: "GitHub",
+                label: "Reference",
+                to: "/reference",
+              },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Discord",
+                href: "https://discord.gg/hyperledger",
+              },
+              {
+                label: "LFDT",
+                href: "https://www.lfdecentralizedtrust.org/",
+              },
+              {
+                label: "Lineth GitHub",
                 href: "https://github.com/LFDT-Lineth",
               },
               {
-                label: "Linea Mainnet docs",
-                href: "https://docs.linea.build",
+                label: "Documentation GitHub",
+                href: "https://github.com/alexandratran/lineth-docs",
               },
             ],
           },

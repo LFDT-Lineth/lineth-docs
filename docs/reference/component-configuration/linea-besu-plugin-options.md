@@ -1,0 +1,41 @@
+---
+title: Linea Besu plugin options
+description: >-
+  CLI configuration options for the Linea Besu sequencer, tracer, and state
+  recovery plugins.
+draft: false
+image: /img/socialCards/linea-besu-plugin-options.jpg
+---
+
+{/* Human-owned wrapper. Automation only updates `_generated/` partials. Add new partial imports when plugins appear. */}
+
+import Provenance from "./_generated/provenance.md";
+import Sequencer from "./_generated/sequencer.md";
+import Tracer from "./_generated/tracer.md";
+
+:::caution Advanced options
+
+Options marked Advanced are hidden from the standard CLI help output but are included for completeness. Their presence does not indicate that changing them is recommended or supported for every deployment. Verify their applicability against the relevant release and deployment guidance.
+:::
+:::note Defaults
+
+Defaults are values defined in the plugin source. They are not recommended production settings and may be overridden by deployment configuration.
+
+:::
+:::note Forced transactions excluded
+
+The `LineaForcedTransactionCliOptions` group is excluded because the forced-transactions feature has not been released.
+
+:::
+
+This reference lists plugin-specific options (flags starting with `--plugin-`), grouped by plugin and feature. Descriptions come from the Java `@Option` sources; defaults are shown in the Default column. Repeated `(default: …)` text is omitted from descriptions.
+
+<Provenance />
+
+<Sequencer />
+
+<Tracer />
+
+## State recovery
+
+_No plugin-specific CLI options were found in this plugin._

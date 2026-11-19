@@ -15,16 +15,19 @@ const GROUPS = [
   { title: "Introduction", test: (route) => route === "/" },
   {
     title: "Evaluate Lineth",
-    test: (route) => route === "/evaluate" || route.startsWith("/evaluate/"),
+    test: (route) =>
+      route === "/stack/evaluate" || route.startsWith("/stack/evaluate/"),
   },
   {
     title: "Deployment architecture",
     test: (route) =>
-      route === "/deployment" || route.startsWith("/deployment/"),
+      route === "/stack/deployment" || route.startsWith("/stack/deployment/"),
   },
   {
     title: "Run and test",
-    test: (route) => route === "/run" || route.startsWith("/run/"),
+    test: (route) =>
+      route === "/stack/run-and-test" ||
+      route.startsWith("/stack/run-and-test/"),
   },
   {
     title: "Protocol",

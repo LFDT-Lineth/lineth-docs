@@ -30,7 +30,6 @@ export default [
       ".claude/",
       "./node_modules/*",
       "**/*.md",
-      "**/*.mdx",
       "**/*.mp4",
       "**/*.mov",
       "src/components/cardlist.jsx",

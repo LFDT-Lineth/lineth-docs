@@ -1,0 +1,54 @@
+---
+title: Coordinator
+description: >-
+  How the Lineth Coordinator orchestrates batching, proof generation, and
+  finality submission.
+image: /img/socialCards/coordinator.jpg
+---
+
+import GlossaryTerm from "@theme/GlossaryTerm";
+
+The coordinator is the <GlossaryTerm term="Lineth" /> orchestration service.
+It drives everything between block production and finalization: it groups blocks into provable units,
+requests each proof from the <GlossaryTerm term="Prover">prover</GlossaryTerm>, and submits the proofs and the transaction
+data to the <GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm>.
+
+The coordinator is also the channel between the network and its finalization layer in both directions.
+It sends the network's data and proofs to the finalization layer.
+It also reads finalized state from that layer and passes it to the components that need it.
+
+## How it works
+
+The coordinator runs a set of services that share a database, each picking up work as the previous stage
+makes it available:
+
+1. It [conflates](./conflation.md) blocks into batches, using trace counts from the
+   <GlossaryTerm term="Tracer">tracer</GlossaryTerm>, and requests an execution proof for each batch it closes.
+2. It compresses conflated batch data into blobs, and requests a compression proof for each blob.
+3. It groups consecutive proven blobs and requests an aggregation proof, a single proof that stands in
+   for the whole group.
+4. It submits blobs to the [rollup contract](../smart-contracts.md) on the finalization layer, then
+   submits the aggregation proof to finalize that range of blocks.
+5. It polls the finalization layer for newly finalized state, feeds that back into conflation, and
+   notifies the <GlossaryTerm term="State manager">state manager</GlossaryTerm>.
+
+Each stage records its results in the coordinator's database, so the stages can advance at their own pace
+and resume from the last persisted state after a restart.
+
+The coordinator handles two jobs outside the proving pipeline.
+It anchors incoming messages from the finalization layer on the network, so the
+[canonical message service](../bridge/canonical-message-service.md) can deliver them, and it
+computes and propagates the gas pricing that the network's nodes advertise.
+
+:::info
+
+On Linea Mainnet, the coordinator currently submits finalizations to Ethereum approximately every
+two hours.
+
+:::
+
+## See also
+
+- Configure coordinator behavior using the [coordinator options](../../../reference/component-configuration/linea-coordinator-options.md).
+- See the [coordinator source code](https://github.com/LFDT-Lineth/lineth-monorepo/tree/main/coordinator)
+  in the `lineth-monorepo`.

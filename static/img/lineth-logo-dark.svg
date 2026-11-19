@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150" role="img" aria-label="Lineth">
+  <!-- Stroke matches the dark navbar surface so the outline reads as a gap. -->
+  <path fill="#707f7f" stroke="#242526" stroke-miterlimit="10" stroke-width="3.6" d="M69.9,16.2l-34.6,58.8,34.6,58.8c-31.7-1.6-56.9-27.3-56.9-58.8s25.2-57.2,56.9-58.8Z"/>
+  <path fill="#707f7f" stroke="#242526" stroke-miterlimit="10" stroke-width="3.6" d="M133,75c0,31.5-25.2,57.2-56.9,58.8l34.6-58.8-34.5-58.8c31.7,1.6,56.9,27.3,56.9,58.8h0Z"/>
+  <path fill="#fff" d="M524.7,116.4h-16.5V35.7h16.5v33.1h37.3v-33.1h16.5v80.7h-16.5v-33.1h-37.3v33.1Z"/>
+  <path fill="#fff" d="M472.7,116.4h-16.5V50.3h-24.7v-14.6h65.9v14.6h-24.8v66Z"/>
+  <path fill="#fff" d="M421,116.4h-53.7V35.7h53.7v14.6h-37.2v18.4h36.1v14.5h-36.1v18.4h37.2v14.6Z"/>
+  <path fill="#fff" d="M337.1,89.1v-53.4h16.5v80.7h-16l-39.7-53.3v53.3h-16.5V35.7h16l39.7,53.4Z"/>
+  <path fill="#fff" d="M267.8,116.4h-16.5V35.7h16.5v80.7Z"/>
+  <path fill="#fff" d="M238.2,116.4h-53.7V35.7h16.5v66h37.2v14.6Z"/>
+</svg>

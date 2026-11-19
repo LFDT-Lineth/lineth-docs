@@ -34,7 +34,7 @@ const getMarkdownFiles = (dir) => {
     const fullPath = path.join(dir, file);
     if (fs.statSync(fullPath).isDirectory()) {
       files.push(...getMarkdownFiles(fullPath));
-    } else if (file.endsWith(".md") || file.endsWith(".mdx")) {
+    } else if (file.endsWith(".md") || file.endsWith(".md")) {
       files.push(fullPath);
     }
   });
@@ -53,7 +53,7 @@ const updateCategories = () => {
     const content = fs.readFileSync(filePath, "utf8");
     const { data } = matter(content);
     const relativePath = path.relative(DOCS_PATH, filePath); // get path relative to docs folder
-    const docId = relativePath.replace(/\\/g, "/").replace(/\.mdx?$/, ""); // use relative path
+    const docId = relativePath.replace(/\\/g, "/").replace(/\.md?$/, ""); // use relative path
 
     // check for `category` front matter
     if (data.category && CATEGORIES[data.category]) {
