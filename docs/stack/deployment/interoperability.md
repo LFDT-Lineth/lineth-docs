@@ -1,5 +1,6 @@
 ---
 title: Native interoperability
+unlisted: true
 description: >-
   Native interoperability between two Lineth networks using the Cross Ledger
   Interoperability Protocol (CLIP)
@@ -15,7 +16,7 @@ There is no shared chain and no third-party bridge operator.
 
 :::tip Lineth for institutions
 CLIP is a feature provided by [Consensys](https://consensys.io/) for institutional and enterprise Lineth deployments.
-To request access, submit a [strategic inquiry](https://linea.build/contact/inquiries).
+To request access, contact [Consensys](https://consensys.com/contact).
 :::
 
 :::note Other interoperability flows

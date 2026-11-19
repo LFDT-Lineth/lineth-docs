@@ -5,7 +5,7 @@ slug: /
 description: >-
   Discover Lineth and the paths for evaluating, deploying, running, and reading
   the protocol.
-image: /img/socialCards/lineth.jpg
+image: /img/socialCards/lineth-documentation.jpg
 ---
 
 import ActionCards from "@site/src/components/ActionCards";
@@ -34,14 +34,14 @@ Get started:
     },
     {
       text: "Run and test",
-      description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment. For detailed production operations, submit a strategic inquiry.",
+      description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment. For detailed production operations, contact Consensys.",
       href: "/stack/run-and-test",
     },
     {
       text: "Prepare for production",
       description:
-        "A production deployment requires environment-specific guidance that is outside the scope of these docs. Submit a strategic inquiry to review your deployment model, production architecture, implementation plan, configuration, and operating model.",
-      href: "https://linea.build/contact/inquiries",
+        "A production deployment requires environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your deployment model, production architecture, implementation plan, configuration, and operating model.",
+      href: "https://consensys.com/contact",
     },
   ]}
 />

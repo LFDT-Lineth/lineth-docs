@@ -13,8 +13,8 @@ availability (HA).
 It uses an example that spans multiple cloud regions: the chain keeps producing blocks if one region
 fails, moves finalization to a standby region when needed, and stops safely if two regions fail at once.
 
-Detailed production topology and supported tooling for a given deployment can be confirmed by submitting a
-[strategic inquiry](https://linea.build/contact/inquiries).
+Detailed production topology and supported tooling for a given deployment can be confirmed by contacting
+[Consensys](https://consensys.com/contact).
 
 ## Example multi-region design
 

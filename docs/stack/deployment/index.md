@@ -12,8 +12,8 @@ import DeploymentArchitectureGraphic from "/img/stack/deployment/lineth-deployme
 
 This section describes the components and design choices in a <GlossaryTerm term="Lineth" /> deployment,
 providing a high-level reference architecture you can use when designing your own deployment.
-Detailed production topology and supported tooling for a given deployment can be confirmed by submitting a
-[strategic inquiry](https://linea.build/contact/inquiries).
+Detailed production topology and supported tooling for a given deployment can be confirmed by contacting
+[Consensys](https://consensys.com/contact).
 
 <ActionCards
   cards={[

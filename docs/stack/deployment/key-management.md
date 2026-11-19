@@ -198,7 +198,7 @@ The coordinator fails if no factory is configured for that name.
 :::tip Lineth for institutions
 For institutional and enterprise Lineth deployments, [Consensys](https://consensys.io/) can supply the custom factory
 so the coordinator, sequencer liveness plugin, and Maru validator sign with AWS KMS without deploying Web3Signer.
-To use this feature, submit a [strategic inquiry](https://linea.build/contact/inquiries).
+To use this feature, contact [Consensys](https://consensys.com/contact).
 :::
 
 ## Operator responsibilities
