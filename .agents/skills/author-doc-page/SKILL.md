@@ -30,7 +30,7 @@ Ask the user for anything they haven't already provided:
 3. **Topic**: what is the page about?
 4. **File path**: where should the file live? Suggest one based on the tab and topic if
    the user doesn't specify (see the directory table in
-   [README.mdx](../../../README.mdx)).
+   [README.md](../../../README.md)).
 5. **Source material**: what code, spec, PR, or other reference verifies the content?
 
 ## Step 1: Confirm an issue exists, then load the relevant rules

@@ -7,10 +7,10 @@ this Docusaurus v3 documentation site for Lineth. The working URL is `docs.linet
 
 | Section                 | Directory         | Documents                                                                          |
 | ----------------------- | ----------------- | ---------------------------------------------------------------------------------- |
-| Introduction            | `docs/index.mdx`  | Lineth overview                                                                    |
-| Evaluate Lineth         | `docs/evaluate`   | Deployment models, trust, security, compliance                                     |
-| Deployment architecture | `docs/deployment` | Data availability, finalization, finality, QBFT, high availability, key management |
-| Run and test            | `docs/run`        | Local stack, validators, monitoring, forced transactions                           |
+| Introduction            | `docs/stack/index.md`      | Lineth overview. Served at `/`.                                          |
+| Evaluate Lineth         | `docs/stack/evaluate`       | Deployment models, trust, security, compliance                           |
+| Deployment architecture | `docs/stack/deployment`     | Data availability, finalization, finality, QBFT, high availability, key management |
+| Run and test            | `docs/stack/run-and-test`   | Local stack, validators, monitoring, forced transactions                 |
 | Protocol                | `docs/protocol`   | Protocol architecture and mechanisms                                               |
 | Reference               | `docs/reference`  | Component configuration, contracts, source repositories, audits, glossary          |
 
@@ -25,15 +25,17 @@ See [README.md](README.md) for what this draft includes and what is still open.
    value, or behavior you haven't verified against source code, a spec, or another
    authoritative reference. If uncertain, mark it `[VERIFY]` (see `editorial-voice.mdc`).
 2. **Use Linea and Lineth precisely.** They're related but distinct terms. Check
-   [`/protocol/linea-vs-lineth`](docs/protocol/linea-vs-lineth.mdx) before asserting which
+   [`/protocol/linea-vs-lineth`](docs/protocol/linea-vs-lineth.md) before asserting which
    one applies to a claim, and don't guess from memory. See `.cursor/rules/terminology.mdc`.
-3. **Use default Docusaurus styling.** Do not reintroduce Linea colors, fonts, logos, or
-   the old token stylesheet. See `.cursor/rules/css-styling.mdc`.
+3. **Use default Docusaurus styling.** The site font is Inter, which matches the
+   Lineth wordmark, and headings are slightly smaller than the Infima defaults.
+   Do not reintroduce Linea colors, Atyp, logos, or the old token stylesheet.
+   See `.cursor/rules/css-styling.mdc`.
 4. **Verify before requesting review.** Preview locally with `npm run start`, and confirm
    `npm run build` succeeds.
 5. **Pass CI.** PRs run ESLint/Stylelint, TypeScript, Vale spelling/style, and link
    checking. Fix warnings before requesting review; see
-   [Quality checks before pushing](README.mdx#quality-checks-before-pushing).
+   [Quality checks before pushing](README.md#quality-checks-before-pushing).
 
 ## AI guidance
 
@@ -43,10 +45,10 @@ editing matching content:
 
 | Rule file                  | Applies to                     | Covers                                                |
 | -------------------------- | ------------------------------ | ----------------------------------------------------- |
-| `content-structure.mdc`    | `docs/**/*.{md,mdx}`           | Tab/audience/tone, page structure                     |
-| `editorial-voice.mdc`      | `docs/**/*.{md,mdx}`           | Voice, heading style, `[VERIFY]` markers              |
-| `terminology.mdc`          | `docs/**/*.{md,mdx}`           | Casing, Linea/Lineth naming, component capitalization |
-| `markdown-formatting.mdc`  | `docs/**/*.{md,mdx}`           | Frontmatter, links, line wrapping, images             |
+| `content-structure.mdc`    | `docs/**/*.md`                 | Tab/audience/tone, page structure                     |
+| `editorial-voice.mdc`      | `docs/**/*.md`                 | Voice, heading style, `[VERIFY]` markers              |
+| `terminology.mdc`          | `docs/**/*.md`                 | Casing, Linea/Lineth naming, component capitalization |
+| `markdown-formatting.mdc`  | `docs/**/*.md`                 | Frontmatter, links, line wrapping, images             |
 | `contributor-workflow.mdc` | repo-wide                      | Issue-first workflow, redirects, PR hygiene           |
 | `css-styling.mdc`          | `src/**/*.{css,tsx,jsx,ts,js}` | CSS architecture, design tokens, forbidden patterns   |
 

@@ -154,7 +154,7 @@ function createFixture() {
       title: "Get started",
       description: "Get started building on Linea.",
       permalink: "/network/quickstart/",
-      source: "@site/docs/network/quickstart/index.mdx",
+      source: "@site/docs/network/quickstart/index.md",
     }),
   );
 

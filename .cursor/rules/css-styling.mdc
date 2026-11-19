@@ -6,7 +6,7 @@ alwaysApply: false
 
 # CSS and styling rules
 
-This site uses the default Docusaurus classic theme and Infima. Do not reintroduce the Linea visual system: no Atyp fonts, no `--linea-*` tokens, no Linea logos, and no Linea color, radius, or spacing palette.
+This site uses the default Docusaurus classic theme and Infima. The theme font is Inter, because that is the face of the Lineth wordmark. Headings are slightly smaller than the Infima defaults. Do not reintroduce the Linea visual system: no Atyp fonts, no `--linea-*` tokens for UI, no Linea logos, and no Linea color, radius, or spacing palette.
 
 ## Where styles go
 

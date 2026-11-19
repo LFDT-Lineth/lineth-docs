@@ -15,7 +15,7 @@ information architecture:
 
 Linea Mainnet, the Linea RPC, and the Token API stay on
 [docs.linea.build](https://docs.linea.build). Access control (RBAC) and native
-interoperability (CLIP) are still in `docs/deployment/` so existing links
+interoperability (CLIP) are still in `docs/stack/deployment/` so existing links
 resolve, and they are omitted from the navigation. The migration plan moves
 those pages to the Consensys commercial site.
 
@@ -32,9 +32,9 @@ publication.
 - Feedback widget targets (`GITHUB_REPO`, Slack, and the page-URL allowlist)
 - CI (the Consensys GitHub Actions workflows are in `.github/disabled-workflows/`
   so they do not run against this draft)
-- A Lineth logo (the navbar and footer still use the Linea mark)
-- A dedicated Lineth support inbox (the support page links to GitHub and the
-  LF Decentralized Trust Discord)
+- A dedicated favicon (the navbar uses the LF Decentralized Trust Lineth logo)
+- A dedicated Lineth support inbox (production guidance uses the strategic
+  inquiry form, and general questions use Discord)
 
 ## Local preview
 

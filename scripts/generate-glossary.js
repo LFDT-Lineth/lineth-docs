@@ -3,7 +3,7 @@ const path = require("path");
 
 const rootDir = path.resolve(__dirname, "..");
 const glossaryJsonPath = path.join(rootDir, "src/lib/glossary.json");
-const glossaryMdxPath = path.join(rootDir, "docs/reference/glossary.mdx");
+const glossaryMdxPath = path.join(rootDir, "docs/reference/glossary.md");
 
 function loadGlossaryTerms() {
   const raw = fs.readFileSync(glossaryJsonPath, "utf8");

@@ -10,7 +10,6 @@ excludedDirs:
 followRedirects: true
 fileExtensions:
   - md
-  - mdx
 baseUrl: https://docs.linea.build
 ignorePatterns:
   - pattern: '^https://github\.com(?:[/?].*)?$'

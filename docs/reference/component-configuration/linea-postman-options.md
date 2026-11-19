@@ -1,0 +1,51 @@
+---
+title: Postman options
+description: Environment variable configuration for the Postman, grouped by section.
+draft: false
+image: /img/socialCards/postman-options.jpg
+---
+
+{/* Human-owned wrapper. Automation only updates `_generated/postman/` partials. Add new partial imports when sections appear. */}
+
+import Provenance from "./_generated/postman/provenance.md";
+import General from "./_generated/postman/general.md";
+import L1Network from "./_generated/postman/l1-network.md";
+import L2Network from "./_generated/postman/l2-network.md";
+import Listener from "./_generated/postman/listener.md";
+import Claiming from "./_generated/postman/claiming.md";
+import Signer from "./_generated/postman/signer.md";
+import Database from "./_generated/postman/database.md";
+import DatabaseCleaner from "./_generated/postman/database-cleaner.md";
+import Api from "./_generated/postman/api.md";
+
+:::caution Advanced options
+
+These are environment variables for Postman deployments. Their presence does not indicate that changing them is recommended or supported for every deployment. Verify their applicability against the relevant release and deployment guidance. Secret and endpoint variables (RPC URLs, private keys, contract addresses, database passwords, signer endpoints) are listed by name only, never with live values.
+:::
+:::note Defaults
+
+Defaults are literal fallbacks defined in the Postman source (`envLoader.ts`). Placeholders such as empty strings or `0x` are omitted from the Default column. These are not recommended production settings and may be overridden by deployment configuration. `.env` / `.env.sample` files are never used as the source of defaults.
+
+:::
+
+This reference lists Postman environment variables, grouped by section. Variable names and defaults come from `envLoader.ts`; descriptions and types come from Zod `.describe()` on `schema.ts`.
+
+<Provenance />
+
+<General />
+
+<L1Network />
+
+<L2Network />
+
+<Listener />
+
+<Claiming />
+
+<Signer />
+
+<Database />
+
+<DatabaseCleaner />
+
+<Api />

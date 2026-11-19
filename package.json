@@ -11,9 +11,8 @@
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "format": "prettier --write \"{blog,docs,src,static}/(**/*).{md,mdx,ts,js,tsx,jsx,json}\"",
-    "format:docs": "prettier --write \"docs/**/*.{md,mdx}\"",
-    "format:docs:check": "prettier --check \"docs/**/*.{md,mdx}\"",
+    "format": "prettier --write \"{src,static}/**/*.{ts,js,tsx,jsx,json}\"",
+    "lint:md": "markdownlint-cli2",
     "glossary:generate": "node scripts/generate-glossary.js",
     "lint": "npm run lint:js && npm run lint:style",
     "lint:js": "eslint .",
@@ -41,7 +40,7 @@
     "**/*.{ts,tsx}": "npm run typecheck-staged",
     "**/*.css": "npm run lint:style",
     "**/*.{ts,js,tsx,jsx,json}": "prettier --write",
-    "**/*.{md,mdx}": "prettier --write"
+    "docs/**/*.md": "markdownlint-cli2"
   },
   "browserslist": {
     "production": [
@@ -111,6 +110,7 @@
     "googleapis-common": "8.0.3",
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
+    "markdownlint-cli2": "^0.18.1",
     "prettier": "3.9.10",
     "stylelint": "17.16.0",
     "stylelint-config-standard": "40.0.0",

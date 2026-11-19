@@ -1,0 +1,166 @@
+---
+title: Submit forced transactions
+description: Submit forced transactions on Linea Public Mainnet.
+image: /img/socialCards/submit-forced-transactions.jpg
+---
+
+:::caution[Status]
+
+🚧 Forced transactions are not yet live. This documentation describes the intended design.
+
+:::
+
+## Submit a forced transaction
+
+To submit a forced transaction, you first need to query the latest finalized state and rolling hashes from the L1.
+
+:::note
+
+The following example uses Ethers v6 and is provided for illustration only.
+You must supply the correct Linea RPC endpoint, contract address, and ABI for `LineaRollup`.
+See the Linea contract addresses and ABIs in the monorepo for production integration.
+
+:::
+
+```typescript
+// Pseudocode example (ethers v6)
+import { AbiCoder, Contract, JsonRpcProvider, id, keccak256 } from "ethers";
+
+// assume provider + contract already initialized
+// const provider = new JsonRpcProvider(L1_RPC_URL);
+// const lineaRollup = new Contract(address, abi, provider);
+
+// 1. Read the last finalized L2 block number from the rollup contract
+const currentL2BlockNumber: bigint = await lineaRollup.currentL2BlockNumber();
+
+// 2. Target the FinalizedStateUpdated event for that exact block.
+//    The event signature is FinalizedStateUpdated(uint256,uint256,uint256,uint256)
+//    with the L2 block number as the indexed topic, so we can filter on
+//    [eventTopic, blockNumberTopic] to fetch a single log instead of scanning
+//    the full event history.
+const abiCoder = AbiCoder.defaultAbiCoder();
+const eventTopic = id("FinalizedStateUpdated(uint256,uint256,uint256,uint256)");
+const blockNumberTopic = abiCoder.encode(["uint256"], [currentL2BlockNumber]);
+
+const logs = await provider.getLogs({
+  address: await lineaRollup.getAddress(),
+  topics: [eventTopic, blockNumberTopic],
+  fromBlock: 0,
+  toBlock: "latest",
+});
+
+if (logs.length === 0) {
+  throw new Error(`No FinalizedStateUpdated event found for L2 block ${currentL2BlockNumber}`);
+}
+
+// 3. Decode the event
+const latestLog = logs[logs.length - 1];
+const parsed = lineaRollup.interface.parseLog({
+  topics: latestLog.topics as string[],
+  data: latestLog.data,
+});
+
+if (!parsed) {
+  throw new Error("Failed to parse FinalizedStateUpdated event");
+}
+
+const {
+  timestamp, // Finalization timestamp
+  messageNumber, // L1->L2 message number
+  forcedTransactionNumber, // Last finalized forced tx number
+} = parsed.args;
+
+// 4. Query rolling hashes from contract state
+const [messageRollingHash, forcedTransactionRollingHash] = await Promise.all([lineaRollup.rollingHashes(messageNumber), lineaRollup.forcedTransactionRollingHashes(forcedTransactionNumber)]);
+
+// 5. Construct the LastFinalizedState object
+const lastFinalizedState = {
+  timestamp,
+  messageNumber,
+  messageRollingHash,
+  forcedTransactionNumber,
+  forcedTransactionRollingHash,
+};
+
+// 6. OPTIONAL: Verify it matches the contract's stored hash
+const expectedHash = keccak256(
+  abiCoder.encode(["uint256", "bytes32", "uint256", "bytes32", "uint256"], [messageNumber, messageRollingHash, forcedTransactionNumber, forcedTransactionRollingHash, timestamp]),
+);
+
+const storedHash = await lineaRollup.currentFinalizedState();
+
+if (expectedHash !== storedHash) {
+  throw new Error("State mismatch - data may be stale");
+}
+```
+
+:::caution[Retry on stale finalized state]
+
+The rollup may finalize a new batch on L1 between the moment you read `LastFinalizedState` and the moment your
+`submitForcedTransaction` call is included on L1. If that happens, the gateway will revert because the supplied
+state no longer matches `currentFinalizedState`. Be prepared to re-read the latest finalized state and retry the
+submission.
+
+:::
+
+Once you have the correct values, you can construct a forced transaction submission with the following fields:
+The last finalized L2 state on L1:
+
+```solidity
+struct LastFinalizedState {
+    uint256 timestamp;                    // Last finalized L2 block timestamp
+    uint256 messageNumber;                // L1→L2 message number at finalization
+    bytes32 messageRollingHash;           // Rolling hash of L1→L2 messages
+    uint256 forcedTransactionNumber;      // Last finalized forced tx number
+    bytes32 forcedTransactionRollingHash; // Rolling hash of forced transactions
+}
+```
+
+A signed EIP-1559 transaction destined for the L2 in field form:
+
+```solidity
+struct Eip1559Transaction {
+    uint256 nonce;
+    uint256 maxPriorityFeePerGas;
+    uint256 maxFeePerGas;
+    uint256 gasLimit;
+    address to;
+    uint256 value;
+    bytes input;
+    AccessList[] accessList;
+    uint8 yParity;
+    uint256 r;
+    uint256 s;
+}
+```
+
+When submitting the transaction, the gateway will validate that:
+
+- The last finalized state matches
+- The transaction details are within limits
+- The appropriate fee has been paid
+
+:::info
+
+The transaction fee is fixed, you may query the `forcedTransactionFeeInWei` on the `LineaRollup`contract:
+
+```typescript
+// Pseudocode
+
+const forcedTransactionFeeInWei = await lineaRollup.forcedTransactionFeeInWei();
+
+await forcedTransactionGateway.submitForcedTransaction(forcedTransactionStruct, lastFinalizedStateStruct, {
+  value: forcedTransactionFeeInWei,
+});
+```
+
+:::
+
+At this stage, the transaction will also be checked by the `AddressFilter` to ensure that certain addresses, such as
+precompiles, are not called directly.
+
+The gateway will then send the transaction to the `LineaRollup` for storage.
+
+## Next steps
+
+- Learn more about [forced transactions](../../protocol/forced-transactions.md).

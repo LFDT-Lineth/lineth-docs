@@ -7,6 +7,7 @@
 
 .description {
   composes: description from "../BaseCard/styles.module.css";
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {

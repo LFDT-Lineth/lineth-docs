@@ -1,7 +1,7 @@
 ---
 description: Required spelling, casing, and naming for product terms and technical concepts across docs.linea.build.
 globs:
-  - docs/**/*.{mdx,md}
+  - docs/**/*.md
   - .github/vale/**
   - .github/workflows/spelling.yml
 alwaysApply: false
@@ -28,7 +28,7 @@ technical accuracy:
 
 Do not assert which term applies to a given page from memory. The canonical explanation,
 including the tab-to-product mapping (which tabs document Linea vs. Lineth), lives at
-[Linea and Lineth](/protocol/linea-vs-lineth) (`docs/protocol/linea-vs-lineth.mdx`). Read
+[Linea and Lineth](/protocol/linea-vs-lineth) (`docs/protocol/linea-vs-lineth.md`). Read
 that page first, and match the naming already used on neighboring pages in the same
 section.
 

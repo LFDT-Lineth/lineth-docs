@@ -1,6 +1,6 @@
 ---
 description: Page structure, audience, and tone conventions for the Lineth documentation.
-globs: docs/**/*.{mdx,md}
+globs: docs/**/*.md
 alwaysApply: false
 ---
 
@@ -9,15 +9,15 @@ alwaysApply: false
 ## Identify the tab and audience first
 
 Before writing or editing a page, identify which tab it belongs to (see the tab-to-directory
-table in [README.mdx](../../README.mdx)) and match the tone expected for that tab's primary
+table in [README.md](../../README.md)) and match the tone expected for that tab's primary
 audience:
 
 | Section | Primary audience | Tone |
 | --- | --- | --- |
-| Introduction (`docs/index.mdx`) | Evaluators and operators | Clear and applied. Point to the other sections. |
-| Evaluate Lineth (`docs/evaluate`) | Evaluators | Technical but applied. Decision and fit. |
-| Deployment architecture (`docs/deployment`) | Operators and architects | Technical but applied. Design choices. |
-| Run and test (`docs/run`) | Operators | Procedural. Numbered steps. |
+| Introduction (`docs/stack/index.md`) | Evaluators and operators | Clear and applied. Point to the other sections. |
+| Evaluate Lineth (`docs/stack/evaluate`) | Evaluators | Technical but applied. Decision and fit. |
+| Deployment architecture (`docs/stack/deployment`) | Operators and architects | Technical but applied. Design choices. |
+| Run and test (`docs/stack/run-and-test`) | Operators | Procedural. Numbered steps. |
 | Protocol (`docs/protocol`) | Software architects, institutional evaluators | Deep technical. Internals and architecture are expected. |
 | Reference (`docs/reference`) | Developers | Code-first and reference-style. Practical. |
 
