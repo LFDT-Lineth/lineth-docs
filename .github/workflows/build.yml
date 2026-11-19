@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Use Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: ".nvmrc"
+
+      # docs-build installs this Node.js version again from the toolcache.
+      # Install npm 12 first so that reinstall keeps the packageManager version.
+      - name: Install npm
+        run: npm install -g npm@12.2.1
+
+      - name: Build
+        uses: Consensys-Incorporated/github-actions/docs-build@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

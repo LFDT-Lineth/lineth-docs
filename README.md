@@ -30,8 +30,8 @@ publication.
 - DNS and the Vercel project
 - A new analytics container (Linea's GTM container and Osano script are removed)
 - Feedback widget targets (`GITHUB_REPO`, Slack, and the page-URL allowlist)
-- CI (the Consensys GitHub Actions workflows are in `.github/disabled-workflows/`
-  so they do not run against this draft)
+- The weekly full-site link check (pull requests run lint, Markdown lint,
+  spelling, links, filename case, and the build)
 - A dedicated favicon (the navbar uses the LF Decentralized Trust Lineth logo)
 - A dedicated Lineth support inbox (production guidance uses the strategic
   inquiry form, and general questions use Discord)
