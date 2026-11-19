@@ -36,6 +36,10 @@ publication.
 - A dedicated Lineth support inbox (production guidance uses the strategic
   inquiry form, and general questions use Discord)
 
+## Contribute
+
+See [Contributing to the Lineth documentation](CONTRIBUTING.md).
+
 ## Local preview
 
 ```bash
