@@ -12,7 +12,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Use Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -25,6 +25,6 @@ jobs:
         run: npm install -g npm@12.2.1
 
       - name: Build
-        uses: Consensys-Incorporated/github-actions/docs-build@main
+        uses: Consensys-Incorporated/github-actions/docs-build@d7118b7e3733bac9a7f92f05f02f18c73892d5ad # main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
