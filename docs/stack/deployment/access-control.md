@@ -28,7 +28,7 @@ also the path to the chain data.
 :::tip Lineth for institutions
 Access control is a feature provided by [Consensys](https://consensys.io/) for institutional and
 enterprise Lineth deployments.
-To use this feature, contact [Consensys](https://consensys.com/contact).
+To use this feature, [contact Consensys](https://consensys.com/contact).
 :::
 
 ## Access control stack

@@ -16,7 +16,7 @@ There is no shared chain and no third-party bridge operator.
 
 :::tip Lineth for institutions
 CLIP is a feature provided by [Consensys](https://consensys.io/) for institutional and enterprise Lineth deployments.
-To request access, contact [Consensys](https://consensys.com/contact).
+To request access, [contact Consensys](https://consensys.com/contact).
 :::
 
 :::note Other interoperability flows

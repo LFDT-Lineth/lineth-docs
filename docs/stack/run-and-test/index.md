@@ -8,8 +8,8 @@ import ActionCards from "@site/src/components/ActionCards";
 import GlossaryTerm from "@theme/GlossaryTerm";
 
 This section contains guides for running and testing a <GlossaryTerm term="Lineth" /> deployment.
-Detailed production operations for a given deployment can be confirmed by contacting
-[Consensys](https://consensys.com/contact).
+Detailed production operations for a given deployment can be confirmed if you
+[contact Consensys](https://consensys.com/contact).
 
 <ActionCards
   cards={[
