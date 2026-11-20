@@ -14,8 +14,8 @@ import TrilemmaGraphic from "/img/stack/institutional-trilemma.svg";
 import TrilemmaGraphicMobile from "/img/stack/institutional-trilemma-mobile.svg";
 
 Lineth is the collection of protocol components, onchain contracts, and operational
-capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution. [Lineth is distinct from Linea](https://docs.linea.build/protocol/linea-vs-lineth), the public network built on
-Lineth.
+capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution.
+[Linea](https://docs.linea.build/) is the public network built on Lineth.
 
 Use this documentation to evaluate and design a custom Lineth deployment.
 Get started:
@@ -33,22 +33,27 @@ Get started:
       href: "/deployment",
     },
     {
+      text: "Protocol",
+      description: "Protocol internals: architecture components, transaction processing, proofs, and state finalization.",
+      href: "/protocol",
+    },
+    {
       text: "Run and test",
-      description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment. For detailed production operations, contact Consensys.",
+      description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment.",
       href: "/run-and-test",
     },
     {
-      text: "Prepare for production",
-      description:
-        "A production deployment requires environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your deployment model, production architecture, implementation plan, configuration, and operating model.",
-      href: "https:" + "//consensys.com/contact",
+      text: "Reference",
+      description: "Component configuration, protocol contracts, published audits, source repositories, and the glossary.",
+      href: "/reference",
     },
   ]}
 />
 
-:::tip
-For protocol mechanics beneath the operator stack, see [Protocol](./protocol/index.md).
-For the public network overview, see [Linea Mainnet](https://docs.linea.build/network).
+:::note Prepare for production
+A production deployment requires environment-specific guidance that is outside the scope of these docs.
+[Contact Consensys](https://consensys.com/contact) to review your deployment model,
+production architecture, implementation plan, configuration, and operating model.
 :::
 
 ## Why Lineth?
