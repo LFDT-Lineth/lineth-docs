@@ -2,68 +2,6 @@
   "installCommand": "npx -y npm@12.2.1 ci",
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/support",
-      "destination": "https://discord.gg/hyperledger",
-      "permanent": true
-    },
-    {
-      "source": "/run",
-      "destination": "/run-and-test",
-      "permanent": true
-    },
-    {
-      "source": "/run/:path*",
-      "destination": "/run-and-test/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/stack/evaluate",
-      "destination": "/evaluate",
-      "permanent": true
-    },
-    {
-      "source": "/stack/evaluate/:path*",
-      "destination": "/evaluate/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/stack/deployment",
-      "destination": "/deployment",
-      "permanent": true
-    },
-    {
-      "source": "/stack/deployment/:path*",
-      "destination": "/deployment/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/stack/run-and-test",
-      "destination": "/run-and-test",
-      "permanent": true
-    },
-    {
-      "source": "/stack/run-and-test/:path*",
-      "destination": "/run-and-test/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/protocol/architecture",
-      "destination": "/protocol",
-      "permanent": true
-    },
-    {
-      "source": "/protocol/eip-7702",
-      "destination": "https://docs.linea.build/protocol/eip-7702",
-      "permanent": true
-    },
-    {
-      "source": "/protocol/linea-vs-lineth",
-      "destination": "https://docs.linea.build/protocol/linea-vs-lineth",
-      "permanent": true
-    }
-  ],
   "routes": [
     {
       "src": "^/$",

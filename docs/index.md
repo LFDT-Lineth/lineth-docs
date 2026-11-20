@@ -41,7 +41,7 @@ Get started:
       text: "Prepare for production",
       description:
         "A production deployment requires environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your deployment model, production architecture, implementation plan, configuration, and operating model.",
-      href: "https://consensys.com/contact",
+      href: "https:" + "//consensys.com/contact",
     },
   ]}
 />

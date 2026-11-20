@@ -31,7 +31,7 @@ Detailed production operations for a given deployment can be confirmed if you
     {
       text: "Prepare for production",
       description: "Production operations require environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your operating model.",
-      href: "https://consensys.com/contact",
+      href: "https:" + "//consensys.com/contact",
     },
   ]}
 />
