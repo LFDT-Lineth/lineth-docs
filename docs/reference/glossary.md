@@ -144,7 +144,7 @@ A build of the Besu execution client, extended with Lineth plugins such as the s
 
 ### Lineth
 
-(Formerly the Linea Stack) The open-source ZK-rollup stack, codebase, and technical protocol that's the foundation of Linea Mainnet. Operators can deploy this stack to launch their own Ethereum-compatible L2 or L3 networks.
+The open-source ZK-rollup stack, codebase, and technical protocol that's the foundation of Linea Mainnet. Operators can deploy this stack to launch their own Ethereum-compatible L2 or L3 networks.
 
 ### Maru
 

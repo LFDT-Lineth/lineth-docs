@@ -71,8 +71,7 @@ Fill in the scaffold with content based on what the user provides:
 - Identify the audience for this tab (`content-structure.mdc`) and write for it.
 - Define jargon on first use (`editorial-voice.mdc`).
 - Use the correct casing for Linea/Lineth, components, and roles
-  (`terminology.mdc`). Use the Linea and Lineth definitions there if you're unsure
-  which product a claim belongs to.
+  (`terminology.mdc`).
 - Mark anything you can't verify with `[VERIFY]` rather than guessing.
 - No marketing language or superlatives ("best-in-class", "powerful", "seamless").
 
