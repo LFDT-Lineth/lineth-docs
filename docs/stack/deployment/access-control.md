@@ -1,5 +1,6 @@
 ---
 title: Access control
+unlisted: true
 description: >-
   How a restricted private validium exposes a single RPC endpoint that enforces
   access control
@@ -27,7 +28,7 @@ also the path to the chain data.
 :::tip Lineth for institutions
 Access control is a feature provided by [Consensys](https://consensys.io/) for institutional and
 enterprise Lineth deployments.
-To use this feature, submit a [strategic inquiry](https://linea.build/contact/inquiries).
+To use this feature, [contact Consensys](https://consensys.com/contact).
 :::
 
 ## Access control stack
