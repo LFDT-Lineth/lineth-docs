@@ -21,7 +21,7 @@ When the documentation means the network you transact on, the product, or its go
 
 ## What is Lineth
 
-**Lineth** is the open-source <GlossaryTerm term="Zero-knowledge rollup">ZK-rollup</GlossaryTerm> stack, codebase, and technical protocol: the protocol components, onchain contracts, developer
+**Lineth (formerly the Linea Stack)** is the open-source <GlossaryTerm term="Zero-knowledge rollup">ZK-rollup</GlossaryTerm> stack, codebase, and technical protocol: the protocol components, onchain contracts, developer
 SDKs, and operational tooling that operators deploy.
 It applies to all chains built on it.
 It is an incubating project at [LF Decentralized Trust (LFDT)](https://www.lfdecentralizedtrust.org/), where the
@@ -51,6 +51,8 @@ This mirrors the [LFDT naming model](https://github.com/LF-Decentralized-Trust/w
 
 - **Linea**: Linea Mainnet-specific brand, token, tokenomics, Linea Consortium, Linea Mainnet, and Linea Sepolia.
 - **Lineth**: the technical stack and protocol, including the open-source rollup stack, codebase, components, clients, contracts, developer SDKs, tooling, LFDT project, and all chains built on it.
+
+On first reference within a page, the stack is introduced as **"Lineth (formerly the Linea Stack)"**, then **Lineth** thereafter.
 
 ## Next steps
 
