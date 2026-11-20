@@ -1,46 +1,19 @@
 # Lineth documentation
 
-Draft source for the public Lineth documentation site. The working URL is
-`docs.lineth.io`. The site is built with Docusaurus 3.
+[Lineth](https://github.com/LFDT-Lineth/lineth-monorepo) is an open-source ZK-rollup stack
+and protocol for running Ethereum-compatible Layer 2 and Layer 3 networks.
+It is developed under the Apache 2.0 and MIT licenses.
 
-This draft was copied from `doc.linea` and trimmed to the Lineth public
-information architecture:
+This repository contains documentation for Lineth, and is built using [Docusaurus](https://docusaurus.io/).
+The doc site is hosted at [`docs.lineth.io`](https://docs.lineth.io).
 
-- Introduction
-- Evaluate Lineth
-- Deployment architecture
-- Protocol
-- Run and test
-- Reference
+If you're looking for the software source code, go to the
+[Lineth software repository](https://github.com/LFDT-Lineth/lineth-monorepo).
 
-Linea Mainnet, the Linea RPC, and the Token API stay on
-[docs.linea.build](https://docs.linea.build). Access control (RBAC) and native
-interoperability (CLIP) stay in `docs/deployment/` so existing links
-resolve. Both pages are unlisted: they are omitted from the navigation, search,
-the sitemap, and `llms.txt`. The migration plan moves those pages to the
-Consensys commercial site.
-
-`organizationName` and `editUrl` in `docusaurus.config.js` point at
-`LFDT-Lineth/lineth-docs`.
-
-## Not done yet
-
-- DNS and the Vercel project
-- A new analytics container (Linea's GTM container and Osano script are removed)
-- Feedback widget targets (`GITHUB_REPO`, Slack, and the page-URL allowlist)
-- The weekly full-site link check (pull requests run lint, Markdown lint,
-  spelling, links, filename case, and the build)
-- A dedicated favicon (the navbar uses the LF Decentralized Trust Lineth logo)
-- A dedicated Lineth support inbox (production guidance directs readers to
-  contact Consensys, and general questions use Discord)
-
-## Contribute
+### Contribute
 
 See [Contributing to the Lineth documentation](CONTRIBUTING.md).
 
-## Local preview
+### Questions?
 
-```bash
-npm install
-npm start
-```
+If you have questions about Lineth, ask on [Discord](https://discord.gg/hyperledger).
