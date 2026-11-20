@@ -34,7 +34,7 @@ quickstart material in production.
 ## What this quickstart runs
 
 The quickstart runs a local Lineth L2 rollup with these services. For component
-details, see [Deployment components](/stack/deployment/core-components).
+details, see [Deployment components](/deployment/core-components).
 
 - Linea Besu <GlossaryTerm term="Sequencer">sequencer</GlossaryTerm>, and an L2 Besu
   <GlossaryTerm term="Follower execution client">follower execution client</GlossaryTerm> that serves RPC
@@ -354,8 +354,8 @@ Reattach to the guided progress view with:
 
 ## Next steps
 
-- Review the [Trust model](/stack/evaluate/trust-model).
-- Compare [deployment models](/stack/evaluate/deployment-models).
-- Understand [data availability](/stack/deployment/data-availability) and the
-  [finalization layer](/stack/deployment/finalization-layer).
-- Review the [protocol components](/stack/deployment/core-components).
+- Review the [Trust model](/evaluate/trust-model).
+- Compare [deployment models](/evaluate/deployment-models).
+- Understand [data availability](/deployment/data-availability) and the
+  [finalization layer](/deployment/finalization-layer).
+- Review the [protocol components](/deployment/core-components).

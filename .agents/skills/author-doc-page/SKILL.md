@@ -71,8 +71,7 @@ Fill in the scaffold with content based on what the user provides:
 - Identify the audience for this tab (`content-structure.mdc`) and write for it.
 - Define jargon on first use (`editorial-voice.mdc`).
 - Use the correct casing for Linea/Lineth, components, and roles
-  (`terminology.mdc`). Check `/protocol/linea-vs-lineth` if you're unsure which product a
-  claim belongs to.
+  (`terminology.mdc`).
 - Mark anything you can't verify with `[VERIFY]` rather than guessing.
 - No marketing language or superlatives ("best-in-class", "powerful", "seamless").
 
@@ -83,8 +82,7 @@ Before finishing, check:
 - [ ] Frontmatter has `title` and `description`, no manual `image` field.
 - [ ] Opening answers "what" and "why" in one to two sentences.
 - [ ] Structure matches the content type and neighboring pages.
-- [ ] Terminology and casing match `terminology.mdc` and the canonical
-  `/protocol/linea-vs-lineth` page.
+- [ ] Terminology and casing match `terminology.mdc`.
 - [ ] Any unverified values are marked `[VERIFY]`.
 - [ ] Links are relative where possible, with descriptive text.
 - [ ] Code samples have language tags and are placed near the bottom of the page.

@@ -2,43 +2,6 @@
   "installCommand": "npx -y npm@12.2.1 ci",
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/support",
-      "destination": "https://discord.gg/hyperledger",
-      "permanent": true
-    },
-    {
-      "source": "/evaluate",
-      "destination": "/stack/evaluate",
-      "permanent": true
-    },
-    {
-      "source": "/evaluate/:path*",
-      "destination": "/stack/evaluate/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/deployment",
-      "destination": "/stack/deployment",
-      "permanent": true
-    },
-    {
-      "source": "/deployment/:path*",
-      "destination": "/stack/deployment/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/run",
-      "destination": "/stack/run-and-test",
-      "permanent": true
-    },
-    {
-      "source": "/run/:path*",
-      "destination": "/stack/run-and-test/:path*",
-      "permanent": true
-    }
-  ],
   "routes": [
     {
       "src": "^/$",

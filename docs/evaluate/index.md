@@ -17,30 +17,25 @@ your use case.
     {
       text: "Deployment models",
       description: "Compare rollup and validium trade-offs for data availability, access, and finalization.",
-      href: "/stack/evaluate/deployment-models",
+      href: "/evaluate/deployment-models",
     },
     {
       text: "Trust model",
       description: "Understand what each deployment component can do, what participants can verify, and privileged contract roles.",
-      href: "/stack/evaluate/trust-model",
+      href: "/evaluate/trust-model",
     },
     {
       text: "Security and assurance",
       description: "Review protocol guarantees, operator controls, and published assurance evidence.",
-      href: "/stack/evaluate/security",
+      href: "/evaluate/security",
     },
     {
       text: "Compliance",
       description: "Use a deployment's protocol evidence in your own compliance program.",
-      href: "/stack/evaluate/compliance",
+      href: "/evaluate/compliance",
     },
   ]}
 />
-
-:::tip
-To explore the components and architectural design choices, see
-[Deployment architecture](../deployment/index.md).
-:::
 
 ## Use cases
 

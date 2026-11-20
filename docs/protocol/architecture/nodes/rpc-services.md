@@ -11,7 +11,7 @@ import GlossaryTerm from "@theme/GlossaryTerm";
 RPC services expose the JSON-RPC interfaces that applications, users, and internal services use to read network
 data and submit transactions.
 Any <GlossaryTerm term="Lineth" /> node can serve them, publicly or only within the operator's network, and RPC
-nodes are typically placed behind load balancers and [access control](../../../stack/deployment/access-control.md).
+nodes are typically placed behind load balancers and [access control](../../../deployment/access-control.md).
 
 Two things distinguish one RPC node from another: which methods it serves, and how much state history
 it retains. Serving RPC is independent of a node's consensus role.
@@ -55,13 +55,13 @@ becomes more valuable:
   Your own node validates chain data directly from the protocol.
 - **Historical data**: Public endpoints often restrict archive access because of its storage cost.
   Your own [archive node](#archive-nodes) has no such limits.
-- **Operational control**: A self-hosted node can sit inside a private network behind load balancers and [access control](../../../stack/deployment/access-control.md),
+- **Operational control**: A self-hosted node can sit inside a private network behind load balancers and [access control](../../../deployment/access-control.md),
   which is useful for backend services, indexers, and internal tooling that need predictable access patterns and
   tighter security boundaries.
 
 ## See also
 
-- See [Deployment architecture](../../../stack/deployment/index.md) for how RPC nodes fit into an
+- See [Deployment architecture](../../../deployment/index.md) for how RPC nodes fit into an
   operator's footprint.
 - On Linea Mainnet, most users reach RPC services through their
   [wallet](https://docs.linea.build/network/how-to/connect-wallet), and developers either use a

@@ -1,6 +1,7 @@
 ---
 title: Forced transactions
 description: Forced transactions on Linea.
+unlisted: true
 image: /img/socialCards/forced-transactions.jpg
 ---
 
@@ -155,9 +156,9 @@ sequenceDiagram
 
 ## Next steps
 
-- Learn how to [enable forced transactions](../stack/run-and-test/enable-forced-transactions.md).
+- Learn how to [enable forced transactions](../run-and-test/enable-forced-transactions.md).
 - Learn how to [submit forced transactions](../protocol/how-to/forced-transactions.md) on Linea
   Public Mainnet.
-- Consider the normal [transaction lifecycle](./architecture/index.md#transaction-lifecycle).
+- Consider the normal [transaction lifecycle](./index.md#transaction-lifecycle).
 - See the [changelog](https://docs.linea.build/changelog/release-notes) for release history.
 ```

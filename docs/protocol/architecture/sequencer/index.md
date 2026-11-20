@@ -40,7 +40,7 @@ the data posted to the <GlossaryTerm term="Finalization layer">finalization laye
 :::note
 
 A single-validator deployment runs one sequencer.
-[Multi-validator deployments](/stack/deployment/multi-validator-consensus) run one sequencer per <GlossaryTerm term="Maru validator">Maru validator</GlossaryTerm>, since each validator needs its own Linea Besu with the sequencer plugins.
+[Multi-validator deployments](/deployment/multi-validator-consensus) run one sequencer per <GlossaryTerm term="Maru validator">Maru validator</GlossaryTerm>, since each validator needs its own Linea Besu with the sequencer plugins.
 
 :::
 

@@ -47,7 +47,7 @@ When the deployment uses <GlossaryTerm term="Quorum Byzantine Fault Tolerance (Q
 ### What participants can verify
 
 In every deployment, participants can check that a proof was accepted by reading the
-[finalization contract](../../protocol/architecture/smart-contracts.md#finalization-contract) on
+[finalization contract](../protocol/architecture/smart-contracts.md#finalization-contract) on
 the finalization layer.
 They can also read submission events, [contract role](#system-contract-roles) assignments, contract state, proxy admin,
 implementation addresses, and canonical bridge events on that layer.

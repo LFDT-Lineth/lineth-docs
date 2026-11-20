@@ -1,26 +1,26 @@
 /** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
 const sidebars = {
   stackSidebar: [
-    { type: "doc", id: "stack/index", className: "intro-section-item" },
+    { type: "doc", id: "index", className: "intro-section-item" },
     {
       type: "category",
       label: "Evaluate Lineth",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "stack/evaluate/index" },
+      link: { type: "doc", id: "evaluate/index" },
       items: [
-        "stack/evaluate/deployment-models",
+        "evaluate/deployment-models",
         {
           type: "doc",
-          id: "stack/evaluate/trust-model",
+          id: "evaluate/trust-model",
           label: "Trust model",
         },
         {
           type: "doc",
-          id: "stack/evaluate/security",
+          id: "evaluate/security",
           label: "Security and assurance",
         },
-        "stack/evaluate/compliance",
+        "evaluate/compliance",
       ],
     },
     {
@@ -28,61 +28,23 @@ const sidebars = {
       label: "Deployment architecture",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "stack/deployment/index" },
+      link: { type: "doc", id: "deployment/index" },
       items: [
-        "stack/deployment/core-components",
-        "stack/deployment/data-availability",
-        "stack/deployment/finalization-layer",
-        "stack/deployment/finality",
-        "stack/deployment/multi-validator-consensus",
-        "stack/deployment/high-availability",
-        "stack/deployment/key-management",
+        "deployment/core-components",
+        "deployment/data-availability",
+        "deployment/finalization-layer",
+        "deployment/finality",
+        "deployment/multi-validator-consensus",
+        "deployment/high-availability",
+        "deployment/key-management",
       ],
     },
     {
       type: "category",
-      label: "Run and test",
+      label: "Protocol",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "stack/run-and-test/index" },
-      items: [
-        "stack/run-and-test/run-local-lineth-stack",
-        {
-          type: "doc",
-          id: "stack/run-and-test/run-multiple-validators",
-          label: "Run multiple validators",
-        },
-        "stack/run-and-test/monitor-a-deployment",
-        {
-          type: "category",
-          label: "Use forced transactions",
-          collapsible: true,
-          collapsed: true,
-          items: [
-            "stack/run-and-test/enable-forced-transactions",
-            {
-              type: "doc",
-              id: "protocol/how-to/forced-transactions",
-              label: "Submit forced transactions",
-            },
-          ],
-        },
-      ],
-    },
-  ],
-  protocolSidebar: [
-    { type: "doc", id: "protocol/index", className: "intro-section-item" },
-    {
-      type: "doc",
-      id: "protocol/linea-vs-lineth",
-      className: "intro-section-item",
-    },
-    {
-      type: "category",
-      label: "Architecture",
-      collapsible: true,
-      collapsed: false,
-      link: { type: "doc", id: "protocol/architecture/index" },
+      link: { type: "doc", id: "protocol/index" },
       items: [
         {
           type: "category",
@@ -139,88 +101,106 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Mechanisms",
+      label: "Run and test",
       collapsible: true,
       collapsed: false,
-      items: ["protocol/eip-7702", "protocol/forced-transactions"],
-    },
-  ],
-  referenceSidebar: [
-    { type: "doc", id: "reference/index", className: "intro-section-item" },
-    {
-      type: "category",
-      label: "Component configuration",
-      collapsible: true,
-      collapsed: false,
-      link: { type: "doc", id: "reference/component-configuration/index" },
+      link: { type: "doc", id: "run-and-test/index" },
       items: [
-        "reference/component-configuration/linea-besu-plugin-options",
-        "reference/component-configuration/linea-prover-options",
-        "reference/component-configuration/linea-coordinator-options",
-        "reference/component-configuration/linea-maru-options",
-        "reference/component-configuration/linea-postman-options",
+        "run-and-test/run-local-lineth-stack",
+        {
+          type: "doc",
+          id: "run-and-test/run-multiple-validators",
+          label: "Run multiple validators",
+        },
+        "run-and-test/monitor-a-deployment",
       ],
     },
     {
       type: "category",
-      label: "Smart contracts",
-      className: "sidebar-collapsible-section",
+      label: "Reference",
       collapsible: true,
-      collapsed: true,
-      link: { type: "doc", id: "reference/smart-contracts/index" },
+      collapsed: false,
+      link: { type: "doc", id: "reference/index" },
       items: [
         {
           type: "category",
-          label: "Interfaces",
+          label: "Component configuration",
           collapsible: true,
           collapsed: true,
+          link: { type: "doc", id: "reference/component-configuration/index" },
           items: [
-            {
-              type: "autogenerated",
-              dirName: "reference/smart-contracts/interfaces",
-            },
+            "reference/component-configuration/linea-besu-plugin-options",
+            "reference/component-configuration/linea-prover-options",
+            "reference/component-configuration/linea-coordinator-options",
+            "reference/component-configuration/linea-maru-options",
+            "reference/component-configuration/linea-postman-options",
           ],
         },
         {
           type: "category",
-          label: "lib",
+          label: "Smart contracts",
+          className: "sidebar-collapsible-section",
           collapsible: true,
           collapsed: true,
-          items: [
-            { type: "autogenerated", dirName: "reference/smart-contracts/lib" },
-          ],
-        },
-        "reference/smart-contracts/linearollup",
-        {
-          type: "category",
-          label: "messageservice",
-          collapsible: true,
-          collapsed: true,
+          link: { type: "doc", id: "reference/smart-contracts/index" },
           items: [
             {
-              type: "autogenerated",
-              dirName: "reference/smart-contracts/messageservice",
+              type: "category",
+              label: "Interfaces",
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  type: "autogenerated",
+                  dirName: "reference/smart-contracts/interfaces",
+                },
+              ],
             },
-          ],
-        },
-        {
-          type: "category",
-          label: "TokenBridge",
-          collapsible: true,
-          collapsed: true,
-          items: [
             {
-              type: "autogenerated",
-              dirName: "reference/smart-contracts/tokenbridge",
+              type: "category",
+              label: "lib",
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  type: "autogenerated",
+                  dirName: "reference/smart-contracts/lib",
+                },
+              ],
             },
+            "reference/smart-contracts/linearollup",
+            {
+              type: "category",
+              label: "messageservice",
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  type: "autogenerated",
+                  dirName: "reference/smart-contracts/messageservice",
+                },
+              ],
+            },
+            {
+              type: "category",
+              label: "TokenBridge",
+              collapsible: true,
+              collapsed: true,
+              items: [
+                {
+                  type: "autogenerated",
+                  dirName: "reference/smart-contracts/tokenbridge",
+                },
+              ],
+            },
+            "reference/smart-contracts/zkevmv2",
           ],
         },
-        "reference/smart-contracts/zkevmv2",
+        "reference/repos",
+        "reference/security-audits",
+        "reference/glossary",
       ],
     },
-    "reference/repos",
-    "reference/security-audits",
-    "reference/glossary",
   ],
 };
 

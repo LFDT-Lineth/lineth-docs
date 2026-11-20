@@ -1,6 +1,7 @@
 ---
 title: Submit forced transactions
 description: Submit forced transactions on Linea Public Mainnet.
+unlisted: true
 image: /img/socialCards/submit-forced-transactions.jpg
 ---
 
