@@ -22,7 +22,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "alexandratran", // Draft repo. Change to LFDT-Lineth when the docs repo is writable.
+  organizationName: "LFDT-Lineth",
   projectName: "lineth-docs",
   deploymentBranch: "gh-pages", // Github Pages deploying branch
 
@@ -61,7 +61,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Set a base path separate from default /docs
-          editUrl: "https://github.com/alexandratran/lineth-docs/tree/main/",
+          editUrl: "https://github.com/LFDT-Lineth/lineth-docs/tree/main/",
           path: "docs",
           routeBasePath: "/",
           include: ["**/*.md"],

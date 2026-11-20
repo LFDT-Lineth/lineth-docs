@@ -15,15 +15,13 @@ information architecture:
 
 Linea Mainnet, the Linea RPC, and the Token API stay on
 [docs.linea.build](https://docs.linea.build). Access control (RBAC) and native
-interoperability (CLIP) are still in `docs/stack/deployment/` so existing links
-resolve, and they are omitted from the navigation. The migration plan moves
-those pages to the Consensys commercial site.
+interoperability (CLIP) stay in `docs/stack/deployment/` so existing links
+resolve. Both pages are unlisted: they are omitted from the navigation, search,
+the sitemap, and `llms.txt`. The migration plan moves those pages to the
+Consensys commercial site.
 
-The destination repository is `LFDT-Lineth/lineth-docs`. This copy lives in a
-repository you can push to until that repository grants write access. `url`,
-`organizationName`, `projectName`, and `editUrl` in `docusaurus.config.js`
-still need to be pointed at the LFDT repository and the final hostname before
-publication.
+`organizationName` and `editUrl` in `docusaurus.config.js` point at
+`LFDT-Lineth/lineth-docs`.
 
 ## Not done yet
 
@@ -33,8 +31,8 @@ publication.
 - The weekly full-site link check (pull requests run lint, Markdown lint,
   spelling, links, filename case, and the build)
 - A dedicated favicon (the navbar uses the LF Decentralized Trust Lineth logo)
-- A dedicated Lineth support inbox (production guidance uses the strategic
-  inquiry form, and general questions use Discord)
+- A dedicated Lineth support inbox (production guidance directs readers to
+  contact Consensys, and general questions use Discord)
 
 ## Contribute
 

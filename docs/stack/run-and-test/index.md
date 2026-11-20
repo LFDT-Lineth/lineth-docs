@@ -8,8 +8,8 @@ import ActionCards from "@site/src/components/ActionCards";
 import GlossaryTerm from "@theme/GlossaryTerm";
 
 This section contains guides for running and testing a <GlossaryTerm term="Lineth" /> deployment.
-Detailed production operations for a given deployment can be confirmed by submitting a
-[strategic inquiry](https://linea.build/contact/inquiries).
+Detailed production operations for a given deployment can be confirmed if you
+[contact Consensys](https://consensys.com/contact).
 
 <ActionCards
   cards={[
@@ -35,8 +35,8 @@ Detailed production operations for a given deployment can be confirmed by submit
     },
     {
       text: "Prepare for production",
-      description: "Production operations require environment-specific guidance that is outside the scope of these docs. Submit a strategic inquiry to review your operating model.",
-      href: "https://linea.build/contact/inquiries",
+      description: "Production operations require environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your operating model.",
+      href: "https://consensys.com/contact",
     },
   ]}
 />
