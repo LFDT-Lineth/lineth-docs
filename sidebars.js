@@ -126,7 +126,7 @@ const sidebars = {
           type: "category",
           label: "Component configuration",
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: { type: "doc", id: "reference/component-configuration/index" },
           items: [
             "reference/component-configuration/linea-besu-plugin-options",
