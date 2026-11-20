@@ -37,6 +37,21 @@
       "source": "/run/:path*",
       "destination": "/stack/run-and-test/:path*",
       "permanent": true
+    },
+    {
+      "source": "/protocol/architecture",
+      "destination": "/protocol",
+      "permanent": true
+    },
+    {
+      "source": "/protocol/eip-7702",
+      "destination": "https://docs.linea.build/protocol/eip-7702",
+      "permanent": true
+    },
+    {
+      "source": "/protocol/linea-vs-lineth",
+      "destination": "https://docs.linea.build/protocol/linea-vs-lineth",
+      "permanent": true
     }
   ],
   "routes": [

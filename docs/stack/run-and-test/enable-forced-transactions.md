@@ -1,6 +1,7 @@
 ---
 title: Enable forced transactions
 description: Enable forced transactions on a Lineth deployment.
+unlisted: true
 image: /img/socialCards/enable-forced-transactions.jpg
 ---
 

@@ -9,8 +9,8 @@ information architecture:
 - Introduction
 - Evaluate Lineth
 - Deployment architecture
-- Run and test
 - Protocol
+- Run and test
 - Reference
 
 Linea Mainnet, the Linea RPC, and the Token API stay on

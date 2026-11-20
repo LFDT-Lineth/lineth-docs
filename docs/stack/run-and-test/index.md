@@ -29,11 +29,6 @@ Detailed production operations for a given deployment can be confirmed if you
       href: "/stack/run-and-test/monitor-a-deployment",
     },
     {
-      text: "Enable forced transactions",
-      description: "Intended design for submitting forced transactions. This feature is not live.",
-      href: "/stack/run-and-test/enable-forced-transactions",
-    },
-    {
       text: "Prepare for production",
       description: "Production operations require environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your operating model.",
       href: "https://consensys.com/contact",

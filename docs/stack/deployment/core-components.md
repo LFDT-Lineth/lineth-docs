@@ -9,7 +9,7 @@ import GlossaryTerm from "@theme/GlossaryTerm";
 This page describes the <GlossaryTerm term="Lineth" /> components.
 It identifies which components an <GlossaryTerm term="Operator">operator</GlossaryTerm> must or may run, and
 describes how they are versioned or replaced.
-For what each component does internally, see [Protocol Architecture](../../protocol/architecture/index.md).
+For what each component does internally, see [Protocol](../../protocol/index.md).
 
 ## Core protocol components
 
@@ -57,7 +57,7 @@ and **replaceable**.
 
 Common examples include:
 
-- [Block explorer](../../protocol/architecture/index.md#components-overview)
+- [Block explorer](../../protocol/index.md#components-overview)
 - [Archive node service](../../protocol/architecture/nodes/rpc-services.md#archive-nodes)
 - [RPC load balancers](../../protocol/architecture/nodes/rpc-services.md)
 - [Monitoring and metrics](../run-and-test/monitor-a-deployment.md)

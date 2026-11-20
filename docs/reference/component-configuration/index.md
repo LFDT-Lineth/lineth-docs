@@ -6,7 +6,7 @@ image: /img/socialCards/component-configuration.jpg
 
 import ActionCards from "@site/src/components/ActionCards";
 
-This section documents configuration options for [Lineth protocol components](../../protocol/architecture/index.md).
+This section documents configuration options for [Lineth protocol components](../../protocol/index.md).
 Each page is generated from that component's source.
 
 <ActionCards

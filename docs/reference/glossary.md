@@ -3,7 +3,6 @@ title: Glossary
 description: >-
   Definitions of Linea, Lineth, and zero-knowledge terms used in the Lineth
   documentation.
-displayed_sidebar: referenceSidebar
 image: /img/socialCards/glossary.jpg
 ---
 

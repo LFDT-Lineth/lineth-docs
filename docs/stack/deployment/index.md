@@ -57,7 +57,7 @@ Detailed production topology and supported tooling for a given deployment can be
 
 :::tip
 If you're still evaluating whether Lineth is the right stack for your use case, see [Evaluate Lineth](../evaluate/index.md).
-For protocol-level architecture details, see [Protocol Architecture](../../protocol/architecture/index.md).
+For protocol-level architecture details, see [Protocol](../../protocol/index.md).
 :::
 
 ## Shared components and variants

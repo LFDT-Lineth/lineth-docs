@@ -71,8 +71,8 @@ of truth for full criteria:
 ### Terminology (`terminology.mdc`)
 
 - `dapp`, `onchain`, `offchain` casing correct.
-- Linea vs. Lineth used correctly for this tab. Cross-check
-  `/protocol/linea-vs-lineth` rather than assuming.
+- Linea vs. Lineth used correctly for this section. Cross-check `terminology.mdc`
+  rather than assuming.
 - Component/role capitalization (Coordinator, Sequencer, Prover, and so on) is consistent
   within the page, with no mid-page drift.
 - Do not use "Linea Enterprise" as a product or offering name. Prefer "Lineth" for the
@@ -129,7 +129,7 @@ existing published content that hasn't been reconciled yet.
 - Line 12: Passive voice. "The block number can be specified..." -> "Specify the block number..."
 
 ### Terminology
-- Line 8: "Lineth" used where the claim is Linea-specific. Check /protocol/linea-vs-lineth.
+- Line 8: "Lineth" used where the claim is Linea-specific. Check terminology.mdc.
 
 ### Formatting
 - Line 45: Link text is "click here". Use descriptive link text.
