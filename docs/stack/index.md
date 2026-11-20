@@ -13,7 +13,7 @@ import GlossaryTerm from "@theme/GlossaryTerm";
 import TrilemmaGraphic from "/img/stack/institutional-trilemma.svg";
 import TrilemmaGraphicMobile from "/img/stack/institutional-trilemma-mobile.svg";
 
-Lineth (formerly the Linea Stack) is the collection of protocol components, onchain contracts, and operational
+Lineth is the collection of protocol components, onchain contracts, and operational
 capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution. [Lineth is distinct from Linea](../protocol/linea-vs-lineth.md), the public network built on
 Lineth.
 
