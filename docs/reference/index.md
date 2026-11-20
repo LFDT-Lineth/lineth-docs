@@ -8,8 +8,7 @@ image: /img/socialCards/reference.jpg
 import ActionCards from "@site/src/components/ActionCards";
 import GlossaryTerm from "@theme/GlossaryTerm";
 
-This section contains reference material for a <GlossaryTerm term="Lineth" /> deployment: component configuration, protocol
-contracts, published audits, source repositories, and the glossary.
+This section contains reference material for a <GlossaryTerm term="Lineth" /> deployment.
 See the [Linea network documentation](https://docs.linea.build/reference/apis) for the Linea JSON-RPC API reference.
 
 <ActionCards

@@ -37,11 +37,6 @@ your use case.
   ]}
 />
 
-:::tip
-To explore the components and architectural design choices, see
-[Deployment architecture](../deployment/index.md).
-:::
-
 ## Use cases
 
 A Lineth network can suit use cases such as:

@@ -8,39 +8,11 @@ image: /img/socialCards/protocol.jpg
 ---
 
 import GlossaryTerm from "@theme/GlossaryTerm";
-import ActionCards from "@site/src/components/ActionCards";
 import TransactionLifecycle from "/img/protocol/architecture/transaction-lifecycle.svg";
 
 This section describes the <GlossaryTerm term="Lineth" /> protocol internals, including the components that make
 up its architecture, and how it processes transactions, generates proofs, and
 finalizes state.
-
-Learn more about the Lineth protocol:
-
-<ActionCards
-  cards={[
-    {
-      text: "State manager",
-      description: "Learn how Lineth tracks and proves Ethereum-compatible state.",
-      href: "/protocol/architecture/state-manager",
-    },
-    {
-      text: "Prover",
-      description: "Learn how the prover generates zero-knowledge validity proofs.",
-      href: "/protocol/architecture/prover",
-    },
-    {
-      text: "Source code",
-      description: "Browse Lineth and Linea source repositories.",
-      href: "/reference/repos",
-    },
-  ]}
-/>
-
-:::tip
-For the operator overview, see [Introduction](../index.md).
-For the public network overview, see [Linea Mainnet](https://docs.linea.build/network).
-:::
 
 ## Transaction lifecycle
 

@@ -12,7 +12,7 @@ import DeploymentArchitectureGraphic from "/img/stack/deployment/lineth-deployme
 
 This section describes the components and design choices in a <GlossaryTerm term="Lineth" /> deployment,
 providing a high-level reference architecture you can use when designing your own deployment.
-Detailed production topology and supported tooling for a given deployment can be confirmed if you
+For detailed production topology and supported tooling for a given deployment,
 [contact Consensys](https://consensys.com/contact).
 
 <ActionCards
@@ -54,11 +54,6 @@ Detailed production topology and supported tooling for a given deployment can be
     },
   ]}
 />
-
-:::tip
-If you're still evaluating whether Lineth is the right stack for your use case, see [Evaluate Lineth](../evaluate/index.md).
-For protocol-level architecture details, see [Protocol](../protocol/index.md).
-:::
 
 ## Shared components and variants
 

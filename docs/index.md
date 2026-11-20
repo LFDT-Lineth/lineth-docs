@@ -15,10 +15,9 @@ import TrilemmaGraphicMobile from "/img/stack/institutional-trilemma-mobile.svg"
 
 Lineth is the collection of protocol components, onchain contracts, and operational
 capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution.
-[Linea](https://docs.linea.build/) is the public network built on Lineth.
+[Linea](https://linea.build/) is a public network built on Lineth.
 
 Use this documentation to evaluate and design a custom Lineth deployment.
-Get started:
 
 <ActionCards
   cards={[
@@ -29,12 +28,12 @@ Get started:
     },
     {
       text: "Deployment architecture",
-      description: "Explore deployment design choices: data availability, finalization layer, finality, QBFT, high availability, and key management.",
+      description: "Explore deployment design choices, including data availability, finality, and validator models. This section provides a reference architecture.",
       href: "/deployment",
     },
     {
       text: "Protocol",
-      description: "Protocol internals: architecture components, transaction processing, proofs, and state finalization.",
+      description: "Understand protocol internals, including core components, transaction lifecycle, and proofs.",
       href: "/protocol",
     },
     {
@@ -44,13 +43,13 @@ Get started:
     },
     {
       text: "Reference",
-      description: "Component configuration, protocol contracts, published audits, source repositories, and the glossary.",
+      description: "Look up component configuration, contracts, audits, and source repositories.",
       href: "/reference",
     },
   ]}
 />
 
-:::note Prepare for production
+:::tip Prepare for production
 A production deployment requires environment-specific guidance that is outside the scope of these docs.
 [Contact Consensys](https://consensys.com/contact) to review your deployment model,
 production architecture, implementation plan, configuration, and operating model.
@@ -87,7 +86,7 @@ maintaining a separate consensus layer.
 
 ## Key features
 
-A custom Lineth network has the same protocol foundations as [Linea Mainnet](https://docs.linea.build/network). <GlossaryTerm term="Operator">Operators</GlossaryTerm> configure access, data availability, and finalization to match their requirements. At a high level, Lineth provides:
+A custom Lineth network has the same protocol foundations as [Linea](https://linea.build/). <GlossaryTerm term="Operator">Operators</GlossaryTerm> configure access, data availability, and finalization to match their requirements. At a high level, Lineth provides:
 
 - **Ethereum-compatible execution:** Run an Ethereum-equivalent network so existing Solidity contracts
   and Ethereum tooling work.
