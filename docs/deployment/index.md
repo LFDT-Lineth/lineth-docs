@@ -20,44 +20,44 @@ Detailed production topology and supported tooling for a given deployment can be
     {
       text: "Deployment components",
       description: "Required and optional components in the deployment footprint, including how they are versioned or replaced.",
-      href: "/stack/deployment/core-components",
+      href: "/deployment/core-components",
     },
     {
       text: "Data availability",
       description: "Where transaction data is stored: on the finalization layer in a rollup, or offchain in a validium.",
-      href: "/stack/deployment/data-availability",
+      href: "/deployment/data-availability",
     },
     {
       text: "Finalization layer",
       description: "Where proofs and state commitments settle: on Ethereum (L1) or Linea Mainnet (L2).",
-      href: "/stack/deployment/finalization-layer",
+      href: "/deployment/finalization-layer",
     },
     {
       text: "Finality",
       description: "Application-level finality on the network versus settlement finality on the finalization layer.",
-      href: "/stack/deployment/finality",
+      href: "/deployment/finality",
     },
     {
       text: "Multi-validator consensus",
       description: "Maru multi-validator QBFT for sequencer fault tolerance and distributed block ordering within the execution path.",
-      href: "/stack/deployment/multi-validator-consensus",
+      href: "/deployment/multi-validator-consensus",
     },
     {
       text: "High availability",
       description: "Multi-region setup: validators and RPC across regions, primary and warm-standby finalization, and failure behavior.",
-      href: "/stack/deployment/high-availability",
+      href: "/deployment/high-availability",
     },
     {
       text: "Key management",
       description: "Signer roles, the key custody options each role can use, and the controls the operator owns.",
-      href: "/stack/deployment/key-management",
+      href: "/deployment/key-management",
     },
   ]}
 />
 
 :::tip
 If you're still evaluating whether Lineth is the right stack for your use case, see [Evaluate Lineth](../evaluate/index.md).
-For protocol-level architecture details, see [Protocol](../../protocol/index.md).
+For protocol-level architecture details, see [Protocol](../protocol/index.md).
 :::
 
 ## Shared components and variants
@@ -104,7 +104,7 @@ The example architecture flows as follows:
 4. Inside the operator network, the coordinator batches blocks, the tracer produces traces,
    and the prover generates <GlossaryTerm term="zk-SNARK" /> proofs.
 5. Proofs and state commitments leave that network when they are submitted to the
-   [finalization contract](../../protocol/architecture/smart-contracts.md#finalization-contract).
+   [finalization contract](../protocol/architecture/smart-contracts.md#finalization-contract).
    This validium example does not post transaction data; a rollup posts it to the finalization layer.
    See [Data availability](./data-availability.md).
 6. Lineth networks can communicate with each other using [native interoperability](interoperability.md).

@@ -25,17 +25,17 @@ Get started:
     {
       text: "Evaluate Lineth",
       description: "Assess deployment models, trust assumptions, privacy, security, and compliance. This section helps determine whether Lineth is a suitable foundation for your use case.",
-      href: "/stack/evaluate",
+      href: "/evaluate",
     },
     {
       text: "Deployment architecture",
       description: "Explore deployment design choices: data availability, finalization layer, finality, QBFT, high availability, and key management.",
-      href: "/stack/deployment",
+      href: "/deployment",
     },
     {
       text: "Run and test",
       description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment. For detailed production operations, contact Consensys.",
-      href: "/stack/run-and-test",
+      href: "/run-and-test",
     },
     {
       text: "Prepare for production",
@@ -47,7 +47,7 @@ Get started:
 />
 
 :::tip
-For protocol mechanics beneath the operator stack, see [Protocol](../protocol/index.md).
+For protocol mechanics beneath the operator stack, see [Protocol](./protocol/index.md).
 For the public network overview, see [Linea Mainnet](https://docs.linea.build/network).
 :::
 

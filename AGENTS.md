@@ -7,11 +7,11 @@ this Docusaurus v3 documentation site for Lineth. The working URL is `docs.linet
 
 | Section                 | Directory         | Documents                                                                          |
 | ----------------------- | ----------------- | ---------------------------------------------------------------------------------- |
-| Introduction            | `docs/stack/index.md`      | Lineth overview. Served at `/`.                                          |
-| Evaluate Lineth         | `docs/stack/evaluate`       | Deployment models, trust, security, compliance                           |
-| Deployment architecture | `docs/stack/deployment`     | Data availability, finalization, finality, QBFT, high availability, key management |
+| Introduction            | `docs/index.md`      | Lineth overview. Served at `/`.                                          |
+| Evaluate Lineth         | `docs/evaluate`       | Deployment models, trust, security, compliance                           |
+| Deployment architecture | `docs/deployment`     | Data availability, finalization, finality, QBFT, high availability, key management |
 | Protocol                | `docs/protocol`   | Protocol architecture                                                              |
-| Run and test            | `docs/stack/run-and-test`   | Local stack, validators, and monitoring                                  |
+| Run and test            | `docs/run-and-test`   | Local stack, validators, and monitoring                                  |
 | Reference               | `docs/reference`  | Component configuration, contracts, source repositories, audits, glossary          |
 
 The site uses one sidebar, in that order.

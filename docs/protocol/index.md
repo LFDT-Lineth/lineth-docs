@@ -11,8 +11,7 @@ import GlossaryTerm from "@theme/GlossaryTerm";
 import ActionCards from "@site/src/components/ActionCards";
 import TransactionLifecycle from "/img/protocol/architecture/transaction-lifecycle.svg";
 
-<GlossaryTerm term="Lineth" /> provides the technical protocol used by Linea Mainnet and other networks built on it.
-This section describes the protocol internals, including the components that make
+This section describes the <GlossaryTerm term="Lineth" /> protocol internals, including the components that make
 up its architecture, and how it processes transactions, generates proofs, and
 finalizes state.
 
@@ -39,7 +38,7 @@ Learn more about the Lineth protocol:
 />
 
 :::tip
-For the operator overview, see [Introduction](../stack/index.md).
+For the operator overview, see [Introduction](../index.md).
 For the public network overview, see [Linea Mainnet](https://docs.linea.build/network).
 :::
 
@@ -77,11 +76,11 @@ The coordinator submits the data and the proofs to the <GlossaryTerm term="Final
 The finalization contract validates the <GlossaryTerm term="zk-SNARK" /> proofs and records the state roots.
 After verification and any configured delay, transactions reach settlement finality on the selected finalization layer.
 
-[Data availability](../stack/deployment/data-availability.md) is the guarantee that the
+[Data availability](../deployment/data-availability.md) is the guarantee that the
 transaction data underlying these proofs remains accessible to the parties who need it to verify or
 reconstruct historical state.
 How data availability is provided depends on the
-[deployment model](../stack/evaluate/deployment-models.md):
+[deployment model](../evaluate/deployment-models.md):
 
 - For a <GlossaryTerm term="Rollup">rollup</GlossaryTerm>, the coordinator submits compressed
   transaction data to the finalization layer as EIP-4844 blobs.
@@ -100,7 +99,7 @@ Lineth includes several classes of components, each of which serve part of the t
 
 - [**Nodes**](./architecture/nodes/index.md) accept transactions over JSON-RPC and produce or import blocks.
   A fully public network provides externally reachable nodes.
-  In other [deployment types](../stack/evaluate/deployment-models.md), node services may be
+  In other [deployment types](../evaluate/deployment-models.md), node services may be
   configured to be private or semi-private.
 
 - **Internal protocol services** stay inside the operator's trusted network boundary.
@@ -137,5 +136,5 @@ configurable as an external P2P service.
   Consensus and execution clients request signatures for blocks, attestations, and transactions
   over HTTP, while private keys stay in an enterprise-grade key store.
   Signing is access-controlled and auditable, which simplifies key revocation and rotation.
-  See [Key management](../stack/deployment/key-management.md) for how Lineth signer roles use
+  See [Key management](../deployment/key-management.md) for how Lineth signer roles use
   Web3Signer and other custody options.

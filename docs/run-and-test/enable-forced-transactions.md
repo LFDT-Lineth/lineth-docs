@@ -13,7 +13,7 @@ import GlossaryTerm from "@theme/GlossaryTerm";
 
 :::
 
-Support for [forced transaction](../../protocol/forced-transactions.md) submission is not enabled by default. To enable forced transaction submission for smart
+Support for [forced transaction](../protocol/forced-transactions.md) submission is not enabled by default. To enable forced transaction submission for smart
 contracts on your <GlossaryTerm term="Lineth" /> deployment:
 
 1. Deploy the
@@ -39,5 +39,5 @@ Rollup and L1 Message Service access control operations must grant the relevant 
 
 ## Next steps
 
-- Learn more about [forced transactions](../../protocol/forced-transactions.md).
-- Learn how to [submit forced transactions](../../protocol/how-to/forced-transactions.md) on Linea Mainnet.
+- Learn more about [forced transactions](../protocol/forced-transactions.md).
+- Learn how to [submit forced transactions](../protocol/how-to/forced-transactions.md) on Linea Mainnet.

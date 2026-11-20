@@ -16,17 +16,17 @@ Detailed production operations for a given deployment can be confirmed if you
     {
       text: "Run a local Lineth stack",
       description: "Start a local L2 rollup, deploy contracts, and verify finalization against a local L1 or Sepolia.",
-      href: "/stack/run-and-test/run-local-lineth-stack",
+      href: "/run-and-test/run-local-lineth-stack",
     },
     {
       text: "Run multiple validators",
       description: "Run multiple Maru validators with QBFT, monitor Maru, restore lost quorum, and upgrade validators.",
-      href: "/stack/run-and-test/run-multiple-validators",
+      href: "/run-and-test/run-multiple-validators",
     },
     {
       text: "Monitor a deployment",
       description: "Expose health and metrics endpoints, and watch finalization, data availability, and consensus signals.",
-      href: "/stack/run-and-test/monitor-a-deployment",
+      href: "/run-and-test/monitor-a-deployment",
     },
     {
       text: "Prepare for production",

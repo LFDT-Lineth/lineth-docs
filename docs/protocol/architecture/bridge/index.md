@@ -29,5 +29,5 @@ See [Message commitments](./canonical-message-service.md#message-commitments) fo
 
 :::tip
 To learn how two Lineth networks communicate with each other, see
-[native interoperability](../../../stack/deployment/interoperability.md).
+[native interoperability](../../../deployment/interoperability.md).
 :::

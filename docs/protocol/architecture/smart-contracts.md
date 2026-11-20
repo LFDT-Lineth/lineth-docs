@@ -17,7 +17,7 @@ language that compiles to EVM bytecode.
 
 ## Finalization contract
 
-Deployed on the [finalization layer](../../stack/deployment/finalization-layer.md), this contract
+Deployed on the [finalization layer](../../deployment/finalization-layer.md), this contract
 is the network's onchain root of trust: nothing the network claims about its own state is accepted elsewhere
 until this contract has recorded it.
 The finalization contract:
@@ -57,7 +57,7 @@ At finalization, the <GlossaryTerm term="zk-SNARK" /> public input includes the 
 new final shnarf.
 The contract accepts the proof only when that new final shnarf matches one it has already recorded.
 
-How the shnarf is recorded depends on the [deployment model](../../stack/evaluate/deployment-models.md):
+How the shnarf is recorded depends on the [deployment model](../../evaluate/deployment-models.md):
 
 - For a <GlossaryTerm term="Rollup">rollup</GlossaryTerm>, the coordinator submits compressed transaction data to
   the finalization layer as EIP-4844 blobs.
@@ -101,7 +101,7 @@ Lineth's upgradeable contracts, including the finalization contract, message ser
 pattern (v4.x): state lives in a proxy, and an upgrade replaces the implementation the proxy delegates to.
 
 Who holds upgrade authority is a deployment decision, not a protocol one.
-See [Trust model](../../stack/evaluate/trust-model.md) for how that authority is scoped.
+See [Trust model](../../evaluate/trust-model.md) for how that authority is scoped.
 
 :::note Linea Mainnet
 

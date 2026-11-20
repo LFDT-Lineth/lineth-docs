@@ -182,11 +182,11 @@ const config = {
             items: [
               {
                 label: "Evaluate Lineth",
-                to: "/stack/evaluate",
+                to: "/evaluate",
               },
               {
                 label: "Deployment architecture",
-                to: "/stack/deployment",
+                to: "/deployment",
               },
               {
                 label: "Protocol",
@@ -194,7 +194,7 @@ const config = {
               },
               {
                 label: "Run and test",
-                to: "/stack/run-and-test",
+                to: "/run-and-test",
               },
               {
                 label: "Reference",

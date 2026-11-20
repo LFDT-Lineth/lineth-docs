@@ -9,33 +9,43 @@
       "permanent": true
     },
     {
-      "source": "/evaluate",
-      "destination": "/stack/evaluate",
-      "permanent": true
-    },
-    {
-      "source": "/evaluate/:path*",
-      "destination": "/stack/evaluate/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/deployment",
-      "destination": "/stack/deployment",
-      "permanent": true
-    },
-    {
-      "source": "/deployment/:path*",
-      "destination": "/stack/deployment/:path*",
-      "permanent": true
-    },
-    {
       "source": "/run",
-      "destination": "/stack/run-and-test",
+      "destination": "/run-and-test",
       "permanent": true
     },
     {
       "source": "/run/:path*",
-      "destination": "/stack/run-and-test/:path*",
+      "destination": "/run-and-test/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/stack/evaluate",
+      "destination": "/evaluate",
+      "permanent": true
+    },
+    {
+      "source": "/stack/evaluate/:path*",
+      "destination": "/evaluate/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/stack/deployment",
+      "destination": "/deployment",
+      "permanent": true
+    },
+    {
+      "source": "/stack/deployment/:path*",
+      "destination": "/deployment/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/stack/run-and-test",
+      "destination": "/run-and-test",
+      "permanent": true
+    },
+    {
+      "source": "/stack/run-and-test/:path*",
+      "destination": "/run-and-test/:path*",
       "permanent": true
     },
     {

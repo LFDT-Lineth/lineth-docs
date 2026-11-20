@@ -169,7 +169,7 @@ Assign a different port or host when more than one of these processes shares a m
 
 The coordinator also polls the <GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm>
 to track finalized state. Set the poll interval, retries, and warning thresholds in
-[`l1-finalization-monitor`](../../reference/component-configuration/linea-coordinator-options#l1-finalization-monitor).
+[`l1-finalization-monitor`](../reference/component-configuration/linea-coordinator-options#l1-finalization-monitor).
 
 ## Alert on these signals
 

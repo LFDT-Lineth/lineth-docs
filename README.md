@@ -15,7 +15,7 @@ information architecture:
 
 Linea Mainnet, the Linea RPC, and the Token API stay on
 [docs.linea.build](https://docs.linea.build). Access control (RBAC) and native
-interoperability (CLIP) stay in `docs/stack/deployment/` so existing links
+interoperability (CLIP) stay in `docs/deployment/` so existing links
 resolve. Both pages are unlisted: they are omitted from the navigation, search,
 the sitemap, and `llms.txt`. The migration plan moves those pages to the
 Consensys commercial site.

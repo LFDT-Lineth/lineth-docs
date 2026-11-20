@@ -1,26 +1,26 @@
 /** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
 const sidebars = {
   stackSidebar: [
-    { type: "doc", id: "stack/index", className: "intro-section-item" },
+    { type: "doc", id: "index", className: "intro-section-item" },
     {
       type: "category",
       label: "Evaluate Lineth",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "stack/evaluate/index" },
+      link: { type: "doc", id: "evaluate/index" },
       items: [
-        "stack/evaluate/deployment-models",
+        "evaluate/deployment-models",
         {
           type: "doc",
-          id: "stack/evaluate/trust-model",
+          id: "evaluate/trust-model",
           label: "Trust model",
         },
         {
           type: "doc",
-          id: "stack/evaluate/security",
+          id: "evaluate/security",
           label: "Security and assurance",
         },
-        "stack/evaluate/compliance",
+        "evaluate/compliance",
       ],
     },
     {
@@ -28,15 +28,15 @@ const sidebars = {
       label: "Deployment architecture",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "stack/deployment/index" },
+      link: { type: "doc", id: "deployment/index" },
       items: [
-        "stack/deployment/core-components",
-        "stack/deployment/data-availability",
-        "stack/deployment/finalization-layer",
-        "stack/deployment/finality",
-        "stack/deployment/multi-validator-consensus",
-        "stack/deployment/high-availability",
-        "stack/deployment/key-management",
+        "deployment/core-components",
+        "deployment/data-availability",
+        "deployment/finalization-layer",
+        "deployment/finality",
+        "deployment/multi-validator-consensus",
+        "deployment/high-availability",
+        "deployment/key-management",
       ],
     },
     {
@@ -104,15 +104,15 @@ const sidebars = {
       label: "Run and test",
       collapsible: true,
       collapsed: false,
-      link: { type: "doc", id: "stack/run-and-test/index" },
+      link: { type: "doc", id: "run-and-test/index" },
       items: [
-        "stack/run-and-test/run-local-lineth-stack",
+        "run-and-test/run-local-lineth-stack",
         {
           type: "doc",
-          id: "stack/run-and-test/run-multiple-validators",
+          id: "run-and-test/run-multiple-validators",
           label: "Run multiple validators",
         },
-        "stack/run-and-test/monitor-a-deployment",
+        "run-and-test/monitor-a-deployment",
       ],
     },
     {

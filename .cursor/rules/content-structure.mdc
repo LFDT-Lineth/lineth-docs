@@ -14,11 +14,11 @@ section's primary audience:
 
 | Section | Primary audience | Tone |
 | --- | --- | --- |
-| Introduction (`docs/stack/index.md`) | Evaluators and operators | Clear and applied. Point to the other sections. |
-| Evaluate Lineth (`docs/stack/evaluate`) | Evaluators | Technical but applied. Decision and fit. |
-| Deployment architecture (`docs/stack/deployment`) | Operators and architects | Technical but applied. Design choices. |
+| Introduction (`docs/index.md`) | Evaluators and operators | Clear and applied. Point to the other sections. |
+| Evaluate Lineth (`docs/evaluate`) | Evaluators | Technical but applied. Decision and fit. |
+| Deployment architecture (`docs/deployment`) | Operators and architects | Technical but applied. Design choices. |
 | Protocol (`docs/protocol`) | Software architects, institutional evaluators | Deep technical. Internals and architecture are expected. |
-| Run and test (`docs/stack/run-and-test`) | Operators | Procedural. Numbered steps. |
+| Run and test (`docs/run-and-test`) | Operators | Procedural. Numbered steps. |
 | Reference (`docs/reference`) | Developers | Code-first and reference-style. Practical. |
 
 A page can serve more than one audience. If two audiences need substantially different

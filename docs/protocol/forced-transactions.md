@@ -156,7 +156,7 @@ sequenceDiagram
 
 ## Next steps
 
-- Learn how to [enable forced transactions](../stack/run-and-test/enable-forced-transactions.md).
+- Learn how to [enable forced transactions](../run-and-test/enable-forced-transactions.md).
 - Learn how to [submit forced transactions](../protocol/how-to/forced-transactions.md) on Linea
   Public Mainnet.
 - Consider the normal [transaction lifecycle](./index.md#transaction-lifecycle).

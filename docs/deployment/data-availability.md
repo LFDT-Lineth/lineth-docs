@@ -31,7 +31,7 @@ to the <GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm>
 In a validium, the <GlossaryTerm term="Coordinator">coordinator</GlossaryTerm> submits state
 commitments and proofs to the finalization layer. Transaction data is not posted there.
 Typically that data lives on the validium's
-[archive nodes](../../protocol/architecture/nodes/rpc-services.md#archive-nodes), not an external data
+[archive nodes](../protocol/architecture/nodes/rpc-services.md#archive-nodes), not an external data
 availability service.
 
 Anyone who can read those nodes can reconstruct and verify history if enough nodes remain available.

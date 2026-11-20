@@ -6,10 +6,11 @@ image: /img/socialCards/reference.jpg
 ---
 
 import ActionCards from "@site/src/components/ActionCards";
+import GlossaryTerm from "@theme/GlossaryTerm";
 
-This section is the lookup material for a Lineth deployment: component configuration, protocol
-contracts, published audits, source repositories, and the glossary. The Linea Mainnet RPC and
-Token API stay on [docs.linea.build](https://docs.linea.build/reference/apis).
+This section contains reference material for a <GlossaryTerm term="Lineth" /> deployment: component configuration, protocol
+contracts, published audits, source repositories, and the glossary.
+See the [Linea network documentation](https://docs.linea.build/reference/apis) for the Linea JSON-RPC API reference.
 
 <ActionCards
   cards={[
@@ -25,7 +26,7 @@ Token API stay on [docs.linea.build](https://docs.linea.build/reference/apis).
     },
     {
       text: "Source repositories",
-      description: "Public source repositories for Lineth, Linea Mainnet components, and supporting libraries.",
+      description: "Public source repositories for Lineth components and supporting libraries.",
       href: "/reference/repos",
     },
     {
@@ -35,7 +36,7 @@ Token API stay on [docs.linea.build](https://docs.linea.build/reference/apis).
     },
     {
       text: "Glossary",
-      description: "Definitions of Linea, Lineth, and zero-knowledge terms used in these docs.",
+      description: "Definitions of Lineth and zero-knowledge terms used in these docs.",
       href: "/reference/glossary",
     },
   ]}

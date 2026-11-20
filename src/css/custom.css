@@ -115,6 +115,18 @@ samp {
   --ifm-h3-font-size: 1.3125rem;
 }
 
+.theme-doc-sidebar-container {
+  --ifm-menu-link-padding-vertical: 0.25rem;
+}
+
+.theme-doc-sidebar-container .menu__list-item:not(:first-child) {
+  margin-top: 0.125rem;
+}
+
+.theme-doc-sidebar-container .menu__list .menu__list {
+  margin-top: 0.125rem;
+}
+
 .theme-doc-sidebar-item-link-level-1 > .menu__link,
 .theme-doc-sidebar-item-category-level-1
   > .menu__list-item-collapsible

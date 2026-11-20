@@ -50,8 +50,8 @@ including in your report. Instead:
 
 ## Step 2: Identify the tab and content type
 
-Read the file path to determine which tab it's in (`docs/network`, `docs/protocol`,
-`docs/stack`, `docs/reference`, `docs/changelog`) and load `.cursor/rules/content-structure.mdc`
+Read the file path to determine which section it's in (`docs/index.md`, `docs/evaluate`,
+`docs/deployment`, `docs/protocol`, `docs/run-and-test`, `docs/reference`) and load `.cursor/rules/content-structure.mdc`
 for the expected audience, tone, and structure for that tab.
 
 ## Step 3: Review against the rule files
