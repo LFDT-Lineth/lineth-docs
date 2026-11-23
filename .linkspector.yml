@@ -6,7 +6,6 @@ excludedDirs:
   - ./.vercel
   - ./build
   - ./.docusaurus
-  - ./docs/network
 followRedirects: true
 fileExtensions:
   - md

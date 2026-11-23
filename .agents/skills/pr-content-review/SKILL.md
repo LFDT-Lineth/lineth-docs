@@ -1,18 +1,18 @@
 ---
 name: pr-content-review
 description: >-
-  Review docs.linea.build content for editorial compliance (voice, terminology, naming,
+  Review docs.lineth.io content for editorial compliance (voice, terminology, naming,
   formatting, frontmatter) before opening or merging a pull request. Use before submitting
   a PR, when reviewing someone else's draft, or when asked to audit existing pages.
 metadata:
-  short-description: Pre-PR editorial review for docs.linea.build content
+  short-description: Pre-PR editorial review for docs.lineth.io content
 ---
 
 # PR content review
 
 ## When to use
 
-- You're about to open a PR against `Consensys-Incorporated/doc.linea` and want a structured editorial
+- You're about to open a PR against `LFDT-Lineth/lineth-docs` and want a structured editorial
   pass first.
 - You're reviewing a draft or an existing page for style, terminology, naming, or
   formatting issues.

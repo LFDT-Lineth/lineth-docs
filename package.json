@@ -60,12 +60,10 @@
     "@docusaurus/core": "3.10.2",
     "@docusaurus/faster": "3.10.2",
     "@docusaurus/plugin-content-docs": "3.10.2",
-    "@docusaurus/plugin-google-tag-manager": "3.10.2",
     "@docusaurus/preset-classic": "3.10.2",
     "@docusaurus/remark-plugin-npm2yarn": "3.10.2",
     "@docusaurus/theme-mermaid": "3.10.2",
     "@easyops-cn/docusaurus-search-local": "0.55.3",
-    "@intercom/messenger-js-sdk": "0.0.20",
     "@mdx-js/react": "3.1.1",
     "@r74tech/docusaurus-plugin-panzoom": "2.5.0",
     "axios": "1.20.0",
@@ -94,10 +92,8 @@
     "@eslint/compat": "2.1.1",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "9.39.5",
-    "@googleapis/sheets": "13.0.2",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "@vercel/node": "5.10.2",
     "eslint": "9.39.5",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-typescript": "4.4.5",
@@ -106,8 +102,6 @@
     "eslint-plugin-prettier": "5.5.7",
     "eslint-plugin-react": "7.37.5",
     "globals": "17.13.0",
-    "google-auth-library": "10.9.1",
-    "googleapis-common": "8.0.3",
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
     "markdownlint-cli2": "^0.24.1",
@@ -125,10 +119,6 @@
   "overrides": {
     "@vercel/nft": {
       "glob": "14.0.2"
-    },
-    "@vercel/node": {
-      "path-to-regexp": "6.3.0",
-      "undici": "6.29.1"
     },
     "@vercel/static-config": {
       "ajv": "8.20.0"
