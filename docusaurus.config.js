@@ -19,7 +19,6 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenAnchors: "throw",
   trailingSlash: false,
-  favicon: "img/favicon.svg",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
