@@ -1,7 +1,15 @@
 /** @type {import("@docusaurus/plugin-content-docs").SidebarsConfig} */
 const sidebars = {
   stackSidebar: [
-    { type: "doc", id: "index", className: "intro-section-item" },
+    {
+      type: "category",
+      label: "Introduction",
+      collapsible: true,
+      collapsed: false,
+      className: "intro-section-item",
+      link: { type: "doc", id: "index" },
+      items: ["linea-vs-lineth"],
+    },
     {
       type: "category",
       label: "Evaluate Lineth",
