@@ -47,10 +47,8 @@ This mirrors the [LFDT naming model](https://github.com/LF-Decentralized-Trust/w
 
 ## When each name applies
 
-- **Linea**: Linea Mainnet-specific brand, token, tokenomics, Linea Consortium, Linea Mainnet, and Linea Sepolia.
+- **Linea**: Linea Mainnet-specific brand, token, tokenomics, Linea Mainnet, and Linea Sepolia.
 - **Lineth**: the technical stack and protocol, including the open-source rollup stack, codebase, components, clients, contracts, developer SDKs, tooling, the LFDT project, and all chains built on it.
-
-On first reference within a page, the stack is introduced as **"Lineth (formerly the Linea Stack)"**, then **Lineth** thereafter.
 
 ## Why the code says Linea
 
@@ -59,5 +57,5 @@ Contract, client, and repository names such as `LineaRollup` and `linea-besu` co
 
 ## Next steps
 
-- Read the [Linea network overview](https://docs.linea.build/network).
+- See the [Linea network documentation](https://docs.linea.build/network).
 - [Evaluate Lineth](./evaluate/index.md) for a custom deployment.
