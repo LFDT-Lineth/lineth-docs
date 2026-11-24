@@ -22,7 +22,7 @@ To request access, [contact Consensys](https://consensys.com/contact).
 :::note Other interoperability flows
 Native interoperability refers to communication between two Lineth networks.
 To communicate with a Lineth network's <GlossaryTerm term="Finalization layer">finalization layer</GlossaryTerm>,
-use the [canonical bridge](../../protocol/architecture/bridge/index.md).
+use the [canonical bridge](../protocol/architecture/bridge/index.md).
 To communicate with a non-Lineth network, use a bridge or relayer such as [Chainlink CCIP](https://docs.chain.link/ccip).
 :::
 
@@ -103,6 +103,6 @@ There is no shared proof across the two Lineth networks that replaces trust in t
 ## See also
 
 - [Access control](./access-control.md): The access control stack for restricted deployments.
-- [Canonical bridge](../../protocol/architecture/bridge/index.md): Canonical message service
+- [Canonical bridge](../protocol/architecture/bridge/index.md): Canonical message service
   and token bridge to the finalization layer.
 ```

@@ -50,8 +50,8 @@ including in your report. Instead:
 
 ## Step 2: Identify the tab and content type
 
-Read the file path to determine which tab it's in (`docs/network`, `docs/protocol`,
-`docs/stack`, `docs/reference`, `docs/changelog`) and load `.cursor/rules/content-structure.mdc`
+Read the file path to determine which section it's in (`docs/index.md`, `docs/evaluate`,
+`docs/deployment`, `docs/protocol`, `docs/run-and-test`, `docs/reference`) and load `.cursor/rules/content-structure.mdc`
 for the expected audience, tone, and structure for that tab.
 
 ## Step 3: Review against the rule files
@@ -71,8 +71,8 @@ of truth for full criteria:
 ### Terminology (`terminology.mdc`)
 
 - `dapp`, `onchain`, `offchain` casing correct.
-- Linea vs. Lineth used correctly for this tab. Cross-check
-  `/protocol/linea-vs-lineth` rather than assuming.
+- Linea vs. Lineth used correctly for this section. Cross-check `terminology.mdc`
+  rather than assuming.
 - Component/role capitalization (Coordinator, Sequencer, Prover, and so on) is consistent
   within the page, with no mid-page drift.
 - Do not use "Linea Enterprise" as a product or offering name. Prefer "Lineth" for the
@@ -129,7 +129,7 @@ existing published content that hasn't been reconciled yet.
 - Line 12: Passive voice. "The block number can be specified..." -> "Specify the block number..."
 
 ### Terminology
-- Line 8: "Lineth" used where the claim is Linea-specific. Check /protocol/linea-vs-lineth.
+- Line 8: "Lineth" used where the claim is Linea-specific. Check terminology.mdc.
 
 ### Formatting
 - Line 45: Link text is "click here". Use descriptive link text.

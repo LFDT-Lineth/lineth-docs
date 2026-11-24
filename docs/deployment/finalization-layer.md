@@ -51,7 +51,7 @@ Choose L1 finalization when the deployment must settle directly on Ethereum.
 
 :::note Other finalization layers
 A Lineth network can use a custom finalization layer other than Ethereum or Linea Mainnet if it can run the
-[system contracts](../../protocol/architecture/smart-contracts.md).
+[system contracts](../protocol/architecture/smart-contracts.md).
 [Rollups](./data-availability.md#rollups) that post EIP-4844 blobs need blob support on that chain.
 :::
 
@@ -60,7 +60,7 @@ finalization layer.
 
 ## Smart contract requirements
 
-Operators must deploy [the finalization and verifier contracts](../../protocol/architecture/smart-contracts.md)
+Operators must deploy [the finalization and verifier contracts](../protocol/architecture/smart-contracts.md)
 on the finalization layer.
 Together, these contracts allow the <GlossaryTerm term="Coordinator">coordinator</GlossaryTerm> to finalize
 batches and state.

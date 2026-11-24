@@ -9,7 +9,7 @@ import GlossaryTerm from "@theme/GlossaryTerm";
 This page describes the <GlossaryTerm term="Lineth" /> components.
 It identifies which components an <GlossaryTerm term="Operator">operator</GlossaryTerm> must or may run, and
 describes how they are versioned or replaced.
-For what each component does internally, see [Protocol Architecture](../../protocol/architecture/index.md).
+For what each component does internally, see [Protocol](../protocol/index.md).
 
 ## Core protocol components
 
@@ -17,18 +17,18 @@ The following components are **required**.
 
 **Replaceability:** Versioned via protocol upgrade.
 
-- [Maru](../../protocol/architecture/nodes/index.md#consensus-client-maru): Consensus layer client
-- [Linea Besu](../../protocol/architecture/nodes/index.md#execution-client-linea-besu): Execution layer client.
+- [Maru](../protocol/architecture/nodes/index.md#consensus-client-maru): Consensus layer client
+- [Linea Besu](../protocol/architecture/nodes/index.md#execution-client-linea-besu): Execution layer client.
   Required for sequencer nodes and trace generation; other nodes can run any Ethereum execution client
-- [Sequencer](../../protocol/architecture/sequencer/index.md): Linea Besu plugins that order, build, and
+- [Sequencer](../protocol/architecture/sequencer/index.md): Linea Besu plugins that order, build, and
   execute blocks
-- [Coordinator](../../protocol/architecture/coordinator/index.md): Orchestrates batching, proof generation, and submissions
-- [Prover](../../protocol/architecture/prover/index.md): Generates zero-knowledge proofs of state transitions
-- [State manager](../../protocol/architecture/state-manager.md): Maintains a state representation for proof generation
-- [Tracer](../../protocol/architecture/sequencer/tracer.md): Generates execution traces required for proofs
+- [Coordinator](../protocol/architecture/coordinator/index.md): Orchestrates batching, proof generation, and submissions
+- [Prover](../protocol/architecture/prover/index.md): Generates zero-knowledge proofs of state transitions
+- [State manager](../protocol/architecture/state-manager.md): Maintains a state representation for proof generation
+- [Tracer](../protocol/architecture/sequencer/tracer.md): Generates execution traces required for proofs
 
 :::note
-Lineth uses a [dual-layer architecture](../../protocol/architecture/nodes/index.md): Maru for consensus and an
+Lineth uses a [dual-layer architecture](../protocol/architecture/nodes/index.md): Maru for consensus and an
 execution client for the EVM.
 Operators can configure the consensus and execution layers separately.
 This enables but does not guarantee client diversity and network resilience; those depend on the operator's deployment.
@@ -40,7 +40,7 @@ Maru instances.
 
 ## Onchain system contracts
 
-The following [smart contracts](../../protocol/architecture/smart-contracts.md) or alternatives that offer parity are **required**.
+The following [smart contracts](../protocol/architecture/smart-contracts.md) or alternatives that offer parity are **required**.
 
 **Replaceability:** Versioned via redeployment.
 
@@ -57,9 +57,9 @@ and **replaceable**.
 
 Common examples include:
 
-- [Block explorer](../../protocol/architecture/index.md#components-overview)
-- [Archive node service](../../protocol/architecture/nodes/rpc-services.md#archive-nodes)
-- [RPC load balancers](../../protocol/architecture/nodes/rpc-services.md)
+- [Block explorer](../protocol/transaction-lifecycle.md#components-overview)
+- [Archive node service](../protocol/architecture/nodes/rpc-services.md#archive-nodes)
+- [RPC load balancers](../protocol/architecture/nodes/rpc-services.md)
 - [Monitoring and metrics](../run-and-test/monitor-a-deployment.md)
 - Indexer
 - API portal

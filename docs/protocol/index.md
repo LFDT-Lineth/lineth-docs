@@ -1,6 +1,5 @@
 ---
 title: Protocol
-sidebar_label: Introduction
 description: >-
   Learn more about the Lineth protocol, including the components that make up
   its architecture, and how it processes transactions, generates proofs, and
@@ -8,62 +7,60 @@ description: >-
 image: /img/socialCards/protocol.jpg
 ---
 
-import GlossaryTerm from "@theme/GlossaryTerm";
 import ActionCards from "@site/src/components/ActionCards";
+import GlossaryTerm from "@theme/GlossaryTerm";
 
-<GlossaryTerm term="Lineth" /> provides the technical protocol used by Linea Mainnet and other networks built on it. This section describes the protocol internals, including the components that make
-up its architecture, and how it processes transactions, generates proofs, and finalizes state.
-
-Learn more about the Lineth protocol:
+This section describes the <GlossaryTerm term="Lineth" /> protocol internals, including the components that make
+up its architecture, and how it processes transactions, generates proofs, and
+finalizes state.
 
 <ActionCards
   cards={[
     {
-      text: "Linea and Lineth",
-      description: "Learn how the public network relates to the open-source protocol stack.",
-      href: "/protocol/linea-vs-lineth",
+      text: "Transaction lifecycle",
+      description:
+        "Follow a transaction from submission through execution, proving, and finalization.",
+      href: "/protocol/transaction-lifecycle",
     },
     {
-      text: "State manager",
-      description: "Learn how Lineth tracks and proves Ethereum-compatible state.",
-      href: "/protocol/architecture/state-manager",
+      text: "Nodes",
+      description:
+        "Nodes accept transactions over JSON-RPC and produce or import blocks.",
+      href: "/protocol/architecture/nodes",
+    },
+    {
+      text: "Sequencer",
+      description: "The sequencer orders transactions and builds blocks.",
+      href: "/protocol/architecture/sequencer",
+    },
+    {
+      text: "Coordinator",
+      description:
+        "The coordinator groups blocks, requests proofs, and submits them to the finalization layer.",
+      href: "/protocol/architecture/coordinator",
     },
     {
       text: "Prover",
-      description: "Learn how the prover generates zero-knowledge validity proofs.",
+      description: "The prover turns execution traces into zero-knowledge proofs.",
       href: "/protocol/architecture/prover",
     },
     {
-      text: "Source code",
-      description: "Browse Lineth and Linea source repositories.",
-      href: "/reference/repos",
+      text: "State manager",
+      description:
+        "The state manager tracks network state and supplies the Merkle proofs the prover needs.",
+      href: "/protocol/architecture/state-manager",
+    },
+    {
+      text: "Canonical bridge",
+      description:
+        "The canonical bridge moves messages and tokens between the network and the finalization layer.",
+      href: "/protocol/architecture/bridge",
+    },
+    {
+      text: "Smart contracts",
+      description:
+        "Lineth deploys system contracts that verify proofs, record state roots, and run the onchain protocol contracts.",
+      href: "/protocol/architecture/smart-contracts",
     },
   ]}
 />
-
-:::tip
-For the operator overview, see [Introduction](../stack/index.md). For the public
-network overview, see [Linea Mainnet](https://docs.linea.build/network).
-:::
-
-## Protocol overview
-
-At a high level, the Lineth protocol processes transactions through four stages.
-
-1. **Execute transactions:** Transactions are submitted to an Ethereum-compatible execution environment,
-   then ordered and executed into blocks. Each accepted transaction produces a deterministic
-   state transition.
-
-2. **Batch and trace blocks:** The protocol records the execution traces for those blocks and groups
-   the blocks into batches.
-
-3. **Generate validity proofs:** The proving system uses those traces to generate zero-knowledge proofs.
-   A verifier can check the proofs without replaying every transaction in the batch.
-
-4. **Submit for data availability and finalization:** The protocol submits the information required for data
-   availability, verification, and finalization to the configured finalization layer.
-   Data availability and finalization choices depend on the deployment model: Linea Mainnet is one deployment that
-   finalizes to Ethereum, while other Lineth-based networks can use different finalization paths.
-
-For the architecture and component-level details behind these stages, see the
-[Architecture overview](./architecture/index.md).

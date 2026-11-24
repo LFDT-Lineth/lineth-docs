@@ -161,25 +161,6 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "stack/index",
-            position: "left",
-            label: "Stack",
-          },
-          {
-            type: "doc",
-            docId: "protocol/index",
-            position: "left",
-            label: "Protocol",
-          },
-          {
-            type: "doc",
-            docId: "reference/index",
-            position: "left",
-            label: "Reference",
-            activeBaseRegex: "^/reference(/|$)",
-          },
-          {
             href: "https://github.com/LFDT-Lineth/lineth-monorepo",
             position: "right",
             className: "header-github-link",
@@ -200,12 +181,20 @@ const config = {
             title: "Documentation",
             items: [
               {
-                label: "Stack",
-                to: "/",
+                label: "Evaluate Lineth",
+                to: "/evaluate",
+              },
+              {
+                label: "Deployment architecture",
+                to: "/deployment",
               },
               {
                 label: "Protocol",
                 to: "/protocol",
+              },
+              {
+                label: "Run and test",
+                to: "/run-and-test",
               },
               {
                 label: "Reference",

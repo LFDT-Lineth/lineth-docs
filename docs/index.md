@@ -14,41 +14,45 @@ import TrilemmaGraphic from "/img/stack/institutional-trilemma.svg";
 import TrilemmaGraphicMobile from "/img/stack/institutional-trilemma-mobile.svg";
 
 Lineth (formerly the Linea Stack) is the collection of protocol components, onchain contracts, and operational
-capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution. [Lineth is distinct from Linea](../protocol/linea-vs-lineth.md), the public network built on
-Lineth.
+capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution.
+[Lineth is distinct from Linea](lineth-and-linea.md), the public network built on Lineth.
 
 Use this documentation to evaluate and design a custom Lineth deployment.
-Get started:
 
 <ActionCards
   cards={[
     {
       text: "Evaluate Lineth",
       description: "Assess deployment models, trust assumptions, privacy, security, and compliance. This section helps determine whether Lineth is a suitable foundation for your use case.",
-      href: "/stack/evaluate",
+      href: "/evaluate",
     },
     {
       text: "Deployment architecture",
-      description: "Explore deployment design choices: data availability, finalization layer, finality, QBFT, high availability, and key management.",
-      href: "/stack/deployment",
+      description: "Explore deployment design choices, including data availability, finality, and validator models. This section provides a reference architecture.",
+      href: "/deployment",
+    },
+    {
+      text: "Protocol",
+      description: "Understand protocol internals, including core components, transaction lifecycle, and proofs.",
+      href: "/protocol",
     },
     {
       text: "Run and test",
-      description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment. For detailed production operations, contact Consensys.",
-      href: "/stack/run-and-test",
+      description: "Run a local evaluation stack, run multiple Maru validators, and monitor a deployment.",
+      href: "/run-and-test",
     },
     {
-      text: "Prepare for production",
-      description:
-        "A production deployment requires environment-specific guidance that is outside the scope of these docs. Contact Consensys to review your deployment model, production architecture, implementation plan, configuration, and operating model.",
-      href: "https://consensys.com/contact",
+      text: "Reference",
+      description: "Look up component configuration, contracts, audits, and source repositories.",
+      href: "/reference",
     },
   ]}
 />
 
-:::tip
-For protocol mechanics beneath the operator stack, see [Protocol](../protocol/index.md).
-For the public network overview, see [Linea Mainnet](https://docs.linea.build/network).
+:::tip Prepare for production
+A production deployment requires environment-specific guidance that is outside the scope of these docs.
+[Contact Consensys](https://consensys.com/contact) to review your deployment model,
+production architecture, implementation plan, configuration, and operating model.
 :::
 
 ## Why Lineth?
@@ -82,7 +86,7 @@ maintaining a separate consensus layer.
 
 ## Key features
 
-A custom Lineth network has the same protocol foundations as [Linea Mainnet](https://docs.linea.build/network). <GlossaryTerm term="Operator">Operators</GlossaryTerm> configure access, data availability, and finalization to match their requirements. At a high level, Lineth provides:
+A custom Lineth network has the same protocol foundations as [Linea](https://linea.build/). <GlossaryTerm term="Operator">Operators</GlossaryTerm> configure access, data availability, and finalization to match their requirements. At a high level, Lineth provides:
 
 - **Ethereum-compatible execution:** Run an Ethereum-equivalent network so existing Solidity contracts
   and Ethereum tooling work.

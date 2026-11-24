@@ -26,11 +26,8 @@ technical accuracy:
 - **Lineth** is the open-source ZK-rollup stack, protocol, codebase, components, onchain
   contracts, and tooling that Linea Mainnet and other networks are built on.
 
-Do not assert which term applies to a given page from memory. The canonical explanation,
-including the tab-to-product mapping (which tabs document Linea vs. Lineth), lives at
-[Linea and Lineth](/protocol/linea-vs-lineth) (`docs/protocol/linea-vs-lineth.md`). Read
-that page first, and match the naming already used on neighboring pages in the same
-section.
+Do not assert which term applies to a given page from memory. Use the definitions
+above, and match the naming already used on neighboring pages in the same section.
 
 Where a page already uses a term consistently, keep matching it rather than introducing a
 new term. If you're unsure whether a name is final, leave the existing wording in place and

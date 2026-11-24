@@ -65,7 +65,7 @@ Governance contracts and multisig controls should be treated as critical
 security infrastructure. They can hold privileged roles, coordinate emergency
 response, or control upgrade authority depending on the deployment. For upgrade
 mechanics, see the
-[OpenZeppelin Transparent Upgradeable Proxy pattern](../../protocol/architecture/smart-contracts.md#contract-versioning).
+[OpenZeppelin Transparent Upgradeable Proxy pattern](../protocol/architecture/smart-contracts.md#contract-versioning).
 
 ## Cryptographic primitives
 
@@ -83,17 +83,17 @@ The following table outlines the cryptographic primitives Lineth relies on, wher
 
 The following public materials are the available assurance evidence for the Lineth stack:
 
-- [Prover architecture](../../protocol/architecture/prover/index.md): The documented current
+- [Prover architecture](../protocol/architecture/prover/index.md): The documented current
   proof path
-- [Trusted setup](../../protocol/architecture/prover/trusted-setup.md): The public multi-party
+- [Trusted setup](../protocol/architecture/prover/trusted-setup.md): The public multi-party
   computation (MPC) ceremonies and structured reference strings used by the proving system
-- [Security audits](../../reference/security-audits.md): The published audit reports
+- [Security audits](../reference/security-audits.md): The published audit reports
   for reviewed components and revisions
 - [Trust model](./trust-model.md): Component-level trust boundaries and
   failure modes
-- [Smart contracts](../../protocol/architecture/smart-contracts.md): The onchain contracts a
+- [Smart contracts](../protocol/architecture/smart-contracts.md): The onchain contracts a
   deployment uses
-- [Source repositories](../../reference/repos.md): The public Lineth source
+- [Source repositories](../reference/repos.md): The public Lineth source
 
 Linea Mainnet assurance evidence is listed in
 [Linea Mainnet-specific evidence](#linea-mainnet-specific-evidence).
@@ -104,14 +104,14 @@ Lineth does not publish a single proof system maturity rating.
 Available maturity evidence includes:
 
 - The documented current proof path: execution, compression, and aggregation proofs.
-  See [Prover architecture](../../protocol/architecture/prover/index.md).
-- The [trusted setup](../../protocol/architecture/prover/trusted-setup.md) and its security assumptions.
+  See [Prover architecture](../protocol/architecture/prover/index.md).
+- The [trusted setup](../protocol/architecture/prover/trusted-setup.md) and its security assumptions.
 - The prover implementation published in the
   [Lineth monorepo](https://github.com/LFDT-Lineth/lineth-monorepo/tree/main/prover).
-- [Audit reports](../../reference/security-audits.md) for the prover, proving libraries,
+- [Audit reports](../reference/security-audits.md) for the prover, proving libraries,
   and cryptographic primitives, which apply to the revisions named in each report.
 
-[RISC-V proving](../../protocol/architecture/prover/risc-v-overview.md) is under development and
+[RISC-V proving](../protocol/architecture/prover/risc-v-overview.md) is under development and
 is not part of any current Lineth deployment.
 
 ## Linea Mainnet-specific evidence

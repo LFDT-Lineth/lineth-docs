@@ -30,5 +30,5 @@ Each report identifies the component and code revision reviewed at the time of t
 
 - [Prover architecture](../protocol/architecture/prover)
 - [Smart contracts](../protocol/architecture/smart-contracts.md)
-- [Security and assurance](/stack/evaluate/security)
-- [Trust model](/stack/evaluate/trust-model)
+- [Security and assurance](/evaluate/security)
+- [Trust model](/evaluate/trust-model)

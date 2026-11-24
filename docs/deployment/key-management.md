@@ -128,8 +128,8 @@ Lineth supports the following custody options.
 A local backend keeps the private key in the signing component: in process memory, or as a
 Maru validator key file.
 
-Configure `web3j` for the [coordinator](../../reference/component-configuration/linea-coordinator-options#l1-submission)
-or `private-key` for the [Postman](../../reference/component-configuration/linea-postman-options#signer)
+Configure `web3j` for the [coordinator](../reference/component-configuration/linea-coordinator-options#l1-submission)
+or `private-key` for the [Postman](../reference/component-configuration/linea-postman-options#signer)
 to load a hex-encoded secp256k1 private key into the process.
 Use those backends for development and local testing only.
 The [local stack quickstart](../run-and-test/run-local-lineth-stack.md) generates runtime
@@ -142,7 +142,7 @@ Web3Signer, the Postman's AWS KMS backend, or a custom signer factory.
 :::
 
 Set `private-key-path` for
-[Maru](../../reference/component-configuration/linea-maru-options#persistence) to mount a validator key as a file.
+[Maru](../reference/component-configuration/linea-maru-options#persistence) to mount a validator key as a file.
 Protect the file in production.
 To use hardware-backed custody for Maru signing, use a [custom signer factory](#custom-signer-factory).
 
@@ -151,9 +151,9 @@ To use hardware-backed custody for Maru signing, use a [custom signer factory](#
 <GlossaryTerm term="Web3Signer" /> is a remote signing service you call over HTTP. When using Web3Signer, the Lineth component holds the endpoint and the public key. Web3Signer holds the private key
 in the store attached to it.
 
-Configure `web3signer` for the [coordinator](../../reference/component-configuration/linea-coordinator-options#l1-submission)
-or [Postman](../../reference/component-configuration/linea-postman-options#signer), or
-`WEB3SIGNER` for the [sequencer liveness plugin](../../reference/component-configuration/linea-besu-plugin-options#sequencer--liveness-service),
+Configure `web3signer` for the [coordinator](../reference/component-configuration/linea-coordinator-options#l1-submission)
+or [Postman](../reference/component-configuration/linea-postman-options#signer), or
+`WEB3SIGNER` for the [sequencer liveness plugin](../reference/component-configuration/linea-besu-plugin-options#sequencer--liveness-service),
 to call Web3Signer over HTTP.
 Optional mutual TLS uses PKCS12 keystore and truststore files.
 
@@ -168,7 +168,7 @@ AWS Key Management Service (KMS) is a managed cloud keystore.
 When using AWS KMS, the <GlossaryTerm term="Postman" /> holds a key ID, Amazon Resource Name (ARN), or alias.
 It loads the public key from the KMS and asks the KMS to sign; the private key stays in the KMS.
 
-Configure `aws-kms` for the [Postman](../../reference/component-configuration/linea-postman-options#signer)
+Configure `aws-kms` for the [Postman](../reference/component-configuration/linea-postman-options#signer)
 to sign with AWS KMS.
 Provide the key ID, ARN, or alias.
 Region is optional and falls back to the AWS SDK default.
@@ -190,8 +190,8 @@ or use a [custom signer factory](#custom-signer-factory).
 A custom factory injects a named signer that is not one of the built-in local, Web3Signer,
 or AWS KMS backends.
 
-Configure `CUSTOM` for the [coordinator](../../reference/component-configuration/linea-coordinator-options#l1-submission)
-or [sequencer liveness plugin](../../reference/component-configuration/linea-besu-plugin-options#sequencer--liveness-service)
+Configure `CUSTOM` for the [coordinator](../reference/component-configuration/linea-coordinator-options#l1-submission)
+or [sequencer liveness plugin](../reference/component-configuration/linea-besu-plugin-options#sequencer--liveness-service)
 to resolve a named signer through an injected factory.
 The coordinator fails if no factory is configured for that name.
 

@@ -101,7 +101,7 @@ nearest healthy region (for example,
 [AWS Global Accelerator](https://aws.amazon.com/global-accelerator/)), protected by a web
 application firewall, then a regional load balancer, an [access control](./access-control.md) endpoint, and
 JSON-RPC routers to
-[near-head and archive nodes](../../protocol/architecture/nodes/rpc-services.md).
+[near-head and archive nodes](../protocol/architecture/nodes/rpc-services.md).
 Private RPC can use private connectivity into each region (for example,
 [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html)).
 

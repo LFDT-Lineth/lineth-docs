@@ -15,23 +15,21 @@ const GROUPS = [
   { title: "Introduction", test: (route) => route === "/" },
   {
     title: "Evaluate Lineth",
-    test: (route) =>
-      route === "/stack/evaluate" || route.startsWith("/stack/evaluate/"),
+    test: (route) => route === "/evaluate" || route.startsWith("/evaluate/"),
   },
   {
     title: "Deployment architecture",
     test: (route) =>
-      route === "/stack/deployment" || route.startsWith("/stack/deployment/"),
-  },
-  {
-    title: "Run and test",
-    test: (route) =>
-      route === "/stack/run-and-test" ||
-      route.startsWith("/stack/run-and-test/"),
+      route === "/deployment" || route.startsWith("/deployment/"),
   },
   {
     title: "Protocol",
     test: (route) => route === "/protocol" || route.startsWith("/protocol/"),
+  },
+  {
+    title: "Run and test",
+    test: (route) =>
+      route === "/run-and-test" || route.startsWith("/run-and-test/"),
   },
   {
     title: "Reference",

@@ -7,15 +7,14 @@ this Docusaurus v3 documentation site for Lineth. The working URL is `docs.linet
 
 | Section                 | Directory         | Documents                                                                          |
 | ----------------------- | ----------------- | ---------------------------------------------------------------------------------- |
-| Introduction            | `docs/stack/index.md`      | Lineth overview. Served at `/`.                                          |
-| Evaluate Lineth         | `docs/stack/evaluate`       | Deployment models, trust, security, compliance                           |
-| Deployment architecture | `docs/stack/deployment`     | Data availability, finalization, finality, QBFT, high availability, key management |
-| Run and test            | `docs/stack/run-and-test`   | Local stack, validators, monitoring, forced transactions                 |
-| Protocol                | `docs/protocol`   | Protocol architecture and mechanisms                                               |
+| Introduction            | `docs/index.md`      | Lineth overview. Served at `/`.                                          |
+| Evaluate Lineth         | `docs/evaluate`       | Deployment models, trust, security, compliance                           |
+| Deployment architecture | `docs/deployment`     | Data availability, finalization, finality, QBFT, high availability, key management |
+| Protocol                | `docs/protocol`   | Protocol architecture                                                              |
+| Run and test            | `docs/run-and-test`   | Local stack, validators, and monitoring                                  |
 | Reference               | `docs/reference`  | Component configuration, contracts, source repositories, audits, glossary          |
 
-Introduction, Evaluate Lineth, Deployment architecture, and Run and test share one sidebar.
-The top navigation labels are Stack, Protocol, and Reference.
+The site uses one sidebar, in that order.
 
 See [README.md](README.md) for what this draft includes and what is still open.
 
@@ -24,9 +23,9 @@ See [README.md](README.md) for what this draft includes and what is still open.
 1. **Do not invent protocol or API behavior.** Never state as fact any parameter, return
    value, or behavior you haven't verified against source code, a spec, or another
    authoritative reference. If uncertain, mark it `[VERIFY]` (see `editorial-voice.mdc`).
-2. **Use Linea and Lineth precisely.** They're related but distinct terms. Check
-   [`/protocol/linea-vs-lineth`](docs/protocol/linea-vs-lineth.md) before asserting which
-   one applies to a claim, and don't guess from memory. See `.cursor/rules/terminology.mdc`.
+2. **Use Linea and Lineth precisely.** They're related but distinct terms. Use the
+   definitions in `.cursor/rules/terminology.mdc` before asserting which one applies
+   to a claim, and don't guess from memory.
 3. **Use default Docusaurus styling.** The site font is Inter, which matches the
    Lineth wordmark, and headings are slightly smaller than the Infima defaults.
    Do not reintroduce Linea colors, Atyp, logos, or the old token stylesheet.
