@@ -54,6 +54,7 @@ const sidebars = {
       collapsed: false,
       link: { type: "doc", id: "protocol/index" },
       items: [
+        "protocol/transaction-lifecycle",
         {
           type: "category",
           label: "Nodes",

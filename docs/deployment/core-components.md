@@ -57,7 +57,7 @@ and **replaceable**.
 
 Common examples include:
 
-- [Block explorer](../protocol/index.md#components-overview)
+- [Block explorer](../protocol/transaction-lifecycle.md#components-overview)
 - [Archive node service](../protocol/architecture/nodes/rpc-services.md#archive-nodes)
 - [RPC load balancers](../protocol/architecture/nodes/rpc-services.md)
 - [Monitoring and metrics](../run-and-test/monitor-a-deployment.md)
