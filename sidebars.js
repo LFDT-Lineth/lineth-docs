@@ -8,7 +8,7 @@ const sidebars = {
       collapsed: false,
       className: "intro-section-item",
       link: { type: "doc", id: "index" },
-      items: ["linea-vs-lineth"],
+      items: ["lineth-and-linea"],
     },
     {
       type: "category",

@@ -15,7 +15,7 @@ import TrilemmaGraphicMobile from "/img/stack/institutional-trilemma-mobile.svg"
 
 Lineth (formerly the Linea Stack) is the collection of protocol components, onchain contracts, and operational
 capabilities that you can use to deploy your own Layer 2 or Layer 3 network, inheriting a <GlossaryTerm term="Zero-knowledge proof">ZK proof</GlossaryTerm> system and Ethereum-compatible execution.
-[Linea](https://linea.build/) is a public network built on Lineth.
+[Lineth is distinct from Linea](lineth-and-linea.md), the public network built on Lineth.
 
 Use this documentation to evaluate and design a custom Lineth deployment.
 
