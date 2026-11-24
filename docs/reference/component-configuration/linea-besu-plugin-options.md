@@ -9,9 +9,9 @@ image: /img/socialCards/linea-besu-plugin-options.jpg
 
 {/* Human-owned wrapper. Automation only updates `_generated/` partials. Add new partial imports when plugins appear. */}
 
-import Provenance from "./_generated/provenance.md";
-import Sequencer from "./_generated/sequencer.md";
-import Tracer from "./_generated/tracer.md";
+import Provenance from "./_generated/besu/provenance.mdx";
+import Sequencer from "./_generated/besu/sequencer.mdx";
+import Tracer from "./_generated/besu/tracer.mdx";
 
 :::caution Advanced options
 

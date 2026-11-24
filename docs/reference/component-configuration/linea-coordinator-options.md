@@ -9,8 +9,8 @@ image: /img/socialCards/coordinator-options.jpg
 
 {/* Human-owned wrapper. Automation only updates `_generated/coordinator/` partials. Add new partial imports when sections appear. */}
 
-import Provenance from "./_generated/coordinator/provenance.md";
-import Reference from "./_generated/coordinator/reference.md";
+import Provenance from "./_generated/coordinator/provenance.mdx";
+import Reference from "./_generated/coordinator/reference.mdx";
 
 :::caution Advanced options
 

@@ -7,17 +7,17 @@ image: /img/socialCards/prover-options.jpg
 
 {/* Human-owned wrapper. Automation only updates `_generated/prover/` partials. Add new partial imports when sections appear. */}
 
-import Provenance from "./_generated/prover/provenance.md";
-import TopLevel from "./_generated/prover/top-level.md";
-import Controller from "./_generated/prover/controller.md";
-import Execution from "./_generated/prover/execution.md";
-import DataAvailability from "./_generated/prover/data-availability.md";
-import Invalidity from "./_generated/prover/invalidity.md";
-import Aggregation from "./_generated/prover/aggregation.md";
-import PublicInputInterconnection from "./_generated/prover/public-input-interconnection.md";
-import Debug from "./_generated/prover/debug.md";
-import Layer2 from "./_generated/prover/layer2.md";
-import TracesLimits from "./_generated/prover/traces-limits.md";
+import Provenance from "./_generated/prover/provenance.mdx";
+import TopLevel from "./_generated/prover/top-level.mdx";
+import Controller from "./_generated/prover/controller.mdx";
+import Execution from "./_generated/prover/execution.mdx";
+import DataAvailability from "./_generated/prover/data-availability.mdx";
+import Invalidity from "./_generated/prover/invalidity.mdx";
+import Aggregation from "./_generated/prover/aggregation.mdx";
+import PublicInputInterconnection from "./_generated/prover/public-input-interconnection.mdx";
+import Debug from "./_generated/prover/debug.mdx";
+import Layer2 from "./_generated/prover/layer2.mdx";
+import TracesLimits from "./_generated/prover/traces-limits.mdx";
 
 :::caution Advanced options
 

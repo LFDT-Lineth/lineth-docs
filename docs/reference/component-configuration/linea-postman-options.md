@@ -7,16 +7,16 @@ image: /img/socialCards/postman-options.jpg
 
 {/* Human-owned wrapper. Automation only updates `_generated/postman/` partials. Add new partial imports when sections appear. */}
 
-import Provenance from "./_generated/postman/provenance.md";
-import General from "./_generated/postman/general.md";
-import L1Network from "./_generated/postman/l1-network.md";
-import L2Network from "./_generated/postman/l2-network.md";
-import Listener from "./_generated/postman/listener.md";
-import Claiming from "./_generated/postman/claiming.md";
-import Signer from "./_generated/postman/signer.md";
-import Database from "./_generated/postman/database.md";
-import DatabaseCleaner from "./_generated/postman/database-cleaner.md";
-import Api from "./_generated/postman/api.md";
+import Provenance from "./_generated/postman/provenance.mdx";
+import General from "./_generated/postman/general.mdx";
+import L1Network from "./_generated/postman/l1-network.mdx";
+import L2Network from "./_generated/postman/l2-network.mdx";
+import Listener from "./_generated/postman/listener.mdx";
+import Claiming from "./_generated/postman/claiming.mdx";
+import Signer from "./_generated/postman/signer.mdx";
+import Database from "./_generated/postman/database.mdx";
+import DatabaseCleaner from "./_generated/postman/database-cleaner.mdx";
+import Api from "./_generated/postman/api.mdx";
 
 :::caution Advanced options
 

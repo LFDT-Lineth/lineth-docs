@@ -7,8 +7,8 @@ image: /img/socialCards/maru-options.jpg
 
 {/* Human-owned wrapper. Automation only updates `_generated/maru/` partials. Add new partial imports when sections appear. */}
 
-import Provenance from "./_generated/maru/provenance.md";
-import Reference from "./_generated/maru/reference.md";
+import Provenance from "./_generated/maru/provenance.mdx";
+import Reference from "./_generated/maru/reference.mdx";
 
 :::caution Advanced options
 
