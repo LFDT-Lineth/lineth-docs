@@ -1,16 +1,16 @@
 ---
 name: author-doc-page
 description: >-
-  Scaffold or draft a new docs.linea.build page to editorial standards. Use when creating a
+  Scaffold or draft a new docs.lineth.io page to editorial standards. Use when creating a
   new page, writing a first draft, or helping a contributor who isn't a professional writer
   produce content that meets the documentation team's expectations.
 metadata:
-  short-description: Scaffold and draft new docs.linea.build pages
+  short-description: Scaffold and draft new docs.lineth.io pages
 ---
 
-# Author a docs.linea.build page
+# Author a docs.lineth.io page
 
-Help create a new documentation page that follows docs.linea.build's editorial standards
+Help create a new documentation page that follows docs.lineth.io's editorial standards
 from the start.
 
 ## When to use
@@ -24,8 +24,8 @@ from the start.
 
 Ask the user for anything they haven't already provided:
 
-1. **Tab**: which tab is this for? (Linea Mainnet, Lineth Stack, Protocol, Reference,
-   Changelog)
+1. **Section**: which section is this for? (Introduction, Evaluate Lineth, Deployment
+   architecture, Protocol, Run and test, Reference)
 2. **Content type**: concept/explanation, how-to guide, reference, or tutorial?
 3. **Topic**: what is the page about?
 4. **File path**: where should the file live? Suggest one based on the tab and topic if

@@ -479,7 +479,7 @@ function truncate(value, maxLength = 140) {
 function readEditorialHeader(siteDir) {
   const existingPath = path.join(siteDir, "static/llms.txt");
   if (!fs.existsSync(existingPath)) {
-    return "# Linea Documentation\n\n> Canonical public documentation for Linea.";
+    return "# Lineth documentation\n\n> Public documentation for Lineth.";
   }
 
   const existing = fs.readFileSync(existingPath, "utf8").trimEnd();
